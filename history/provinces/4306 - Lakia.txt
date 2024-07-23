@@ -1,0 +1,47 @@
+#4306 - Lakia
+
+owner = GAZ
+controller = GAZ
+culture = lak
+religion = sunni	
+capital = "Kumukh"
+trade_goods = wool
+hre = no
+base_tax = 6
+base_production = 4
+base_manpower = 4
+is_city = yes
+add_core = GAZ
+
+extra_cost = 8
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1801.1.18 = {
+	owner = RUS
+	controller = RUS
+	add_core = RUS
+} # Annexed by Russia

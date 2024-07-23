@@ -1,0 +1,28 @@
+#6371 - Rottach
+#Region - Germany
+#Area - Upper Bavaria
+
+owner = SLZ
+controller = SLZ
+add_core = SLZ
+add_core = REG
+culture = austrian
+religion = catholic
+base_tax = 2
+base_production = 2
+base_manpower = 1
+trade_goods = beer
+capital = "Rottach"
+is_city = yes
+hre = yes
+
+extra_cost = 8
+
+
+
+
+
+
+
+#Documented 1002 AD
+1806.7.12 = { hre = no } # The Holy Roman Empire is dissolved

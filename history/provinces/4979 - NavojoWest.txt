@@ -1,0 +1,24 @@
+#4979 - Navojo West
+
+add_core = NAH
+owner = NAH
+controller = NAH
+is_city = yes
+culture = navajo
+religion = totemism
+capital = "Dinétah"
+trade_goods = wool
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+native_size = 10
+native_ferocity = 2
+native_hostileness = 3
+
+
+
+
+
+
+

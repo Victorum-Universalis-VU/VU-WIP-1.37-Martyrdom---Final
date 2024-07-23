@@ -1,0 +1,23 @@
+#5373 - Cwebeni
+
+owner = ZUL
+controller = ZUL
+add_core = ZUL
+culture = zulu
+religion = shamanism
+capital = "Cwebeni"
+is_city = yes
+base_manpower = 1 
+trade_goods = gold
+hre = no
+base_tax = 1
+base_production = 1
+ 
+
+
+
+
+
+
+
+

@@ -1,0 +1,39 @@
+#8262 - Luban
+
+#Default
+owner = BOH
+controller = BOH
+add_core = BOH
+add_core = MEI
+capital = "Lauban"
+is_city = yes
+culture = sorbian
+religion = catholic
+base_tax = 2
+base_production = 1
+base_manpower = 1
+trade_goods = apiculture
+hre = yes
+
+#Claimants
+add_core = SOR
+
+#Buildings
+
+#Special Modifiers
+
+#Known by Technology groups
+
+
+
+
+
+
+#Histories by docRobert & SF
+1444.1.1 = {
+	culture = silesian_german
+	owner = BOH
+	controller = BOH
+	add_core = BOH
+	remove_core = MEI
+}

@@ -1,0 +1,13 @@
+#5753 - Schitsuumsh
+
+culture = interior_salish
+religion = totemism 
+capital = "Sq'wt'u" 			#Cataldo Mission pre-colonial name.
+trade_goods = unknown			#a lot of lead. Also some silver.
+hre = no 
+base_tax = 1 
+base_production = 1 
+base_manpower = 1 
+native_size = 10
+native_ferocity = 1 
+native_hostileness = 3 

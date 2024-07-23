@@ -1,0 +1,26 @@
+#7620 - Lüchow
+#Region - Germany
+#Area - Mittelmark
+
+owner = LUN
+controller = LUN
+add_core = LUN
+culture = polabian_culture	#Descendants of Drevani living in Dannenberg-Luchow were still speaking slavic language until 18th century
+religion = catholic
+hre = yes
+base_tax = 4			
+base_production = 4		
+trade_goods = livestock
+base_manpower = 4 
+capital = "Lüchow"
+is_city = yes
+
+
+
+
+
+
+
+1525.1.1 = { culture = saxon } #Slavic language vanishes
+1539.1.1 = { religion = protestant }
+1806.7.12 = { hre = no } # The Holy Roman Empire is dissolved

@@ -1,0 +1,22 @@
+#7451 - Afula
+
+owner = MAM
+controller = MAM
+culture = palastinian_arabic
+religion = sunni
+capital = "Afula"
+trade_goods = wool
+hre = no
+base_tax = 2
+base_production = 1
+base_manpower = 1
+is_city = yes
+add_core = MAM
+add_core = PLE
+
+1517.1.1 = {
+	owner = TUR
+	controller = TUR
+	add_core = TUR
+} # Part of the Ottoman empire
+1750.1.1 = { add_core = SYR }

@@ -1,0 +1,27 @@
+#8114 - Empuries
+
+owner = ARA
+controller = ARA
+add_core = ARA
+add_core = CAT #Changed from CTT
+culture = catalan
+religion = catholic
+capital = "Castelló"
+base_tax = 2
+base_production = 2
+base_manpower = 1
+trade_goods = olive_oil
+is_city = yes
+hre = no
+
+
+
+
+
+
+
+#Province history completed by - Darth Modus
+
+1385.1.1 = {
+	capital = "Figueres"
+}	#Province annexed to Aragon

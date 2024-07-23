@@ -1,0 +1,43 @@
+#4287 - Ibra
+
+owner = OMA
+controller = OMA
+add_core = OMA
+capital = "Ibra"
+culture = omani_culture
+religion = ibadi
+trade_goods = wool
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 2 
+is_city = yes
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Interior largely avoids Portuguese influence, remains more or less independent througout the period, as far as I can tell. Might make it a protectorate, vassal, or new tributary at some point, but no history changes
+
+
+
+#Paradox additions in 1.23, unless I'm mistaken. May return and look into this invasion, but cutting for the moment as it is lacking elsewhere in history.
+#1741.1.1 = {
+#	owner = PER
+#	controller = PER	
+#	add_core = PER
+#}# Invaded by Persia
+#1749.6.10 = {
+#	owner = OMA
+#	controller = OMA
+#	remove_core = PER
+#	unrest = 0
+#}

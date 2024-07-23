@@ -1,0 +1,21 @@
+#5842 - Salvanes
+
+owner = CAS
+controller = CAS
+add_core = CAS
+add_core = TLD #BTB added: Castilian revolter tag.
+culture = castillian
+religion = catholic
+capital = "Villarejo"
+base_tax = 3
+base_production = 2
+base_manpower = 1
+trade_goods = horses
+is_city = yes
+hre = no
+
+
+
+
+
+

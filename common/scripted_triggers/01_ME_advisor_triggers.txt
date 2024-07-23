@@ -1,0 +1,128 @@
+ME_has_mil_advisor = {
+	OR = {
+		advisor = abu_said_mirza
+		advisor = usa_secretary_of_war
+		advisor = ME_executioner
+		advisor = ME_mercenary_commander
+		advisor = GRA_civil_engineer
+		advisor = GRA_military_writer
+	}
+}
+
+ME_has_mil_advisor_2 = {
+	OR = {
+		abu_said_mirza = 2
+		usa_secretary_of_war = 2
+		ME_executioner = 2
+		ME_mercenary_commander = 2
+		GRA_civil_engineer = 2
+		GRA_military_writer = 2
+	}
+}
+
+ME_has_mil_advisor_3 = {
+	OR = {
+		abu_said_mirza = 3
+		usa_secretary_of_war = 3
+		ME_executioner = 3
+		ME_mercenary_commander = 3
+		GRA_civil_engineer = 3
+		GRA_military_writer = 3
+	}
+}
+
+ME_has_dip_advisor = {
+	OR = {
+		advisor = usa_head_diplomat
+		advisor = travelling_merchant
+		advisor = bendahara
+		advisor = jean_baptiste
+		advisor = GRA_translator
+		advisor = GRA_astronomer
+		advisor = GRA_alchemist
+		advisor = GRA_andalusian_philosopher
+		advisor = Leo_Africanus_Diplomat
+	}
+}
+
+ME_has_dip_advisor_2 = {
+	OR = {
+		usa_head_diplomat = 2
+		travelling_merchant = 2
+		bendahara = 2
+		jean_baptiste = 2
+		GRA_translator = 2
+		GRA_astronomer = 2
+		GRA_alchemist = 2
+		GRA_andalusian_philosopher = 2
+		Leo_Africanus_Diplomat = 2
+	}
+}
+
+ME_has_dip_advisor_3 = {
+	OR = {
+		usa_head_diplomat = 3
+		travelling_merchant = 3
+		bendahara = 3
+		jean_baptiste = 3
+		GRA_translator = 3
+		GRA_astronomer = 3
+		GRA_alchemist = 3
+		GRA_andalusian_philosopher = 3
+		Leo_Africanus_Diplomat = 3
+	}
+}
+
+ME_has_adm_advisor = {
+	OR = {
+		advisor = mayan_scribe
+		advisor = usa_secretary_of_the_treasury
+		advisor = muscovy_architect
+		advisor = me_reformist
+		advisor = me_lyricist
+		advisor = me_land_reformer
+		advisor = sufi_scholar_advisor
+		advisor = me_regent
+		advisor = ME_wahhabi_scholar
+		advisor = ME_historian
+		advisor = GRA_muslim_scholar
+		advisor = GRA_mathematician
+		advisor = Leo_Africanus_Geographer
+	}
+}
+
+ME_has_adm_advisor_2 = {
+	OR = {
+		mayan_scribe = 2
+		usa_secretary_of_the_treasury = 2
+		muscovy_architect = 2
+		me_reformist = 2
+		me_lyricist = 2
+		me_land_reformer = 2
+		sufi_scholar_advisor = 2
+		me_regent = 2
+		ME_wahhabi_scholar = 2
+		ME_historian = 2
+		GRA_muslim_scholar = 2
+		GRA_mathematician = 2
+		Leo_Africanus_Geographer = 2
+	}
+}
+
+ME_has_adm_advisor_3 = {
+	OR = {
+		mayan_scribe = 3
+		usa_secretary_of_the_treasury = 3
+		muscovy_architect = 3
+		me_reformist = 3
+		me_lyricist = 3
+		me_land_reformer = 3
+		sufi_scholar_advisor = 3
+		me_regent = 3
+		ME_wahhabi_scholar = 3
+		ME_historian = 3
+		GRA_muslim_scholar = 3
+		GRA_mathematician = 3
+		Leo_Africanus_Geographer = 3
+	}
+}
