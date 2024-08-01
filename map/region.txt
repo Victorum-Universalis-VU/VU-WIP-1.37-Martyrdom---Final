@@ -115,6 +115,7 @@ low_countries_region = {
 
 italy_region = {
 	areas = {
+		malta_area
 		venetia_area
 		lombardy_area
 		piedmont_area

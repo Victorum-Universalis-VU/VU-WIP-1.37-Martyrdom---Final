@@ -1149,130 +1149,6 @@ convento_de_cristo = {
 #	}
 #}
 
-universidade_de_coimbra = {	
-	start = 1851 #Coimbra
-	date = 1290.05.05
-	time = { months = 0	}
-	build_cost = 0
-	can_be_moved = no
-	move_days_per_unit_distance = 10
-	starting_tier = 1
-	type = monument
-
-	build_trigger = {
-		OR = { 
-			culture = portugese
-			culture_group = old_latin
-		}
-		has_owner_culture = yes
-	}
-
-	on_built = {
-	}
-
-	on_destroyed = {
-	}
-
-	can_use_modifiers_trigger = {
-		OR = { 
-			culture = portugese
-			culture_group = old_latin
-		}
-		has_owner_culture = yes
-	}
-
-	can_upgrade_trigger = {
-		OR = { 
-			culture = portugese
-			culture_group = old_latin
-		}
-		has_owner_culture = yes
-	}
-
-	keep_trigger = {
-	}
-
-	tier_0 = {
-		upgrade_time = {
-			months = 0
-		}
-		cost_to_upgrade = {
-			factor = 0
-		}
-		province_modifiers = {
-		}
-		area_modifier = {
-		}
-		country_modifiers = {
-		}
-		on_upgraded = {
-		}
-	}
-
-	tier_1 = {
-		upgrade_time = {
-			months = 120
-		}
-		cost_to_upgrade = {
-			factor = 1000
-		}
-		province_modifiers = {
-			local_development_cost = -0.05
-		}
-		area_modifier = { 
-			local_institution_spread = 0.1
-		}
-		country_modifiers = {
-			trade_company_governing_cost = -0.1
-		}
-		on_upgraded = {
-		}
-	}
-
-	tier_2 = {
-		upgrade_time = {
-			months = 240
-		}
-		cost_to_upgrade = {
-			factor = 2000
-		}
-		province_modifiers = {
-			local_development_cost = -0.1
-		}
-		area_modifier = {
-			local_institution_spread = 0.15
-		}
-		country_modifiers = {
-			advisor_cost = -0.1
-			trade_company_governing_cost = -0.25
-		}
-		on_upgraded = {
-		}
-	}
-
-	tier_3 = {
-		upgrade_time = {
-			months = 480
-		}
-		cost_to_upgrade = {
-			factor = 4000
-		}
-		province_modifiers = {
-			local_development_cost = -0.2
-		}
-		area_modifier = {
-			local_institution_spread = 0.25
-		}
-		country_modifiers = {
-			advisor_cost = -0.15
-			trade_company_governing_cost = -0.5
-			technology_cost = -0.05
-		}
-		on_upgraded = { 
-		}
-	}
-}
-
 sanssouci_palace = {
 	# province it starts in
 	start = 4748
@@ -2755,11 +2631,17 @@ siegessaule = {
 
 	#can we build it?
 	build_trigger = {
-		FROM = {
-			owns_or_vassal_of = 50
-			is_subject = no		
-			tag = GER
+		owner = {
+			has_won_war_against = {
+                who = DAN
+                max_years_since = 1000
+            }
 		}
+		#FROM = { #Hashed this out - SF
+		#	owns_or_vassal_of = 50
+		#	is_subject = no		
+		#	tag = GER
+		#}
 	}
 
 	#what to do when it's built
@@ -2783,6 +2665,7 @@ siegessaule = {
 
 	#can our country keep it or is it destroyed when we get hold of it?
 	keep_trigger = {
+		culture_group = germanic
 	}
 
 	#tier data
@@ -2835,6 +2718,9 @@ siegessaule = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
+			global_unrest = -1
+			years_of_nationalism = -2
+			naval_morale = 0.05
 			monthly_splendor = 0.5
 			prestige = 0.2
 		}
@@ -2865,6 +2751,9 @@ siegessaule = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
+			global_unrest = -2
+			years_of_nationalism = -5
+			naval_morale = 0.1
 			monthly_splendor = 1
 			prestige = 0.5
 		}
@@ -2895,6 +2784,9 @@ siegessaule = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
+			global_unrest = -3
+			years_of_nationalism = -10
+			naval_morale = 0.15
 			monthly_splendor = 1.5
 			prestige = 1
 			power_projection_from_insults = 0.2
@@ -13787,207 +13679,6 @@ imperial_castle = {
 					loyalty = 15
 				}
 			}
-		}
-	}
-}
-
-ruprecht_karl_university = {
-	# province it starts in
-	start = 77
-	
-	# date built in real life (so anything built during game time will be there if you start a game after that date)
-	date = 1386.01.01 #1478
-	
-	#time to build
-	time = {
-		months = 0
-	}
-	
-	#how much to build one
-	build_cost = 0
-	
-	#can we move it?
-	can_be_moved = no
-	
-	#time to move the project one unit of distance, in days
-	move_days_per_unit_distance = 10
-	
-	#tier that the project starts at when first placed in the game (be that at game start or when built by a country as the game progresses)
-	starting_tier = 1
-	
-	#project type
-	type = monument
-
-	#can we build it?
-	build_trigger = {
-		culture_group = germanic
-		OR = {
-				has_owner_culture = yes
-				has_owner_accepted_culture = yes			
-		}
-		
-	}
-
-	#what to do when it's built
-	on_built = {
-	}
-	
-	#what to do when it's destroyed
-	on_destroyed = {
-	}
-
-	#can our country use it?
-	can_use_modifiers_trigger = {	
-		culture_group = germanic
-		OR = {
-				has_owner_culture = yes
-				has_owner_accepted_culture = yes			
-		}
-		
-	}
-
-	#can our country upgrade it?
-	can_upgrade_trigger = {
-		culture_group = germanic
-		OR = {
-				has_owner_culture = yes
-				has_owner_accepted_culture = yes			
-		}
-		
-	}
-
-	#can our country keep it or is it destroyed when we get hold of it?
-	keep_trigger = {
-	}
-
-	#tier data
-	tier_0 = {
-		#time to upgrade to this level (0 for tier 0)
-		upgrade_time = {
-			months = 0
-		}
-
-		#cost to upgrade to this level (0 for tier 0)
-		cost_to_upgrade = {
-			factor = 0
-		}
-
-		#what modifiers are added to the province when we have this project here on this tier
-		province_modifiers = {
-			
-		}
-
-		#what modifiers are added to the provinces in the map area when we have this project here on this tier
-		area_modifier = {
-		}
-
-		#what modifiers are added to the country when we have this project here on this tier
-		country_modifiers = {
-		}
-
-		#what effects happen when this tier is achieved
-		on_upgraded = {
-		}
-	}
-
-	tier_1 = {
-		#time to upgrade to this level (0 for tier 0)
-		upgrade_time = {
-			months = 120
-		}
-
-		#cost to upgrade to this level (0 for tier 0)
-		cost_to_upgrade = {
-			factor = 1000
-		}
-
-		#what modifiers are added to the province when we have this project here on this tier
-		province_modifiers = {
-			local_institution_spread = 0.10
-		}
-
-		#what modifiers are added to the provinces in the map area when we have this project here on this tier
-		area_modifier = {
-		}
-
-		#what modifiers are added to the country when we have this project here on this tier
-		country_modifiers = {
-			innovativeness_gain = 0.25
-		}
-
-		#what effects happen when this tier is achieved
-		on_upgraded = {
-			
-
-		}
-	}
-
-	tier_2 = {
-		#time to upgrade to this level (0 for tier 0)
-		upgrade_time = {
-			months = 240
-		}
-
-		#cost to upgrade to this level (0 for tier 0)
-		cost_to_upgrade = {
-			factor = 2500
-		}
-
-		#what modifiers are added to the province when we have this project here on this tier
-		province_modifiers = {
-			local_institution_spread = 0.25
-		}
-
-		#what modifiers are added to the provinces in the map area when we have this project here on this tier
-		area_modifier = {
-			
-		}
-
-		#what modifiers are added to the country when we have this project here on this tier
-		country_modifiers = {
-			innovativeness_gain = 0.50
-			idea_cost = -0.05
-		}
-
-		#what effects happen when this tier is achieved
-		on_upgraded = {
-			
-
-		}
-	}
-
-	tier_3 = {
-		#time to upgrade to this level (0 for tier 0)
-		upgrade_time = {
-			months = 480
-		}
-
-		#cost to upgrade to this level (0 for tier 0)
-		cost_to_upgrade = {
-			factor = 5000
-		}
-
-		#what modifiers are added to the province when we have this project here on this tier
-		province_modifiers = {
-			local_institution_spread = 0.50
-		}
-
-		#what modifiers are added to the provinces in the map area when we have this project here on this tier
-		area_modifier = {
-			
-		}
-
-		#what modifiers are added to the country when we have this project here on this tier
-		country_modifiers = {
-			innovativeness_gain = 0.50
-			idea_cost = -0.10
-			technology_cost = -0.05
-		}
-
-		#what effects happen when this tier is achieved
-		on_upgraded = {
-			
-		
 		}
 	}
 }

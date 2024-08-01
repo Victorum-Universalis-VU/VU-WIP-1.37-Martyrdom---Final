@@ -98,7 +98,9 @@ gme_reichstag = {
 			local_monthly_devastation = -0.05
 		}
 		area_modifier = { }
-		country_modifiers = { }
+		country_modifiers = { 
+			governing_capacity = 0.1
+		}
 		on_upgraded = {
 			add_devastation = -10
 		}
@@ -112,7 +114,9 @@ gme_reichstag = {
 		area_modifier = {
 			local_unrest = -1
 		}
-		country_modifiers = { }
+		country_modifiers = { 
+			governing_capacity = 0.2
+		}
 		on_upgraded = { }
 	}
 	tier_3 = {
@@ -125,7 +129,7 @@ gme_reichstag = {
 			local_unrest = -2
 		}
 		country_modifiers = {
-			governing_capacity_modifier = 0.25
+			governing_capacity_modifier = 0.3
 			yearly_corruption = -0.02
 			expand_administration_cost = -0.1
 		}

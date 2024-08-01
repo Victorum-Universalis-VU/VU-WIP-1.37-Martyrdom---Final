@@ -50,6 +50,7 @@ technology = { #Merchants & Trade
 	trade_range	= 50
 	global_colonial_growth = 10
 
+	cinema = yes
 
 }
 
@@ -412,6 +413,8 @@ technology = { #Naval Ambitions
 	range = 115
 	impressment_offices = yes
 	naval_engagement_width = 10
+	
+	theatrics = yes
 }
 
 technology = { #Docks
@@ -570,8 +573,6 @@ technology = { #The Galleass
 	
 	tradecompany = yes
 	num_accepted_cultures = 1
-
-	theatrics = yes
 	
 	enable = galleass
 }
@@ -1184,7 +1185,6 @@ technology = {
 	trade_range = 20
 	range = 100
 
-	cinema = yes
 	radio_station = yes
 }
 

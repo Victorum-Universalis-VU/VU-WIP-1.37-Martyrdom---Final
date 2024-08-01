@@ -10,7 +10,7 @@ ENG_missions_1_1 = {
 		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 		NOT = { has_country_flag = ENG_Angevin_Missions }
 	}
-	has_country_shield  = yes
+	has_country_shield = yes
 
 	ENG_Reclaim_Maine = {
 		icon = mission_conquer_50_development
@@ -189,7 +189,7 @@ GBR_missions_1_1 = {
 		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 		NOT = { has_country_flag = ENG_Angevin_Missions }
 	}
-	has_country_shield  = yes
+	has_country_shield = yes
 
 	GBR_Peace_in_ireland = {
 		icon = mission_rb_cod_wars
@@ -283,7 +283,7 @@ ENG_missions_1_2 = {
 		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 		NOT = { has_country_flag = ENG_Angevin_Missions }
 	}
-	has_country_shield  = yes
+	has_country_shield = yes
 
 	ENG_seize_gibraltar = {
 		icon = mission_rb_take_gibraltar
@@ -350,7 +350,7 @@ GBR_missions_1_2 = {
 		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 		NOT = { has_country_flag = ENG_Angevin_Missions }
 	}
-	has_country_shield  = yes
+	has_country_shield = yes
 
 	GBR_mediterranean_islands = {
 		icon = mission_invade_island
@@ -459,7 +459,7 @@ ENG_missions_1_3 = {
 		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 		NOT = { has_country_flag = ENG_Angevin_Missions }
 	}
-	has_country_shield  = yes
+	has_country_shield = yes
 
 	ENG_Permanent_army = {
 		icon = mission_assemble_an_army
@@ -529,7 +529,7 @@ GBR_missions_1_3 = {
 		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 		NOT = { has_country_flag = ENG_Angevin_Missions }
 	}
-	has_country_shield  = yes
+	has_country_shield = yes
 
 	GBR_Wooden_wall = {
 		icon = mission_sea_battles
@@ -603,7 +603,7 @@ ENG_missions_2_1 = {
 		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 		NOT = { has_country_flag = ENG_Angevin_Missions }
 	}
-	has_country_shield  = yes
+	has_country_shield = yes
 
 	ENG_Hundred_Years_war = {
 		icon = me_mission_france_100_years_war
@@ -931,7 +931,7 @@ GBR_missions_2_1 = {
 		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 		NOT = { has_country_flag = ENG_Angevin_Missions }
 	}
-	has_country_shield  = yes
+	has_country_shield = yes
 
 	GBR_north_sea_trade_dominance = {
 		icon = mission_dominate_home_trade_node
@@ -1024,7 +1024,7 @@ ENG_missions_2_2 = {
 		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 		NOT = { has_country_flag = ENG_Angevin_Missions }
 	}
-	has_country_shield  = yes
+	has_country_shield = yes
 
 	ENG_naval_power = {
 		icon = mission_rb_a_mighty_fleet
@@ -1194,7 +1194,7 @@ GBR_missions_2_2 = {
 		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 		NOT = { has_country_flag = ENG_Angevin_Missions }
 	}
-	has_country_shield  = yes
+	has_country_shield = yes
 
 	GBR_fair_taxation = {
 		icon = mission_high_income
@@ -1342,7 +1342,7 @@ ENG_missions_2_3 = {
 		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 		NOT = { has_country_flag = ENG_Angevin_Missions }
 	}
-	has_country_shield  = yes
+	has_country_shield = yes
 
 	ENG_naval_infrastructure = {
 		icon = mission_establish_high_seas_navy
@@ -1395,7 +1395,7 @@ GBR_missions_2_3 = {
 		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 		NOT = { has_country_flag = ENG_Angevin_Missions }
 	}
-	has_country_shield  = yes
+	has_country_shield = yes
 
 	GBR_portsmouth = {
 		icon = mission_galleys_in_port
@@ -1446,7 +1446,7 @@ ENG_missions_3_1 = {
 		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 		NOT = { has_country_flag = ENG_Angevin_Missions }
 	}
-	has_country_shield  = yes
+	has_country_shield = yes
 
 	ENG_Chartres = {
 		icon = mission_assemble_an_army
@@ -1819,7 +1819,7 @@ GBR_missions_3_1 = {
 		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 		NOT = { has_country_flag = ENG_Angevin_Missions }
 	}
-	has_country_shield  = yes
+	has_country_shield = yes
 
 	GBR_naval_dominance_in_north_seas = {
 		icon = mission_establish_high_seas_navy
@@ -1917,7 +1917,7 @@ ENG_missions_3_2 = {
 		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 		NOT = { has_country_flag = ENG_Angevin_Missions }
 	}
-	has_country_shield  = yes
+	has_country_shield = yes
 
 	ENG_markets_of_england = {
 		icon = mission_market_place_with_asian_traders
@@ -2007,7 +2007,7 @@ GBR_missions_3_2 = {
 		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 		NOT = { has_country_flag = ENG_Angevin_Missions }
 	}
-	has_country_shield  = yes
+	has_country_shield = yes
 
 	GBR_sun_never_sets = {
 		icon = me_mission_british_flag
@@ -2072,7 +2072,7 @@ ENG_missions_3_3 = {
 		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 		NOT = { has_country_flag = ENG_Angevin_Missions }
 	}
-	has_country_shield  = yes
+	has_country_shield = yes
 
 	ENG_thirteen_colonies = {
 		icon = mission_rb_the_thirteen_colonies
@@ -2124,7 +2124,7 @@ GBR_missions_3_3 = {
 		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 		NOT = { has_country_flag = ENG_Angevin_Missions }
 	}
-	has_country_shield  = yes
+	has_country_shield = yes
 
 	GBR_beyond_appalachian = {
 		icon = mission_trade_company_region_abroad
@@ -2167,7 +2167,7 @@ ENG_missions_3_4 = {
 		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 		NOT = { has_country_flag = ENG_Angevin_Missions }
 	}
-	has_country_shield  = yes
+	has_country_shield = yes
 
 	ENG_Pacific_exploration = {
 		icon = mission_establish_high_seas_navy
@@ -2206,7 +2206,7 @@ GBR_missions_3_4 = {
 		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 		NOT = { has_country_flag = ENG_Angevin_Missions }
 	}
-	has_country_shield  = yes
+	has_country_shield = yes
 
 	GBR_Melaka = {
 		icon = mission_galleys_in_port
@@ -2346,7 +2346,7 @@ ENG_missions_3_5 = {
 		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 		NOT = { has_country_flag = ENG_Angevin_Missions }
 	}
-	has_country_shield  = yes
+	has_country_shield = yes
 
 	ENG_workshops = {
 		icon = mission_early_game_buildings
@@ -2407,7 +2407,7 @@ GBR_missions_3_5 = {
 		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 		NOT = { has_country_flag = ENG_Angevin_Missions }
 	}
-	has_country_shield  = yes
+	has_country_shield = yes
 
 	GBR_exploit_the_mine_fields = {
 		icon = mission_rb_prospect_for_coal
@@ -2495,7 +2495,7 @@ GBR_missions_3_6 = {
 		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 		NOT = { has_country_flag = ENG_Angevin_Missions }
 	}
-	has_country_shield  = yes
+	has_country_shield = yes
 
 	GBR_Industrialization = {
 		icon = mission_rb_build_furnaces
@@ -2591,7 +2591,7 @@ ENG_missions_4_1 = {
 		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 		NOT = { has_country_flag = ENG_Angevin_Missions }
 	}
-	has_country_shield  = yes
+	has_country_shield = yes
 
 	ENG_war_of_the_roses = {
 		icon = mission_rb_war_of_the_roses
@@ -2739,7 +2739,7 @@ GBR_missions_4_1 = {
 		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 		NOT = { has_country_flag = ENG_Angevin_Missions }
 	}
-	has_country_shield  = yes
+	has_country_shield = yes
 
 	GBR_Irish_parliament = {
 		icon = pluto_missions_icon
@@ -2834,7 +2834,7 @@ ENG_missions_4_2 = {
 		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 		NOT = { has_country_flag = ENG_Angevin_Missions }
 	}
-	has_country_shield  = yes
+	has_country_shield = yes
 
 	ENG_dutch_deal = {
 		icon = me_mission_venice_ship_in_port
@@ -3129,7 +3129,7 @@ GBR_missions_4_2 = {
 		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 		NOT = { has_country_flag = ENG_Angevin_Missions }
 	}
-	has_country_shield  = yes
+	has_country_shield = yes
 
 	GBR_new_zealand = {
 		icon = mission_early_game_buildings
@@ -3308,7 +3308,7 @@ ENG_missions_4_3 = {
 		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 		NOT = { has_country_flag = ENG_Angevin_Missions }
 	}
-	has_country_shield  = yes
+	has_country_shield = yes
 
 	ENG_the_mines = {
 		icon = me_mission_industrial_salt_mine
@@ -3486,7 +3486,7 @@ ENG_missions_5_1 = {
 		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 		NOT = { has_country_flag = ENG_Angevin_Missions }
 	}
-	has_country_shield  = yes
+	has_country_shield = yes
 
 	ENG_demands_of_the_peasants = {
 		icon = mission_alliances
@@ -3995,7 +3995,7 @@ GBR_missions_5_1 = {
 		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 		NOT = { has_country_flag = ENG_Angevin_Missions }
 	}
-	has_country_shield  = yes
+	has_country_shield = yes
 
 	GBR_Irish_plantations = {
 		icon = mission_unite_home_region
@@ -4091,7 +4091,7 @@ ENG_missions_5_2 = {
 		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 		NOT = { has_country_flag = ENG_Angevin_Missions }
 	}
-	has_country_shield  = yes
+	has_country_shield = yes
 
 	ENG_importance_of_wool = {
 		icon = me_mission_aachen_cloth_trade
@@ -4219,7 +4219,7 @@ GBR_missions_5_2 = {
 		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 		NOT = { has_country_flag = ENG_Angevin_Missions }
 	}
-	has_country_shield  = yes
+	has_country_shield = yes
 
 	GBR_interior = {
 		icon = mission_war_chest
@@ -4452,7 +4452,7 @@ ENG_missions_5_3 = {
 		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 		NOT = { has_country_flag = ENG_Angevin_Missions }
 	}
-	has_country_shield  = yes
+	has_country_shield = yes
 	ENG_oxbridge = {
 		icon = mission_rb_renovate_oxbridge
 		required_missions = { }

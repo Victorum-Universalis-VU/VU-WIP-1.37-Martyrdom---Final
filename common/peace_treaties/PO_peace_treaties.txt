@@ -1,0 +1,1479 @@
+#po_add_provinces_to_hre_file
+po_HAB_add_provinces_to_hre = {
+	
+	category = 6 
+	power_projection = no 
+	power_cost_base = 0 
+	prestige_base = 0.01
+	ae_base = 0.01
+	warscore_cost = {
+		all_provinces = 0.5 
+		no_provinces = 10.0 
+		owner_keeps = 0.0 
+		conquered = 0.0 
+		returned_core = 0.0 
+		released_nation = 0.0 
+		cancelled_subject = 0.0 
+		concede_colonial_region = 0.0 
+	}
+	warscore_cap = 100 
+	requires_demand_independence = yes 
+	is_make_subject = yes 
+	requires_is_allowed = yes 
+	effect = { 
+		FROM = { set_in_empire = yes }
+		add_imperial_influence = 10
+	}
+	ai_weight = { 
+		export_to_variable = {
+			variable_name = ai_value 
+			value = 100
+		}
+		limit = {
+			is_emperor = yes
+		}
+	}
+}
+
+#po_austria_balkanize_france_file
+#po_austria_balkanize_france = {
+#	
+#	category = 6 
+#	power_projection = no 
+#	power_cost_base = 0 
+#	prestige_base = 0.1
+#	ae_base = 1
+#	warscore_cost = {
+#		all_provinces = 0.5 
+#		no_provinces = 10.0 
+#		owner_keeps = 0.0 
+#		conquered = 0.0 
+#		returned_core = 0.0 
+#		released_nation = 0.0 
+#		cancelled_subject = 0.0 
+#		concede_colonial_region = 0.0 
+#	}
+#	warscore_cap = 100 
+#	requires_demand_independence = yes 
+#	is_make_subject = no
+#	requires_is_allowed = yes 
+#	
+#	is_visible = { 
+#		has_country_flag = HAB_may_balkanize_france
+#	}
+#	is_allowed = { 
+#		FROM = {
+#			tag = FRA
+#		}
+#	}
+#	effect = { 
+#		FROM = {
+#			country_event = { id = ME_Austria_Events.66 }
+#		}
+#	}
+#	ai_weight = { 
+#		export_to_variable = {
+#			variable_name = ai_value 
+#			value = 10000
+#		}
+#		limit = {
+#			is_emperor = yes
+#		}
+#	}
+#}
+
+#po_austria_balkanize_poland_file
+#po_austria_balkanize_poland = {
+#	# The following strings need localization: 
+#	#		"po_austria_balkanize_poland_desc" (uses text processing, supporting bracket notation) ("[FROM.GetName] becomes a [THIS.GetName] Dummy")
+#	#		"CB_ALLOWED_po_austria_balkanize_poland" (uses plain localization) ("Enforced Dumbness")
+#	#		"PEACE_po_austria_balkanize_poland" (uses plain localization, but with support for $TAKER$, $TAKERS$, $GIVER$ and $GIVERS$) ("Become $TAKERS$ Dummy")
+#	
+#	category = 6 
+#	power_projection = no 
+#	power_cost_base = 0 
+#	prestige_base = 0.1
+#	ae_base = 1
+#	warscore_cost = {
+#		all_provinces = 0.5 
+#		no_provinces = 10.0 
+#		owner_keeps = 0.0 
+#		conquered = 0.0 
+#		returned_core = 0.0 
+#		released_nation = 0.0 
+#		cancelled_subject = 0.0 
+#		concede_colonial_region = 0.0 
+#	}
+#	warscore_cap = 100 
+#	requires_demand_independence = yes 
+#	is_make_subject = no
+#	requires_is_allowed = yes 
+#	
+#	is_visible = { 
+#		has_country_flag = HAB_may_balkanize_poland
+#	}
+#	is_allowed = { 
+#		FROM = {
+#			OR = {
+#				tag = POL
+#				tag = PLC
+#			}
+#		}
+#	}
+#	effect = { 
+#		FROM = {
+#			country_event = { id = ME_Austria_Events.57 }
+#		}
+#	}
+#	ai_weight = { 
+#		export_to_variable = {
+#			variable_name = ai_value 
+#			value = 10000
+#		}
+#		limit = {
+#			is_emperor = yes
+#		}
+#	}
+#}
+
+#po_brazil_abolish_slavery_file
+po_brazil_abolish_slavery = {
+	# The following strings need localization:
+	#		"po_brazil_abolish_slavery_desc" (uses text processing, supporting bracket notation) ("[FROM.GetName] becomes a [THIS.GetName] Dummy")
+	#		"CB_ALLOWED_po_brazil_abolish_slavery" (uses plain localization) ("Enforced Dumbness")
+	#		"PEACE_po_brazil_abolish_slavery" (uses plain localization, but with support for $TAKER$, $TAKERS$, $GIVER$ and $GIVERS$) ("Become $TAKERS$ Dummy")
+	category = 6
+	power_projection = no
+	power_cost_base = 0
+	prestige_base = 0.286
+	ae_base = 0
+	warscore_cost = {
+		all_provinces = 0
+		no_provinces = 20.0
+		owner_keeps = 0.0
+		conquered = 0.0
+		returned_core = 0.0
+		released_nation = 0.0
+		cancelled_subject = 0.0
+		concede_colonial_region = 0.0
+	}
+	warscore_cap = -1
+	requires_demand_independence = yes
+	is_make_subject = no
+	requires_is_allowed = no
+
+	is_visible = {
+		has_country_flag = BRZ_a_lei
+		FROM = {
+			OR = {
+				technology_group = western
+				technology_group = dutch_tech_group
+				technology_group = english_tech_group
+				technology_group = french_tech_group
+				technology_group = german_tech_group
+				technology_group = italian_tech_group
+				technology_group = portuguese_tech_group
+				technology_group = roman_tech_group
+				technology_group = scandinavian_tech_group
+				technology_group = spanish_tech_group
+				technology_group = swiss_tech_group
+			}
+			slaves = 1
+		}
+	}
+	is_allowed = {
+		always = yes
+	}
+	effect = {
+		FROM = {
+			add_country_modifier = {
+				name = "the_abolish_slavery_act"
+				duration = -1
+			}
+			custom_tooltip = abolished_slavery_act_tooltip
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						trade_goods = slaves
+					}
+					change_trade_goods = unknown
+					remove_building = tradecompany
+					if = {
+						limit = { has_province_modifier = slave_entrepot }
+						remove_province_modifier = slave_entrepot
+					}
+				}
+			}
+		}
+	}
+	ai_weight = {
+		export_to_variable = {
+			variable_name = ai_value
+			value = 100
+		}
+		limit = {
+			always = yes
+		}
+	}
+}
+
+#po_claim_timurid_empire_file
+#I found no entries inside this file - SF
+
+#po_hesse_schmal_file
+#po_hesse_schmal = {
+#	category = 6
+#	power_projection = no
+#	power_cost_base = 0
+#	prestige_base = 0.286
+#	ae_base = 0
+#	warscore_cost = {
+#		all_provinces = 0
+#		no_provinces = 40.0
+#		owner_keeps = 0.0
+#		conquered = 0.0
+#		returned_core = 0.0
+#		released_nation = 0.0
+#		cancelled_subject = 0.0
+#		concede_colonial_region = 0.0
+#	}
+#	warscore_cap = -1
+#	requires_demand_independence = yes
+#	is_make_subject = no
+#	requires_is_allowed = yes
+#
+#	is_visible = {
+#		FROM = {
+#			has_country_flag = HES_leader
+#		}
+#	}
+#	is_allowed = {
+#		always = yes
+#	}
+#	effect = {
+#		FROM = {
+#			ROOT = {
+#				country_event = { id = ME_Hesse_Events.5 }
+#			}
+#		}
+#	}
+#	ai_weight = {
+#		export_to_variable = {
+#			variable_name = ai_value
+#			value = 100
+#		}
+#		limit = {
+#			always = yes
+#		}
+#	}
+#}
+
+#po_hre_claim_electorate_file
+#po_hre_claim_electorate = {
+#	category = 6
+#
+#	power_projection = no
+#	power_cost_base = 0
+#	prestige_base = 0.1
+#	ae_base = 0.01
+#	warscore_cost = {
+#		all_provinces = 0.5
+#		no_provinces = 10.0
+#		owner_keeps = 0.0
+#		conquered = 0.0
+#	}
+#	warscore_cap = 100
+#
+#	is_visible = {
+#		has_country_flag = emperor_claim_electorate_approved
+#		FROM = {
+#			is_elector = yes
+#		}
+#	}
+#
+#	effect = {
+#		FROM = {
+#			country_event = {
+#				id = ME_HRE_CB_Events.1
+#			}
+#		}
+#	}
+#	ai_weight = {
+#		export_to_variable = {
+#			variable_name = ai_value
+#			value = 10000
+#		}
+#	}
+#}
+
+#po_italy_file
+#po_italy_humiliation_rivals = {
+#	category = 6
+#
+#	power_projection = no
+#	power_cost_base = 1.0
+#	prestige_base = 0.05
+#	ae_base = 0
+#	warscore_cost = {
+#		no_provinces = 60.0
+#	}
+#	warscore_cap = 100
+#	requires_demand_independence = yes # Whether this can be demanded by the former subject in an independence war without also demanding independence.
+#	is_make_subject = yes # This will make the treaty mutually exclusive with other treaties that makes the giver a subject, or that explicitly frees the giver from their current overlord.
+#	requires_is_allowed = yes # If set to "yes", treaty will only be visible when explicitly allowed by casus belli. If not, it will be available but cost diplomatic power.
+#
+#	is_visible = { }
+#
+#	effect = {
+#		country_event = { id = ME_ITA_CB_Events.1 }
+#	}
+#
+#	is_allowed = {
+#		FROM = {
+#			capital_scope = {
+#				controlled_by = ROOT
+#			}
+#		}
+#	}
+#
+#	ai_weight = {
+#		export_to_variable = {
+#			variable_name = ai_value
+#			value = 100
+#		}
+#		limit = {
+#			always = yes
+#		}
+#	}
+#}
+
+#po_mainz_restore_file
+#po_mainz_restore = {
+#	category = 6
+#	power_projection = no
+#	power_cost_base = 0
+#	prestige_base = 0.286
+#	ae_base = 0
+#	warscore_cost = {
+#		all_provinces = 0
+#		no_provinces = 40.0
+#		owner_keeps = 0.0
+#		conquered = 0.0
+#		returned_core = 0.0
+#		released_nation = 0.0
+#		cancelled_subject = 0.0
+#		concede_colonial_region = 0.0
+#	}
+#	warscore_cap = -1
+#	requires_demand_independence = yes
+#	is_make_subject = no
+#	requires_is_allowed = yes
+#
+#	is_visible = {
+#		FROM = {
+#			has_country_flag = RHN_collegiate
+#		}
+#	}
+#	is_allowed = {
+#		always = yes
+#	}
+#	effect = {
+#		FROM = {
+#			save_global_event_target_as = RHN_mainz_target
+#		}
+#		ROOT = {
+#			country_event = { id = ME_Mainz_Events.5 }
+#		}
+#	}
+#	ai_weight = {
+#		export_to_variable = {
+#			variable_name = ai_value
+#			value = 100
+#		}
+#		limit = {
+#			always = yes
+#		}
+#	}
+#}
+
+#po_make_french_hre_subject_file
+#po_make_french_hre_subject = {
+#	# The following strings need localization:
+#	#		"po_make_french_hre_subject_desc" (uses text processing, supporting bracket notation) ("[FROM.GetName] becomes a [THIS.GetName] Dummy")
+#	#		"CB_ALLOWED_po_make_french_hre_subject" (uses plain localization) ("Enforced Dumbness")
+#	#		"PEACE_po_make_french_hre_subject" (uses plain localization, but with support for $TAKER$, $TAKERS$, $GIVER$ and $GIVERS$) ("Become $TAKERS$ Dummy")
+#
+#	# Values default to 0 or "no" unless otherwise stated
+#
+#	category = 6 # Any number between 0 and 6. Represents the tab under which it will be listed. 6 corresponds to "treaties". This value currently defaults to 6.
+#	power_projection = vassalized_rival # "power_projection" will only be applied if giver is your rival.
+#	power_cost_base = 0.6 # Base factor for diplomatic power cost when treaty is not allowed by casus belli. Scales with war score cost.
+#	prestige_base = 0.155 # Base factor for prestige gain and loss. Scales with war score cost.
+#	ae_base = 0.3 # Base factor for aggressive expansion. Scales with war score cost.
+#	warscore_cost = {
+#		# Which of the giver's provinces' war score costs are included and by how much. All entries default to 0. Any combination of entries can be used. Try negative values at your own risk.
+#		all_provinces = 0.0 # All the giver's provinces
+#		no_provinces = 80.0 # This is just a constant. Equivalent to a single province with with war score cost 1
+#		owner_keeps = 0.0 # The provinces that are not of any of the types below
+#		conquered = 0.0 # Provinces that are selected by a Demand Province treaty
+#		returned_core = 0.0 # Provinces that are selected by a Return Core treaty
+#		released_nation = 0.0 # Provinces that will become a part of a selected released-to-be nation
+#		cancelled_subject = 0.0 # This one should not be relevant here since Giver can't be a cancelled subject. Including anyway for completeness
+#		concede_colonial_region = 0.0 # Ditto
+#	}
+#	warscore_cap = -1 # Warscore cost will never go above this value. Only enabled if non-negative. This value defaults to -1.
+#	requires_demand_independence = yes # Whether this can be demanded by the former subject in an independence war without also demanding independence.
+#	is_make_subject = yes # This will make the treaty mutually exclusive with other treaties that makes the giver a subject, or that explicitly frees the giver from their current overlord.
+#	requires_is_allowed = no # If set to "yes", treaty will only be visible when explicitly allowed by casus belli. If not, it will be available but cost diplomatic power.
+#
+#	is_visible = { # Defaults to equivalent of "always = yes"
+#		can_be_overlord = french_hre_subject
+#		has_country_flag = french_hre_subject_enabled
+#		FROM = {
+#			is_subject = no
+#			capital_scope = {
+#				OR = {
+#					region = north_german_region
+#					region = south_german_region
+#					region = low_countries_region
+#				}
+#			}
+#		}
+#	}
+#	is_allowed = { # Defaults to equivalent of "always = yes"
+#		has_country_flag = french_hre_subject_enabled
+#	}
+#	effect = { # Defaults to empty effect (which makes error log entry but is safe)
+#		reverse_add_opinion = {
+#			who = FROM
+#			modifier = po_make_french_hre_subject_opinion
+#		}
+#		create_subject = {
+#			subject = FROM
+#			subject_type = french_hre_subject
+#		}
+#		change_variable = { 
+#			which = french_authority 
+#			value = 1
+#		}
+#	}
+#	ai_weight = { # Defaults to always evaluate to 0
+#		export_to_variable = {
+#			variable_name = ai_value # Mandatory to have entry called "ai_value". Its value at the end of the ai_weight scope is what will be used
+#			value = 10
+#		}
+#		limit = {
+#			always = yes
+#		}
+#	}
+#}
+
+#po_najd_convert_school_file
+#po_najd_convert_school = {
+#	category = 6
+#	power_projection = no
+#	power_cost_base = 0
+#	prestige_base = 0.286
+#	ae_base = 0
+#	warscore_cost = {
+#		all_provinces = 0
+#		no_provinces = 40.0
+#		owner_keeps = 0.0
+#		conquered = 0.0
+#		returned_core = 0.0
+#		released_nation = 0.0
+#		cancelled_subject = 0.0
+#		concede_colonial_region = 0.0
+#	}
+#	warscore_cap = -1
+#	requires_demand_independence = yes
+#	is_make_subject = no
+#	requires_is_allowed = no
+#
+#	is_visible = {
+#		has_dlc = "Cradle of Civilization"
+#		religious_school = {
+#			group = muslim
+#			school = hanbali_school
+#		}
+#		OR = {
+#			is_in_war = {
+#				casus_belli = cb_najd_war_2
+#				attacker_leader = ROOT
+#			}
+#			is_in_war = {
+#				casus_belli = cb_najd_war
+#				attacker_leader = ROOT
+#			}
+#		}
+#		FROM = {
+#			NOT = {
+#				religious_school = {
+#					group = muslim
+#					school = hanbali_school
+#				}
+#			}
+#			OR = {
+#				is_in_war = {
+#					casus_belli = cb_najd_war_2
+#				}
+#				is_in_war = {
+#					casus_belli = cb_najd_war
+#				}
+#			}
+#		}
+#	}
+#	is_allowed = {
+#		always = yes
+#	}
+#	effect = {
+#		FROM = {
+#			country_event = { id = ME_Najd_Events.2 }
+#		}
+#	}
+#	ai_weight = {
+#		export_to_variable = {
+#			variable_name = ai_value
+#			value = 100
+#		}
+#		limit = {
+#			always = yes
+#		}
+#	}
+#}
+
+#po_persia_indian_hegemony_coup_file
+#po_persia_indian_hegemony_coup = {
+#	# The following strings need localization:
+#	#		"po_persia_indian_hegemony_coup_desc" (uses text processing, supporting bracket notation) ("[FROM.GetName] becomes a [THIS.GetName] Dummy")
+#	#		"CB_ALLOWED_po_persia_indian_hegemony_coup" (uses plain localization) ("Enforced Dumbness")
+#	#		"PEACE_po_persia_indian_hegemony_coup" (uses plain localization, but with support for $TAKER$, $TAKERS$, $GIVER$ and $GIVERS$) ("Become $TAKERS$ Dummy")
+#
+#	# Values default to 0 or "no" unless otherwise stated
+#
+#	category = 6 # Any number between 0 and 6. Represents the tab under which it will be listed. 6 corresponds to "treaties". This value currently defaults to 6.
+#	power_projection = vassalized_rival # "power_projection" will only be applied if giver is your rival.
+#	power_cost_base = 0 # Base factor for diplomatic power cost when treaty is not allowed by casus belli. Scales with war score cost.
+#	prestige_base = 0.5 # Base factor for prestige gain and loss. Scales with war score cost.
+#	ae_base = 0.168 # Base factor for aggressive expansion. Scales with war score cost.
+#	warscore_cost = {
+#		# Which of the giver's provinces' war score costs are included and by how much. All entries default to 0. Any combination of entries can be used. Try negative values at your own risk.
+#		all_provinces = 0.0 # All the giver's provinces
+#		no_provinces = 30.0 # This is just a constant. Equivalent to a single province with with war score cost 1
+#		owner_keeps = 0.0 # The provinces that are not of any of the types below
+#		conquered = 0.0 # Provinces that are selected by a Demand Province treaty
+#		returned_core = 0.0 # Provinces that are selected by a Return Core treaty
+#		released_nation = 0.0 # Provinces that will become a part of a selected released-to-be nation
+#		cancelled_subject = 0.0 # This one should not be relevant here since Giver can't be a cancelled subject. Including anyway for completeness
+#		concede_colonial_region = 0.0 # Ditto
+#	}
+#	warscore_cap = 30 # Warscore cost will never go above this value. Only enabled if non-negative. This value defaults to -1.
+#	requires_demand_independence = no # Whether this can be demanded by the former subject in an independence war without also demanding independence.
+#	is_make_subject = yes # This will make the treaty mutually exclusive with other treaties that makes the giver a subject, or that explicitly frees the giver from their current overlord.
+#	requires_is_allowed = yes # If set to "yes", treaty will only be visible when explicitly allowed by casus belli. If not, it will be available but cost diplomatic power.
+#
+#	is_visible = { # Defaults to equivalent of "always = yes"
+#		has_country_flag = me_persia_indian_hegemony_mechanic
+#		event_target:me_persia_indian_hegemony_mechanic_coup_target = {
+#			is_subject = no
+#			OR = {
+#				owns = 522
+#				owns = 563
+#				owns = 1948
+#				owns = 541
+#			}
+#			is_in_war = {
+#				attacker_leader = ROOT
+#				attackers = THIS
+#				defender_leader = FROM
+#				casus_belli = cb_persia_indian_hegemony_coup
+#			}
+#		}
+#	}
+#	is_allowed = { # Defaults to equivalent of "always = yes"
+#		event_target:me_persia_indian_hegemony_mechanic_coup_target = {
+#			capital_scope = {
+#				controlled_by = PREV
+#			}
+#		}
+#	}
+#	effect = { # Defaults to empty effect (which makes error log entry but is safe)
+#		vassalize = event_target:me_persia_indian_hegemony_mechanic_coup_target
+#		clear_global_event_target = me_persia_indian_hegemony_mechanic_coup_target
+#	}
+#	ai_weight = { # Defaults to always evaluate to 0
+#		export_to_variable = {
+#			variable_name = ai_value # Mandatory to have entry called "ai_value". Its value at the end of the ai_weight scope is what will be used
+#			value = 1000
+#		}
+#		limit = {
+#			always = yes
+#		}
+#	}
+#}
+
+#po_poland_deluge_file
+#po_poland_deluge = {
+#	category = 6
+#	power_projection = no
+#	power_cost_base = 0
+#	prestige_base = 0.01
+#	ae_base = 0
+#	warscore_cost = {
+#		all_provinces = 0
+#		no_provinces = 80.0
+#		owner_keeps = 0.0
+#		conquered = 0.0
+#		returned_core = 0.0
+#		released_nation = 0.0
+#		cancelled_subject = 0.0
+#		concede_colonial_region = 0.0
+#	}
+#	warscore_cap = 80
+#	requires_demand_independence = yes
+#	is_make_subject = no
+#	requires_is_allowed = yes
+#
+#	is_visible = {
+#		has_country_flag = POL_is_POL
+#		FROM = { owns = 1 }
+#	}
+#	is_allowed = {
+#		always = yes
+#	}
+#	effect = {
+#		hidden_effect = {
+#			FROM = {
+#				save_global_event_target_as = POL_Peace_Recipient
+#			}
+#			ROOT = {
+#				country_event = { id = ME_Poland_Events.30 }
+#			}
+#		}
+#	}
+#	ai_weight = {
+#		export_to_variable = {
+#			variable_name = ai_value
+#			value = 100
+#		}
+#		limit = {
+#			always = yes
+#		}
+#	}
+#}
+
+#po_prussia_enforce_sovereignty_file
+#po_prussia_liberate = {
+#	category = 6
+#	power_projection = no
+#	power_cost_base = 0
+#	prestige_base = 0.01
+#	ae_base = 0
+#	warscore_cost = {
+#		all_provinces = 0
+#		no_provinces = 60.0
+#		owner_keeps = 0.0
+#		conquered = 0.0
+#		returned_core = 0.0
+#		released_nation = 0.0
+#		cancelled_subject = 0.0
+#		concede_colonial_region = 0.0
+#	}
+#	warscore_cap = 60
+#	requires_demand_independence = yes
+#	is_make_subject = no
+#	requires_is_allowed = yes
+#
+#	is_visible = {
+#		always = yes
+#	}
+#	is_allowed = {
+#		NOT = {
+#			PRU = {
+#				num_of_cities = 6
+#			}
+#		}
+#		PRU = { ai = yes }
+#	}
+#	effect = {
+#		country_event = { id = ME_Prussia_Events.41 }
+#	}
+#	ai_weight = {
+#		export_to_variable = {
+#			variable_name = ai_value
+#			value = 100
+#		}
+#		limit = {
+#			always = yes
+#		}
+#	}
+#}
+
+#po_prussia_humiliate_file
+#po_prussia_humiliate = {
+#	category = 6
+#	power_projection = no
+#	power_cost_base = 0
+#	prestige_base = 0.01
+#	ae_base = 0
+#	warscore_cost = {
+#		all_provinces = 0
+#		no_provinces = 100.0
+#		owner_keeps = 0.0
+#		conquered = 0.0
+#		returned_core = 0.0
+#		released_nation = 0.0
+#		cancelled_subject = 0.0
+#		concede_colonial_region = 0.0
+#	}
+#	warscore_cap = -1
+#	requires_demand_independence = yes
+#	is_make_subject = no
+#	requires_is_allowed = yes
+#
+#	is_visible = {
+#		has_country_flag = PRU_TARGET_INITIALIZED
+#		FROM = {
+#			has_country_flag = ME_PRU_a_target
+#		}
+#	}
+#	is_allowed = {
+#		always = yes
+#	}
+#	effect = {
+#		FROM = {
+#			set_country_flag = PRU_po_enforced_flag
+#		}
+#		country_event = { id = ME_Prussia_Events.40 }
+#	}
+#	ai_weight = {
+#		export_to_variable = {
+#			variable_name = ai_value
+#			value = 100
+#		}
+#		limit = {
+#			always = yes
+#		}
+#	}
+#}
+
+#po_swabia_add_provinces_back_to_hre_low_countries_file
+#po_swabia_add_provinces_back_to_hre_low_countries = {
+#	# The following strings need localization: 
+#	#		"po_swabia_add_provinces_back_to_hre_low_countries_desc" (uses text processing, supporting bracket notation) ("[FROM.GetName] becomes a [THIS.GetName] Dummy")
+#	#		"CB_ALLOWED_po_swabia_add_provinces_back_to_hre_low_countries" (uses plain localization) ("Enforced Dumbness")
+#	#		"PEACE_po_swabia_add_provinces_back_to_hre_low_countries" (uses plain localization, but with support for $TAKER$, $TAKERS$, $GIVER$ and $GIVERS$) ("Become $TAKERS$ Dummy")
+#	
+#	category = 6 
+#	power_projection = no 
+#	power_cost_base = 0 
+#	prestige_base = 0.01
+#	ae_base = 0.01
+#	warscore_cost = {
+#		all_provinces = 0.5 
+#		no_provinces = 10.0 
+#		owner_keeps = 0.0 
+#		conquered = 0.0 
+#		returned_core = 0.0 
+#		released_nation = 0.0 
+#		cancelled_subject = 0.0 
+#		concede_colonial_region = 0.0 
+#	}
+#	warscore_cap = 100 
+#	requires_demand_independence = yes 
+#	is_make_subject = yes 
+#	requires_is_allowed = yes 
+#	
+#	is_visible = { 
+#		has_global_flag = SWA_Low_countries
+#		mission_completed = SWA_Low_countries
+#		low_countries_region = {
+#			owned_by = FROM
+#			is_part_of_hre = no
+#		}
+#	}
+#	is_allowed = { 
+#		FROM = {
+#			is_subject = no
+#		}
+#	}
+#	effect = { 
+#		low_countries_region = {
+#			limit = {
+#				owned_by = FROM
+#				is_part_of_hre = no
+#			}
+#			set_in_empire = yes
+#		}
+#		add_imperial_influence = 1
+#	}
+#	ai_weight = { 
+#		export_to_variable = {
+#			variable_name = ai_value 
+#			value = 100
+#		}
+#		limit = {
+#			is_emperor = yes
+#		}
+#	}
+#}
+
+#po_swabia_add_provinces_back_to_hre_north_france_file
+#po_swabia_add_provinces_back_to_hre_north_france = {
+#	# The following strings need localization: 
+#	#		"po_swabia_add_provinces_back_to_hre_north_france_desc" (uses text processing, supporting bracket notation) ("[FROM.GetName] becomes a [THIS.GetName] Dummy")
+#	#		"CB_ALLOWED_po_swabia_add_provinces_back_to_hre_north_france" (uses plain localization) ("Enforced Dumbness")
+#	#		"PEACE_po_swabia_add_provinces_back_to_hre_north_france" (uses plain localization, but with support for $TAKER$, $TAKERS$, $GIVER$ and $GIVERS$) ("Become $TAKERS$ Dummy")
+#	
+#	category = 6 
+#	power_projection = no 
+#	power_cost_base = 0 
+#	prestige_base = 0.01
+#	ae_base = 0.01
+#	warscore_cost = {
+#		all_provinces = 0.5 
+#		no_provinces = 10.0 
+#		owner_keeps = 0.0 
+#		conquered = 0.0 
+#		returned_core = 0.0 
+#		released_nation = 0.0 
+#		cancelled_subject = 0.0 
+#		concede_colonial_region = 0.0 
+#	}
+#	warscore_cap = 100 
+#	requires_demand_independence = yes 
+#	is_make_subject = yes 
+#	requires_is_allowed = yes 
+#	
+#	is_visible = { 
+#		has_global_flag = SWA_France
+#		mission_completed = SWA_France
+#		OR = {
+#			picardy_area = {
+#				owned_by = FROM
+#				is_part_of_hre = no
+#			}
+#			champagne_area = {
+#				owned_by = FROM
+#				is_part_of_hre = no
+#			}
+#			lorraine_area = {
+#				owned_by = FROM
+#				is_part_of_hre = no
+#			}
+#			ile_de_france_area = {
+#				owned_by = FROM
+#				is_part_of_hre = no
+#			}
+#			normandy_area = {
+#				owned_by = FROM
+#				is_part_of_hre = no
+#			}
+#			brittany_area = {
+#				owned_by = FROM
+#				is_part_of_hre = no
+#			}
+#			loire_area = {
+#				owned_by = FROM
+#				is_part_of_hre = no
+#			}
+#			bourgogne_area = {
+#				owned_by = FROM
+#				is_part_of_hre = no
+#			}
+#		}
+#	}
+#	is_allowed = { 
+#		FROM = {
+#			is_subject = no
+#		}
+#	}
+#	effect = {
+#		picardy_area = {
+#			limit = {
+#				owned_by = FROM
+#				is_part_of_hre = no
+#			}
+#			set_in_empire = yes
+#		}
+#		champagne_area = {
+#			limit = {
+#				owned_by = FROM
+#				is_part_of_hre = no
+#			}
+#			set_in_empire = yes
+#		}
+#		lorraine_area = {
+#			limit = {
+#				owned_by = FROM
+#				is_part_of_hre = no
+#			}
+#			set_in_empire = yes
+#		}
+#		ile_de_france_area = {
+#			limit = {
+#				owned_by = FROM
+#				is_part_of_hre = no
+#			}
+#			set_in_empire = yes
+#		}
+#		normandy_area = {
+#			limit = {
+#				owned_by = FROM
+#				is_part_of_hre = no
+#			}
+#			set_in_empire = yes
+#		}
+#		brittany_area = {
+#			limit = {
+#				owned_by = FROM
+#				is_part_of_hre = no
+#			}
+#			set_in_empire = yes
+#		}
+#		loire_area = {
+#			limit = {
+#				owned_by = FROM
+#				is_part_of_hre = no
+#			}
+#			set_in_empire = yes
+#		}
+#		bourgogne_area = {
+#			limit = {
+#				owned_by = FROM
+#				is_part_of_hre = no
+#			}
+#			set_in_empire = yes
+#		}
+#		add_imperial_influence = 1
+#	}
+#	ai_weight = { 
+#		export_to_variable = {
+#			variable_name = ai_value 
+#			value = 100
+#		}
+#		limit = {
+#			is_emperor = yes
+#		}
+#	}
+#}
+
+#po_swabia_add_provinces_back_to_hre_north_italy_file
+#po_swabia_add_provinces_back_to_hre_north_italy = {
+#	# The following strings need localization: 
+#	#		"po_swabia_add_provinces_back_to_hre_north_italy_desc" (uses text processing, supporting bracket notation) ("[FROM.GetName] becomes a [THIS.GetName] Dummy")
+#	#		"CB_ALLOWED_po_swabia_add_provinces_back_to_hre_north_italy" (uses plain localization) ("Enforced Dumbness")
+#	#		"PEACE_po_swabia_add_provinces_back_to_hre_north_italy" (uses plain localization, but with support for $TAKER$, $TAKERS$, $GIVER$ and $GIVERS$) ("Become $TAKERS$ Dummy")
+#	
+#	category = 6 
+#	power_projection = no 
+#	power_cost_base = 0 
+#	prestige_base = 0.01
+#	ae_base = 0.01
+#	warscore_cost = {
+#		all_provinces = 0.5 
+#		no_provinces = 10.0 
+#		owner_keeps = 0.0 
+#		conquered = 0.0 
+#		returned_core = 0.0 
+#		released_nation = 0.0 
+#		cancelled_subject = 0.0 
+#		concede_colonial_region = 0.0 
+#	}
+#	warscore_cap = 100 
+#	requires_demand_independence = yes 
+#	is_make_subject = yes 
+#	requires_is_allowed = yes 
+#	
+#	is_visible = { 
+#		has_global_flag = SWA_Northern_Italy
+#		mission_completed = SWA_North_italy
+#		OR = {
+#			lombardy_area = {
+#				owned_by = FROM
+#				is_part_of_hre = no
+#			}
+#			venetia_area = {
+#				owned_by = FROM
+#				is_part_of_hre = no
+#			}
+#			piedmont_area = {
+#				owned_by = FROM
+#				is_part_of_hre = no
+#			}
+#			liguria_area = {
+#				owned_by = FROM
+#				is_part_of_hre = no
+#			}
+#			tuscany_area = {
+#				owned_by = FROM
+#				is_part_of_hre = no
+#			}
+#			emilia_romagna_area = {
+#				owned_by = FROM
+#				is_part_of_hre = no
+#			}
+#		}
+#	}
+#	is_allowed = { 
+#		FROM = {
+#			is_subject = no
+#		}
+#	}
+#	effect = {
+#		lombardy_area = {
+#			limit = {
+#				owned_by = FROM
+#				is_part_of_hre = no
+#			}
+#			set_in_empire = yes
+#		}
+#		venetia_area = {
+#			limit = {
+#				owned_by = FROM
+#				is_part_of_hre = no
+#			}
+#			set_in_empire = yes
+#		}
+#		piedmont_area = {
+#			limit = {
+#				owned_by = FROM
+#				is_part_of_hre = no
+#			}
+#			set_in_empire = yes
+#		}
+#		liguria_area = {
+#			limit = {
+#				owned_by = FROM
+#				is_part_of_hre = no
+#			}
+#			set_in_empire = yes
+#		}
+#		tuscany_area = {
+#			limit = {
+#				owned_by = FROM
+#				is_part_of_hre = no
+#			}
+#			set_in_empire = yes
+#		}
+#		emilia_romagna_area = {
+#			limit = {
+#				owned_by = FROM
+#				is_part_of_hre = no
+#			}
+#			set_in_empire = yes
+#		}
+#		add_imperial_influence = 1
+#	}
+#	ai_weight = { 
+#		export_to_variable = {
+#			variable_name = ai_value 
+#			value = 100
+#		}
+#		limit = {
+#			is_emperor = yes
+#		}
+#	}
+#}
+
+#po_swabia_add_provinces_back_to_hre_south_france_file
+#po_swabia_add_provinces_back_to_hre_south_france = {
+#	# The following strings need localization: 
+#	#		"po_swabia_add_provinces_back_to_hre_south_france_desc" (uses text processing, supporting bracket notation) ("[FROM.GetName] becomes a [THIS.GetName] Dummy")
+#	#		"CB_ALLOWED_po_swabia_add_provinces_back_to_hre_south_france" (uses plain localization) ("Enforced Dumbness")
+#	#		"PEACE_po_swabia_add_provinces_back_to_hre_south_france" (uses plain localization, but with support for $TAKER$, $TAKERS$, $GIVER$ and $GIVERS$) ("Become $TAKERS$ Dummy")
+#	
+#	category = 6 
+#	power_projection = no 
+#	power_cost_base = 0 
+#	prestige_base = 0.01
+#	ae_base = 0.01
+#	warscore_cost = {
+#		all_provinces = 0.5 
+#		no_provinces = 10.0 
+#		owner_keeps = 0.0 
+#		conquered = 0.0 
+#		returned_core = 0.0 
+#		released_nation = 0.0 
+#		cancelled_subject = 0.0 
+#		concede_colonial_region = 0.0 
+#	}
+#	warscore_cap = 100 
+#	requires_demand_independence = yes 
+#	is_make_subject = yes 
+#	requires_is_allowed = yes 
+#	
+#	is_visible = { 
+#		has_global_flag = SWA_France
+#		mission_completed = SWA_France
+#		OR = {
+#			poitou_area = {
+#				owned_by = FROM
+#				is_part_of_hre = no
+#			}
+#			massif_central_area = {
+#				owned_by = FROM
+#				is_part_of_hre = no
+#			}
+#			savoy_dauphine_area = {
+#				owned_by = FROM
+#				is_part_of_hre = no
+#			}
+#			guyenne_area = {
+#				owned_by = FROM
+#				is_part_of_hre = no
+#			}
+#			pyrenees_area = {
+#				owned_by = FROM
+#				is_part_of_hre = no
+#			}
+#			brittany_area = {
+#				owned_by = FROM
+#				is_part_of_hre = no
+#			}
+#			languedoc_area = {
+#				owned_by = FROM
+#				is_part_of_hre = no
+#			}
+#			provence_area = {
+#				owned_by = FROM
+#				is_part_of_hre = no
+#			}
+#		}
+#	}
+#	is_allowed = { 
+#		FROM = {
+#			is_subject = no
+#		}
+#	}
+#	effect = {
+#		poitou_area = {
+#			limit = {
+#				owned_by = FROM
+#				is_part_of_hre = no
+#			}
+#			set_in_empire = yes
+#		}
+#		massif_central_area = {
+#			limit = {
+#				owned_by = FROM
+#				is_part_of_hre = no
+#			}
+#			set_in_empire = yes
+#		}
+#		savoy_dauphine_area = {
+#			limit = {
+#				owned_by = FROM
+#				is_part_of_hre = no
+#			}
+#			set_in_empire = yes
+#		}
+#		guyenne_area = {
+#			limit = {
+#				owned_by = FROM
+#				is_part_of_hre = no
+#			}
+#			set_in_empire = yes
+#		}
+#		pyrenees_area = {
+#			limit = {
+#				owned_by = FROM
+#				is_part_of_hre = no
+#			}
+#			set_in_empire = yes
+#		}
+#		brittany_area = {
+#			limit = {
+#				owned_by = FROM
+#				is_part_of_hre = no
+#			}
+#			set_in_empire = yes
+#		}
+#		languedoc_area = {
+#			limit = {
+#				owned_by = FROM
+#				is_part_of_hre = no
+#			}
+#			set_in_empire = yes
+#		}
+#		provence_area = {
+#			limit = {
+#				owned_by = FROM
+#				is_part_of_hre = no
+#			}
+#			set_in_empire = yes
+#		}
+#		add_imperial_influence = 1
+#	}
+#	ai_weight = { 
+#		export_to_variable = {
+#			variable_name = ai_value 
+#			value = 100
+#		}
+#		limit = {
+#			is_emperor = yes
+#		}
+#	}
+#}
+
+#po_swabia_add_provinces_back_to_hre_south_italy_file
+#po_swabia_add_provinces_back_to_hre_south_italy = {
+#	# The following strings need localization: 
+#	#		"po_swabia_add_provinces_back_to_hre_south_italy_desc" (uses text processing, supporting bracket notation) ("[FROM.GetName] becomes a [THIS.GetName] Dummy")
+#	#		"CB_ALLOWED_po_swabia_add_provinces_back_to_hre_south_italy" (uses plain localization) ("Enforced Dumbness")
+#	#		"PEACE_po_swabia_add_provinces_back_to_hre_south_italy" (uses plain localization, but with support for $TAKER$, $TAKERS$, $GIVER$ and $GIVERS$) ("Become $TAKERS$ Dummy")
+#	
+#	category = 6 
+#	power_projection = no 
+#	power_cost_base = 0 
+#	prestige_base = 0.01
+#	ae_base = 0.01
+#	warscore_cost = {
+#		all_provinces = 0.5 
+#		no_provinces = 10.0 
+#		owner_keeps = 0.0 
+#		conquered = 0.0 
+#		returned_core = 0.0 
+#		released_nation = 0.0 
+#		cancelled_subject = 0.0 
+#		concede_colonial_region = 0.0 
+#	}
+#	warscore_cap = 100 
+#	requires_demand_independence = yes 
+#	is_make_subject = yes 
+#	requires_is_allowed = yes 
+#	
+#	is_visible = { 
+#		has_global_flag = SWA_Southern_Italy
+#		mission_completed = SWA_South_italy
+#		OR = {
+#			corsica_sardinia_area = {
+#				owned_by = FROM
+#				is_part_of_hre = no
+#			}
+#			sicily_area = {
+#				owned_by = FROM
+#				is_part_of_hre = no
+#			}
+#			naples_area = {
+#				owned_by = FROM
+#				is_part_of_hre = no
+#			}
+#			calabria_area = {
+#				owned_by = FROM
+#				is_part_of_hre = no
+#			}
+#			apulia_area = {
+#				owned_by = FROM
+#				is_part_of_hre = no
+#			}
+#			central_italy_area = {
+#				owned_by = FROM
+#				is_part_of_hre = no
+#			}
+#		}
+#	}
+#	is_allowed = { 
+#		FROM = {
+#			is_subject = no
+#		}
+#	}
+#	effect = {
+#		corsica_sardinia_area = {
+#			limit = {
+#				owned_by = FROM
+#				is_part_of_hre = no
+#			}
+#			set_in_empire = yes
+#		}
+#		sicily_area = {
+#			limit = {
+#				owned_by = FROM
+#				is_part_of_hre = no
+#			}
+#			set_in_empire = yes
+#		}
+#		naples_area = {
+#			limit = {
+#				owned_by = FROM
+#				is_part_of_hre = no
+#			}
+#			set_in_empire = yes
+#		}
+#		calabria_area = {
+#			limit = {
+#				owned_by = FROM
+#				is_part_of_hre = no
+#			}
+#			set_in_empire = yes
+#		}
+#		apulia_area = {
+#			limit = {
+#				owned_by = FROM
+#				is_part_of_hre = no
+#			}
+#			set_in_empire = yes
+#		}
+#		central_italy_area = {
+#			limit = {
+#				owned_by = FROM
+#				is_part_of_hre = no
+#			}
+#			set_in_empire = yes
+#		}
+#		add_imperial_influence = 1
+#	}
+#	ai_weight = { 
+#		export_to_variable = {
+#			variable_name = ai_value 
+#			value = 100
+#		}
+#		limit = {
+#			is_emperor = yes
+#		}
+#	}
+#}
+
+
+
+#po_take_caliphate_file
+#po_take_caliphate = {
+#	# The following strings need localization: 
+#	#		"po_take_caliphate_desc" (uses text processing, supporting bracket notation) ("[FROM.GetName] becomes a [THIS.GetName] Dummy")
+#	#		"CB_ALLOWED_po_take_caliphate" (uses plain localization) ("Enforced Dumbness")
+#	#		"PEACE_po_take_caliphate" (uses plain localization, but with support for $TAKER$, $TAKERS$, $GIVER$ and $GIVERS$) ("Become $TAKERS$ Dummy")
+#	
+#	category = 6 
+#	power_projection = vassalized_rival
+#	power_cost_base = 0 
+#	prestige_base = 0.1
+#	ae_base = 0
+#	warscore_cost = {
+#		all_provinces = 0
+#		no_provinces = 100.0 
+#		owner_keeps = 0.0 
+#		conquered = 0.0 
+#		returned_core = 0.0 
+#		released_nation = 0.0 
+#		cancelled_subject = 0.0 
+#		concede_colonial_region = 0.0 
+#	}
+#	warscore_cap = 100
+#	requires_demand_independence = yes 
+#	is_make_subject = no 
+#	requires_is_allowed = yes 
+#	
+#	is_visible = {
+#		religion_group = muslim
+#		NOT = { ME_has_caliphate_reform_trigger = yes }
+#		FROM = {
+#			ME_has_caliphate_reform_trigger = yes
+#		}
+#	}
+#	is_allowed = { 
+#		religion = sunni
+#	}
+#	effect = { 
+#		ME_become_caliphate_effect = yes
+#		FROM = {
+#			if = {
+#				limit = {
+#					has_reform = ME_caliphate_reform_sunni
+#				}
+#				remove_government_reform = ME_caliphate_reform_sunni
+#			}
+#			else_if = {
+#				limit = {
+#					has_reform = ME_caliphate_reform_sunni_andalusia
+#				}
+#				remove_government_reform = ME_caliphate_reform_sunni_andalusia
+#			}
+#			else_if = {
+#				limit = {
+#					has_reform = ME_caliphate_reform_sunni_arabian
+#				}
+#				remove_government_reform = ME_caliphate_reform_sunni_arabian
+#			}
+#			else_if = {
+#				limit = {
+#					has_reform = ME_caliphate_reform_shia_ibadi
+#				}
+#				remove_government_reform = ME_caliphate_reform_shia_ibadi
+#			}
+#			else = { }
+#		}
+#	}
+#	 	
+#	ai_weight = { 
+#		export_to_variable = {
+#			variable_name = ai_value 
+#			value = 100
+#		}
+#		limit = {
+#			government_rank = 3
+#		}
+#	}
+#}
+
+#po_take_delhi_file
+#po_annex_delhi = {
+#
+#	category = 6 
+#	power_projection = vassalized_rival
+#	power_cost_base = 0 
+#	prestige_base = 1
+#	ae_base = 1
+#	warscore_cost = {
+#		all_provinces = 0
+#		no_provinces = 100.0 
+#		owner_keeps = 0.0 
+#		conquered = 0.0 
+#		returned_core = 0.0 
+#		released_nation = 0.0 
+#		cancelled_subject = 0.0 
+#		concede_colonial_region = 0.0 
+#	}
+#	warscore_cap = 100
+#	requires_demand_independence = yes
+#	is_make_subject = no 
+#	requires_is_allowed = yes
+#	
+#	is_visible = {
+#		always = yes
+#	}
+#	is_allowed = {
+#		always = yes
+#	}
+#	effect = { 
+#		FROM = {
+#			capital_scope = {
+#				add_core = ROOT
+#			}
+#			every_owned_province = {
+#				cede_province = ROOT
+#				add_core = ROOT
+#			}
+#			every_subject_country = {
+#				limit = {
+#					capital_scope = {
+#						OR = {
+#							area = upper_doab_area
+#							area = sirhind_area
+#							area = lahore_area
+#							area = sind_sagar_area
+#						}
+#					}
+#				}
+#				ROOT = {
+#					vassalize = PREV
+#				}
+#			}
+#		}
+#	}
+#	ai_weight = { 
+#		export_to_variable = {
+#			variable_name = ai_value 
+#			value = 100
+#		}
+#	}
+#}

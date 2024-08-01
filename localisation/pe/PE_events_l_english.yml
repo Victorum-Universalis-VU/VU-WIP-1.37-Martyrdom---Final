@@ -43,3 +43,27 @@
  estate_noble_absolute_taxation: "Levy additional Taxes"
  estate_noble_absolute_taxation_desc: "beep boop, pay up nibba"
  estate_noble_absolute_taxation_tooltip: "-5 Noble Loyalty if your ruler's mil skill is 3 or lower, -5 Noble Loyalty is your ruler's mil skill is 1 or lower."
+
+ ME_estate_nobles_TIM_influencial_military: "Influential Military"
+ ME_estate_nobles_TIM_influencial_military_desc: ""
+ ME_estate_nobles_TIM_influencial_military_tooltip: ""
+
+ ME_estate_nobles_TIM_disloyal_princes: "Disloyal Princes"
+ ME_estate_nobles_TIM_disloyal_princes_desc: ""
+ ME_estate_nobles_TIM_disloyal_princes_tooltip: ""
+
+ ME_estate_nobles_TIM_eternal_regency: "Eternal Regency"
+ ME_estate_nobles_TIM_eternal_regency_desc: ""
+ ME_estate_nobles_TIM_eternal_regency_tooltip: ""
+
+ ME_estate_nobles_bedouin_recruitment: "Bedouin Recruitment"
+ ME_estate_nobles_bedouin_recruitment_desc: ""
+ ME_estate_nobles_bedouin_recruitment_tooltip: ""
+
+ ME_estate_maratha_special_privilege: "Special Privilege"
+ ME_estate_maratha_special_privilege_desc: ""
+ ME_estate_maratha_special_privilege_tooltip: ""
+
+ ME_estate_nobles_loyal_military: "Loyal Military"
+ ME_estate_nobles_loyal_military_desc: ""
+ ME_estate_nobles_loyal_military_tooltip: ""

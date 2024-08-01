@@ -15,7 +15,7 @@ ENG_UKS_missions_1 = {
 			tag = UKS
 		}
 	}
-	has_country_shield  = yes
+	has_country_shield = yes
 	
 	UKS_Integrate_French_Concessions = {
 		icon = mission_monarch_in_throne_room
@@ -217,7 +217,7 @@ ENG_UKS_missions_2 = {
 			tag = UKS
 		}
 	}
-	has_country_shield  = yes
+	has_country_shield = yes
 	
 	UKS_brittany = {
 		icon = mission_rb_conquer_brittany
@@ -448,7 +448,7 @@ ENG_UKS_missions_3 = {
 			tag = UKS
 		}
 	}
-	has_country_shield  = yes
+	has_country_shield = yes
 	
 	UKS_recover_england = {
 		icon = mission_alliances
@@ -717,7 +717,7 @@ ENG_UKS_missions_4 = {
 			tag = UKS
 		}
 	}
-	has_country_shield  = yes
+	has_country_shield = yes
 	
 	UKS_recover_france = {
 		icon = mission_rb_control_electors
@@ -832,7 +832,7 @@ ENG_UKS_missions_5 = {
 			tag = UKS
 		}
 	}
-	has_country_shield  = yes
+	has_country_shield = yes
 	
 	UKS_loyalty_of_france = {
 		icon = mission_have_two_subjects
@@ -1052,7 +1052,7 @@ UKS_missions_1 = {
 			}
 		}
 	}
-	has_country_shield  = yes
+	has_country_shield = yes
 	
 	UKS_uaval_power = {
 		icon = mission_establish_high_seas_navy
@@ -1355,7 +1355,7 @@ UKS_missions_2 = {
 			}
 		}
 	}
-	has_country_shield  = yes
+	has_country_shield = yes
 	
 	UKS_wessex_ports = {
 		icon = me_mission_venice_navy
@@ -1776,7 +1776,7 @@ UKS_missions_3 = {
 			}
 		}
 	}
-	has_country_shield  = yes
+	has_country_shield = yes
 	
 	UKS_taxation = {
 		icon = mission_monarch_in_throne_room
@@ -2381,7 +2381,7 @@ UKS_missions_4 = {
 			}
 		}
 	}
-	has_country_shield  = yes
+	has_country_shield = yes
 	
 	UKS_revitalize = {
 		icon = mission_dominate_home_trade_node
@@ -3522,7 +3522,7 @@ UKS_missions_5 = {
 			}
 		}
 	}
-	has_country_shield  = yes
+	has_country_shield = yes
 	
 	UKS_english_cot = {
 		icon = mission_dominate_home_trade_node

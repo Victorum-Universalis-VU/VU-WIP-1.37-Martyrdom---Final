@@ -21,10 +21,6 @@ spriteTypes = {
     }
 	
 		spriteType = {
-        name = "GFX_great_project_universidade_de_coimbra"
-        texturefile = "gfx//interface//great_projects//grand_combo_monuments//great_project_universidade_de_coimbra.dds"
-    }
-		spriteType = {
         name = "GFX_great_project_cesky_krumlov"
         texturefile = "gfx//interface//great_projects//grand_combo_monuments//great_project_cesky_krumlov.dds"
     }	
@@ -448,11 +444,6 @@ spriteTypes = {
 		spriteType = {
 		name = "GFX_great_project_holsten_gate"	
 		texturefile = "gfx//interface//great_projects//grand_combo_monuments//great_project_holsten_gate.dds"
-	}
-	
-		spriteType = {
-		name = "GFX_great_project_ruprecht_karl_university"	
-		texturefile = "gfx//interface//great_projects//grand_combo_monuments//great_project_ruprecht_karl_university.dds"
 	}
 
 		spriteType = {

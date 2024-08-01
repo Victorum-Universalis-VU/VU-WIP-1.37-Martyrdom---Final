@@ -12,7 +12,7 @@ POL_Missions_1 = {
 			}
 		}
 	}  
-	has_country_shield  = yes
+	has_country_shield = yes
 	
 	POL_mission_to_pope = {
 		icon = catholic_confraternity
@@ -708,7 +708,7 @@ POL_Missions_2 = {
 			}
 		}
 	} 
-	has_country_shield  = yes
+	has_country_shield = yes
 	
 	POL_ruthenia = {
 		icon = mission_conquer_novgorod
@@ -1331,7 +1331,7 @@ POL_Missions_3_1 = {
 			}
 		}
 	}  
-	has_country_shield  = yes
+	has_country_shield = yes
 	
 	POL_sejm_mission = {
 		icon = subiaco_press
@@ -1470,7 +1470,7 @@ POL_Missions_3_Piast = {
 			}
 		}
 	}  
-	has_country_shield  = yes
+	has_country_shield = yes
 	
 	POL_nitra = {
 		icon = fight_bosnian_heresies
@@ -1541,7 +1541,7 @@ POL_Missions_3_2 = {
 			}
 		}
 	}  
-	has_country_shield  = yes
+	has_country_shield = yes
 	
 	POL_end_knights = {
 		icon = mission_teutonic_knights
@@ -1842,7 +1842,7 @@ POL_Missions_4_Jagiellon = {
 			}
 		}
 	}  
-	has_country_shield  = yes
+	has_country_shield = yes
 	
 	POL_reinforce_jagiellons = {
 		icon = polish_diplomacy
@@ -1886,7 +1886,7 @@ POL_Missions_4_Piast = {
 			}
 		}
 	}  
-	has_country_shield  = yes
+	has_country_shield = yes
 	
 	POL_reconquer_silesia = {
 		icon = take_silesia
@@ -1927,7 +1927,7 @@ POL_Missions_4_1 = {
 			}
 		}
 	}  
-	has_country_shield  = yes
+	has_country_shield = yes
 	
 	POL_zwiazek_pruski = {
 		icon = return_visby_to_the_league
@@ -2020,7 +2020,7 @@ POL_Missions_4_Jagiellon_2 = {
 			}
 		}
 	}  
-	has_country_shield  = yes
+	has_country_shield = yes
 	
 	POL_bohemian_PU = {
 		icon = hussite_regency
@@ -2128,7 +2128,7 @@ POL_Missions_4_Piast_2 = {
 			}
 		}
 	}  
-	has_country_shield  = yes
+	has_country_shield = yes
 	
 	POL_beyond_the_oder = {
 		icon = mission_advance_to_the_dnieper
@@ -2178,7 +2178,7 @@ POL_Missions_4_2 = {
 			}
 		}
 	}  
-	has_country_shield  = yes
+	has_country_shield = yes
 	
 	POL_curonia = {
 		icon = overseas_empire
@@ -2699,7 +2699,7 @@ POL_Missions_5_1 = {
 			}
 		}
 	} 
-	has_country_shield  = yes
+	has_country_shield = yes
 	
 	POL_rada_krolewska = {
 		icon = mission_noble_council
@@ -2833,7 +2833,7 @@ POL_Missions_5_Jagiellon = {
 			}
 		}
 	} 
-	has_country_shield  = yes
+	has_country_shield = yes
 	
 	POL_bohemian_diplomacy = {
 		icon = hungarian_union
@@ -3234,7 +3234,7 @@ POL_Missions_5_Piast = {
 			}
 		}
 	} 
-	has_country_shield  = yes
+	has_country_shield = yes
 	
 	POL_morze = {
 		icon = mission_look_west
@@ -3372,7 +3372,7 @@ POL_Missions_5_2 = {
 			}
 		}
 	} 
-	has_country_shield  = yes
+	has_country_shield = yes
 	
 	POL_muscovy = {
 		icon = me_mission_poland_bathory

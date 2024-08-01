@@ -15,7 +15,7 @@
 		}
 		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 	} 
-	has_country_shield  = yes
+	has_country_shield = yes
 	
 	FKN_conquer_nuremburg = {
 		icon = sources_of_trade
@@ -539,7 +539,7 @@ FKN_Missions_1 = {
 		tag = FKN
 		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 	} 
-	has_country_shield  = yes
+	has_country_shield = yes
 	
 	FKN_trade_center = {
 		icon = return_visby_to_the_league
@@ -773,7 +773,7 @@ FKN_Missions_2 = {
 		tag = FKN
 		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 	} 
-	has_country_shield  = yes
+	has_country_shield = yes
 	
 	FKN_bavaria = {
 		icon = establish_a_standing_army
@@ -1066,7 +1066,7 @@ FKN_Missions_3 = {
 		tag = FKN
 		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 	} 
-	has_country_shield  = yes
+	has_country_shield = yes
 	
 	FKN_west_franconia = {
 		icon = all_bases_covered
@@ -1362,7 +1362,7 @@ FKN_Missions_4 = {
 		tag = FKN
 		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 	} 
-	has_country_shield  = yes
+	has_country_shield = yes
 	
 	
 	FKN_saxony = {
@@ -1660,7 +1660,7 @@ FKN_Missions_5 = {
 		tag = FKN
 		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 	} 
-	has_country_shield  = yes
+	has_country_shield = yes
 	
 	FKN_capture_berlin = {
 		icon = develop_konigsberg

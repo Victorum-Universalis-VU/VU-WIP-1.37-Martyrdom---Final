@@ -16,10 +16,10 @@ spriteTypes = {
         name = "GFX_great_project_vu_at_turaif"	
         texturefile = "gfx//interface//great_projects//VU_Monuments//great_projects_vu_at_turaif.dds"
     }
-    spriteType = {
-        name = "GFX_great_project_vu_bahla_fort"	
-        texturefile = "gfx//interface//great_projects//VU_Monuments//great_projects_vu_bahla_fort.dds"
-    }
+    #spriteType = {
+    #    name = "GFX_great_project_vu_bahla_fort"	
+    #    texturefile = "gfx//interface//great_projects//VU_Monuments//great_projects_vu_bahla_fort.dds"
+    #}
     spriteType = {
         name = "GFX_great_project_vu_qalhat"	
         texturefile = "gfx//interface//great_projects//VU_Monuments//great_projects_vu_qalhat.dds"
@@ -1457,10 +1457,7 @@ spriteTypes = {
 		name = "GFX_great_project_vu_amsterdam_stock_exchange"	
 		texturefile = "gfx//interface//VU_great_projects//great_project_vu_amsterdam_stock_exchange.dds"
 	}
-	spriteType = {
-		name = "GFX_great_project_vu_university_vienna"	
-		texturefile = "gfx//interface//VU_great_projects//great_project_vu_university_vienna.dds"
-	}
+
 	spriteType = {
 		name = "GFX_great_project_vu_white_tower"	
 		texturefile = "gfx//interface//VU_great_projects//great_project_vu_white_tower.dds"

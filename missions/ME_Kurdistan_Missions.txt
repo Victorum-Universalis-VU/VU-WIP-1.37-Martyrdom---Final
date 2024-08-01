@@ -11,7 +11,7 @@
 			tag = ARD
 		}
 	}
-	has_country_shield  = yes
+	has_country_shield = yes
 	KRD_army_of_the_sun = {
 		icon = mission_assemble_an_army
 		required_missions = { }
@@ -99,7 +99,7 @@ Kurdistan_1_egypt = {
 		}
 		has_country_flag = KRD_egypt
 	}
-	has_country_shield  = yes
+	has_country_shield = yes
 	KRD_syria = {
 		icon = mission_cannons_firing
 		required_missions = { KRD_legacy }
@@ -203,7 +203,7 @@ Generic_Kurdistan_2 = {
 			tag = ARD
 		}
 	}
-	has_country_shield  = yes
+	has_country_shield = yes
 	KRD_great_insurgance = {
 		icon = mission_build_up_to_force_limit
 		required_missions = { KRD_army_of_the_sun KRD_diplomatic_missions }
@@ -272,7 +272,7 @@ Kurdistan_2_egypt = {
 		}
 		has_country_flag = KRD_egypt
 	}
-	has_country_shield  = yes
+	has_country_shield = yes
 	KRD_egypt = {
 		icon = mission_egyptian_mamluk_soldier
 		required_missions = { KRD_unifying_kurdistan KRD_syria }
@@ -313,7 +313,7 @@ Kurdistan_2_persia = {
 		}
 		has_country_flag = KRD_persia
 	}
-	has_country_shield  = yes
+	has_country_shield = yes
 	KRD_southern_persia = {
 		icon = mission_unite_home_region
 		required_missions = { KRD_at_the_foot }
@@ -374,7 +374,7 @@ Generic_Kurdistan_3 = {
 			tag = ARD
 		}
 	}
-	has_country_shield  = yes
+	has_country_shield = yes
 	KRD_diplomatic_missions = {
 		icon = mission_alliances
 		required_missions = { }
@@ -447,7 +447,7 @@ Kurdistan_3_persia = {
 		}
 		has_country_flag = KRD_persia
 	}
-	has_country_shield  = yes
+	has_country_shield = yes
 	KRD_at_the_foot = {
 		icon = mission_cannons_firing
 		required_missions = { KRD_unifying_kurdistan }
@@ -550,7 +550,7 @@ Generic_Kurdistan_4 = {
 			tag = ARD
 		}
 	}
-	has_country_shield  = yes
+	has_country_shield = yes
 	KRD_our_faith = {
 		icon = mission_hands_praying
 		required_missions = { KRD_preserving_our_culture }
@@ -665,7 +665,7 @@ Generic_Kurdistan_5 = {
 			tag = ARD
 		}
 	}
-	has_country_shield  = yes
+	has_country_shield = yes
 
 	KRD_preserving_our_culture = {
 		icon = human_missions_icon

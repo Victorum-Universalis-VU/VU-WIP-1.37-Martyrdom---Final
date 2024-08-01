@@ -528,231 +528,231 @@ defeat_the_livonian_order_provinces = { #Unchanged, though it creates errors in 
 }
 
 #Ottomans
-conquer_southern_greece_provinces = {
-		#VU overhauled to all provinces in Southern Greece, excluding Cephalonia & Corfu
-	OR = {
-		area = morea_area
-		area = western_aegean_area
-		#area = euboea_area
-		area = aetolia_area
-		#area = northern_peloponnesus_area
-		area = northern_greece_area
-		province_id = 164
-	}
-	NOT = {
-		province_id = 4698
-		province_id = 142
-	}
-}
-conquer_serbia_provinces = {
-	OR = {
-		area = rascia_area
-		#VU overhauled to include all Serbian provinces at game start
-		area = serbia_area
-		#area = syrmia_area
-		province_id = 3187 #Podrinje
-		province_id = 7724 #Srebrenica
-		province_id = 3000 #Nis
-		province_id = 7711 #Vranje
-	}
-	NOT = {
-		province_id = 7709 #Pljevlja
-	}
-}
-conquer_bosnia_provinces = {
-	OR = {
-		area = bosnia_area
-		#VU additions
-		area = krajina_area
-		area = herzegovina_area
-		province_id = 7709 #Pljevlja
-	}
-	NOT = {
-		province_id = 7728 #Prijedor
-		province_id = 7729 #Bihar
-	}
-}
-conquer_hungary_provinces = {
-	OR = {
-		area = alfold_area
-		#VU additions, attempting to simulate historical Suleiman borders
-		area = slavonia_area
-		area = banat_area
-		area = syrmia_area
-		province_id = 157 #Bihar
-		province_id = 153 #Pest
-		province_id = 1864 #Somogy
-		province_id = 4240 #Fejer
-		province_id = 7728 #Prijedor
-		province_id = 7729 #Bihar
-		province_id = 7736 #Sisak
-	}
-	NOT = {
-		province_id = 152 #Varazdin
-	}
-}
-vassalize_wallachia_provinces = { #Unchanged
-	OR = {
-		area = wallachia_area
-		area = oltenia_area
-		area = upper_muntenia_area
-	}
-}
-vassalize_transylvania_provinces = {
-	OR = {
-		area = transylvania_area
-		area = southern_transylvania_area
-		#VU additions
-		province_id = 1952
-	}
-	NOT = {
-		province_id = 1954 #Given to Control the Danube
-	}
-}
-consolidate_asia_minor_provinces = {
-	#VU completely changed to allow for a simpler trigger - all Anatolian provinces except Trebizond, plus Malatya & Antep, as they are controlled by Turkish beyliks.
-	OR = {
-		region = anatolia_region
-		province_id = 2303
-		province_id = 4298
-	}
-	NOT = {
-		area = pontus_area
-	}
-}
-safeguard_eastern_anatolia_provinces = {
-	OR = {
-		area = north_kurdistan_area
-		area = erzurum_area
-		#VU adjusted to mardin area
-		area = mardin_area
-		#area = dulkadir_area
-		province_id = 4303 #Tao
-	}
-}
-conquer_mesopotamia_provinces = {
-	OR = {
-		area = iraq_arabi_area
-		area = al_jazira_area
-		#VU additions
-		area = shahrizor_area
-		area = rakka_area
-	}
-	NOT = {
-		province_id = 2211
-	}
-}
-conquer_haasa_provinces = { #Unchanged
-	OR = {
-		area = basra_area
-		area = bahrain_area
-	}
-}
-conquer_trebizond_provinces = {
-	#VU adjusted to whole Pontus area.
-	area = pontus_area
-}
-take_kaffa_provinces = {
-	OR = {
-		#VU adjusted to historical Ottoman holdings.
-		province_id = 2447 #Matrega
-		province_id = 3245 #Cerco
-		province_id = 285 #Caffa
-		province_id = 7190 #Cembalo
-		province_id = 286 #Asovia
-	}
-}
-conquer_levant_provinces = {
-	#VU adjusted to include all of the Levant region, which means Ottomans finally get a claim to Cyprus!
-	region = mashriq_region
-}
-conquer_egypt_provinces = {
-	OR = {
-		area = delta_area
-		area = bahari_area
-		area = said_area
-		area = vostani_area
-		area = al_wahat_area
-		#VU moved to Tripolitania
-		#area = cyrenaica_area
-		#VU additions
-		area = lower_nubia_area
-		province_id = 4322
-	}
-	NOT = {
-		province_id = 2322
-		province_id = 5277
-		province_id = 5279
-		province_id = 5301
-	}
-}
-defeat_the_knights_provinces = {
-	province_id = 320
-}
-take_crete_from_venice_provinces = {
-	#VU adjusted to Crete area.
-	area = eastern_mediterrenean_islands_area
-}
-conquer_tripolitania_provinces = {
-	OR = {
-		area = tripolitania_area
-		#VU moved to Tunisia
-		#area = djerba_area
-		#VU additions
-		area = cyrenaica_area
-	}
-	NOT = {
-		province_id = 5303
-		province_id = 5304
-	}
-}
-conquer_tunisia_provinces = {
-	OR = {
-		#VU adjusted to encompass historical regions of Tunisia under Suleiman
-		area = tunisia_area
-		#area = east_aures_area
-		area = djerba_area
-	}
-	NOT = {
-		province_id = 5316 #Tuzer
-		province_id = 2450 #Jebil
-	}
-}
-subjugate_algiers_provinces = {
-	OR = {
-		#area = west_aures_area
-		#area = constantine_area
-		area = kabylia_area
-		area = barbary_coast_area
-		#area = algiers_area
-		area = hautes_plaines_area
-		area = ouled_nail_area #Hopefully this is Sarahan Atlas
-	}
-	NOT = {
-		province_id = 350
-	}
-}
-conquer_hedjaz_provinces = {
-	OR = {
-		area = mecca_area
-		area = tabuk_area
-		area = medina_area
-		#VU additions
-		area = tihama_al_yemen_area
-	}
-	NOT = {
-		province_id = 2346
-	}
-}
-conquer_mocha_provinces = {
-	OR = {
-		#VU moved to Hejaz, replaced by single province below
-		#area = tihama_al_yemen_area
-		area = yemen_area
-		#VU additions
-		province_id = 2346
-	}
-}
+#conquer_southern_greece_provinces = {
+#		#VU overhauled to all provinces in Southern Greece, excluding Cephalonia & Corfu
+#	OR = {
+#		area = morea_area
+#		area = western_aegean_area
+#		#area = euboea_area
+#		area = aetolia_area
+#		#area = northern_peloponnesus_area
+#		area = northern_greece_area
+#		province_id = 164
+#	}
+#	NOT = {
+#		province_id = 4698
+#		province_id = 142
+#	}
+#}
+#conquer_serbia_provinces = {
+#	OR = {
+#		area = rascia_area
+#		#VU overhauled to include all Serbian provinces at game start
+#		area = serbia_area
+#		#area = syrmia_area
+#		province_id = 3187 #Podrinje
+#		province_id = 7724 #Srebrenica
+#		province_id = 3000 #Nis
+#		province_id = 7711 #Vranje
+#	}
+#	NOT = {
+#		province_id = 7709 #Pljevlja
+#	}
+#}
+#conquer_bosnia_provinces = {
+#	OR = {
+#		area = bosnia_area
+#		#VU additions
+#		area = krajina_area
+#		area = herzegovina_area
+#		province_id = 7709 #Pljevlja
+#	}
+#	NOT = {
+#		province_id = 7728 #Prijedor
+#		province_id = 7729 #Bihar
+#	}
+#}
+#conquer_hungary_provinces = {
+#	OR = {
+#		area = alfold_area
+#		#VU additions, attempting to simulate historical Suleiman borders
+#		area = slavonia_area
+#		area = banat_area
+#		area = syrmia_area
+#		province_id = 157 #Bihar
+#		province_id = 153 #Pest
+#		province_id = 1864 #Somogy
+#		province_id = 4240 #Fejer
+#		province_id = 7728 #Prijedor
+#		province_id = 7729 #Bihar
+#		province_id = 7736 #Sisak
+#	}
+#	NOT = {
+#		province_id = 152 #Varazdin
+#	}
+#}
+#vassalize_wallachia_provinces = { #Unchanged
+#	OR = {
+#		area = wallachia_area
+#		area = oltenia_area
+#		area = upper_muntenia_area
+#	}
+#}
+#vassalize_transylvania_provinces = {
+#	OR = {
+#		area = transylvania_area
+#		area = southern_transylvania_area
+#		#VU additions
+#		province_id = 1952
+#	}
+#	NOT = {
+#		province_id = 1954 #Given to Control the Danube
+#	}
+#}
+#consolidate_asia_minor_provinces = {
+#	#VU completely changed to allow for a simpler trigger - all Anatolian provinces except Trebizond, plus Malatya & Antep, as they are controlled by Turkish beyliks.
+#	OR = {
+#		region = anatolia_region
+#		province_id = 2303
+#		province_id = 4298
+#	}
+#	NOT = {
+#		area = pontus_area
+#	}
+#}
+#safeguard_eastern_anatolia_provinces = {
+#	OR = {
+#		area = north_kurdistan_area
+#		area = erzurum_area
+#		#VU adjusted to mardin area
+#		area = mardin_area
+#		#area = dulkadir_area
+#		province_id = 4303 #Tao
+#	}
+#}
+#conquer_mesopotamia_provinces = {
+#	OR = {
+#		area = iraq_arabi_area
+#		area = al_jazira_area
+#		#VU additions
+#		area = shahrizor_area
+#		area = rakka_area
+#	}
+#	NOT = {
+#		province_id = 2211
+#	}
+#}
+#conquer_haasa_provinces = { #Unchanged
+#	OR = {
+#		area = basra_area
+#		area = bahrain_area
+#	}
+#}
+#conquer_trebizond_provinces = {
+#	#VU adjusted to whole Pontus area.
+#	area = pontus_area
+#}
+#take_kaffa_provinces = {
+#	OR = {
+#		#VU adjusted to historical Ottoman holdings.
+#		province_id = 2447 #Matrega
+#		province_id = 3245 #Cerco
+#		province_id = 285 #Caffa
+#		province_id = 7190 #Cembalo
+#		province_id = 286 #Asovia
+#	}
+#}
+#conquer_levant_provinces = {
+#	#VU adjusted to include all of the Levant region, which means Ottomans finally get a claim to Cyprus!
+#	region = mashriq_region
+#}
+#conquer_egypt_provinces = {
+#	OR = {
+#		area = delta_area
+#		area = bahari_area
+#		area = said_area
+#		area = vostani_area
+#		area = al_wahat_area
+#		#VU moved to Tripolitania
+#		#area = cyrenaica_area
+#		#VU additions
+#		area = lower_nubia_area
+#		province_id = 4322
+#	}
+#	NOT = {
+#		province_id = 2322
+#		province_id = 5277
+#		province_id = 5279
+#		province_id = 5301
+#	}
+#}
+#defeat_the_knights_provinces = {
+#	province_id = 320
+#}
+#take_crete_from_venice_provinces = {
+#	#VU adjusted to Crete area.
+#	area = eastern_mediterrenean_islands_area
+#}
+#conquer_tripolitania_provinces = {
+#	OR = {
+#		area = tripolitania_area
+#		#VU moved to Tunisia
+#		#area = djerba_area
+#		#VU additions
+#		area = cyrenaica_area
+#	}
+#	NOT = {
+#		province_id = 5303
+#		province_id = 5304
+#	}
+#}
+#conquer_tunisia_provinces = {
+#	OR = {
+#		#VU adjusted to encompass historical regions of Tunisia under Suleiman
+#		area = tunisia_area
+#		#area = east_aures_area
+#		area = djerba_area
+#	}
+#	NOT = {
+#		province_id = 5316 #Tuzer
+#		province_id = 2450 #Jebil
+#	}
+#}
+#subjugate_algiers_provinces = {
+#	OR = {
+#		#area = west_aures_area
+#		#area = constantine_area
+#		area = kabylia_area
+#		area = barbary_coast_area
+#		#area = algiers_area
+#		area = hautes_plaines_area
+#		area = ouled_nail_area #Hopefully this is Sarahan Atlas
+#	}
+#	NOT = {
+#		province_id = 350
+#	}
+#}
+#conquer_hedjaz_provinces = {
+#	OR = {
+#		area = mecca_area
+#		area = tabuk_area
+#		area = medina_area
+#		#VU additions
+#		area = tihama_al_yemen_area
+#	}
+#	NOT = {
+#		province_id = 2346
+#	}
+#}
+#conquer_mocha_provinces = {
+#	OR = {
+#		#VU moved to Hejaz, replaced by single province below
+#		#area = tihama_al_yemen_area
+#		area = yemen_area
+#		#VU additions
+#		province_id = 2346
+#	}
+#}
 
 #Poland-Commonwealth
 conquer_warmia_provinces = { #Unchanged
@@ -2096,15 +2096,15 @@ gbr_rb_india_princedoms_provinces = {
 	}
 }
 eng_rb_british_india_provinces = {
-  OR = {
-	  region = bengal_region
-		region = coromandel_region
-		region = deccan_region
-		region = west_india_region
-  }
+    OR = {
+		region = bengal_region
+  		region = coromandel_region
+  		region = deccan_region
+  		region = west_india_region
+    }
 }
 eng_rb_british_burma_provinces = {
-	  region = burma_region
+	region = burma_region
 }
 eng_take_shetland_and_faro_isles_provinces = {
 	OR = {

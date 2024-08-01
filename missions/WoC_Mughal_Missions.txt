@@ -1892,15 +1892,19 @@ WoC_mughals_4 = {
 				custom_tooltip = " "
 				
 				give_claims = { area = malacca_area }
-				give_claims = { area = north_malaya_area }
+				give_claims = { area = tenasserim_area }
+				give_claims = { area = kedah_area }
+				#give_claims = { area = north_malaya_area }
 				give_claims = { area = malaya_area }
-				give_claims = { area = johor_area }
+				give_claims = { area = indonesian_islands_area }
+				give_claims = { area = riau_islands_area }
 				give_claims = { area = minangkabau_area }
 				give_claims = { area = north_sumatra_area }
 				give_claims = { area = south_sumatra_area }
 				give_claims = { area = batak_area }
 				give_claims = { area = central_sumatra_area }
-				give_claims = { area = jambi_area }
+				#give_claims = { area = jambi_area }
+				give_claims = { area = palembang_area }
 
 				custom_tooltip = " "
 			}
@@ -1948,8 +1952,12 @@ WoC_mughals_4_locked = {
 		provinces_to_highlight = {
 			OR = {
 				area = malacca_area
+				area = tenasserim_area
+				area = kedah_area
 				#area = north_malaya_area #Removed in VU
 				area = malaya_area
+				area = indonesian_islands_area
+				area = riau_islands_area
 				#area = johor_area #Removed in VU
 				area = minangkabau_area
 				area = north_sumatra_area
@@ -1963,8 +1971,12 @@ WoC_mughals_4_locked = {
 			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 				OR = {
 					area = malacca_area
+					area = tenasserim_area
+					area = kedah_area
 					#area = north_malaya_area #Removed in VU
 					area = malaya_area
+					area = indonesian_islands_area
+					area = riau_islands_area
 					#area = johor_area #Removed in VU
 					area = minangkabau_area
 					area = north_sumatra_area
@@ -2031,8 +2043,12 @@ WoC_mughals_4_coromandel = {
 		provinces_to_highlight = {
 			OR = {
 				area = malacca_area
+				area = tenasserim_area
+				area = kedah_area
 				#area = north_malaya_area #Removed in VU
 				area = malaya_area
+				area = indonesian_islands_area
+				area = riau_islands_area
 				#area = johor_area #Removed in VU
 				area = minangkabau_area
 				area = north_sumatra_area
@@ -2047,8 +2063,12 @@ WoC_mughals_4_coromandel = {
 			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 				OR = {
 					area = malacca_area
+					area = tenasserim_area
+					area = kedah_area
 					#area = north_malaya_area #Removed in VU
 					area = malaya_area
+					area = indonesian_islands_area
+					area = riau_islands_area
 					#area = johor_area #Removed in VU
 					area = minangkabau_area
 					area = north_sumatra_area
@@ -2115,8 +2135,12 @@ WoC_mughals_4_ayutthaya = {
 		provinces_to_highlight = {
 			OR = {
 				area = malacca_area
+				area = tenasserim_area
+				area = kedah_area
 				#area = north_malaya_area #Removed in VU
 				area = malaya_area
+				area = indonesian_islands_area
+				area = riau_islands_area
 				#area = johor_area #Removed in VU
 				area = minangkabau_area
 				area = north_sumatra_area
@@ -2131,8 +2155,12 @@ WoC_mughals_4_ayutthaya = {
 			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 				OR = {
 					area = malacca_area
+					area = tenasserim_area
+					area = kedah_area
 					#area = north_malaya_area #Removed in VU
 					area = malaya_area
+					area = indonesian_islands_area
+					area = riau_islands_area
 					#area = johor_area #Removed in VU
 					area = minangkabau_area
 					area = north_sumatra_area
@@ -2742,15 +2770,19 @@ WoC_mughals_5 = {
 				custom_tooltip = " "
 				
 				give_claims = { area = malacca_area }
-				give_claims = { area = north_malaya_area }
+				give_claims = { area = tenasserim_area }
+				give_claims = { area = kedah_area }
+				#give_claims = { area = north_malaya_area }
 				give_claims = { area = malaya_area }
-				give_claims = { area = johor_area }
+				give_claims = { area = indonesian_islands_area }
+				give_claims = { area = riau_islands_area }
 				give_claims = { area = minangkabau_area }
 				give_claims = { area = north_sumatra_area }
 				give_claims = { area = south_sumatra_area }
 				give_claims = { area = batak_area }
 				give_claims = { area = central_sumatra_area }
-				give_claims = { area = jambi_area }
+				#give_claims = { area = jambi_area }
+				give_claims = { area = palembang_area }
 				
 				custom_tooltip = " "
 			}

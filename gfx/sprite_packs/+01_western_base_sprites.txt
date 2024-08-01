@@ -29,7 +29,11 @@ dan_base_sprite_pack = {
 pru_base_sprite_pack = {
 	# Tests against every tag in game
 	country_trigger = {
-		tag = PRU
+		OR = {
+			tag = PRU
+			tag = NGC
+			tag = GER
+		}
 	}
 
 	sprite_infantry = {
@@ -173,9 +177,29 @@ eng_base_sprite_pack = {
 	# Tests against every tag in game
 	country_trigger = {
 		OR = {
+			tag = ARC
+			tag = AFU
+			tag = BCK
+			tag = BED
+			tag = CST
+			tag = DUR
 			tag = ENG
+			tag = EXE
 			tag = GBR
+			tag = GLR
+			tag = JER
+			tag = LCA
+			tag = LNN
+			tag = NFL
+			tag = OXF
+			tag = PEM
+			tag = RT1
+			tag = RCH
+			tag = SM1
 			tag = UNK
+			tag = WMC
+			tag = WRK
+			tag = YRK
 		}
 	}
 
@@ -336,4 +360,3 @@ fra_base_sprite_pack = {
 		3 = FRA_ARTILLERY_4
 	}
 }
-

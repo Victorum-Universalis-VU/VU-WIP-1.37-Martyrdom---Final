@@ -681,7 +681,7 @@ mam_missions_2 = {
 				}
 				403 = { 
 					add_great_project_tier = {
-						type = vu_bahla_fort
+						type = nizwa_fort #Was vu_bahla_fort but changed by SF in 1.37
 						tier = 1 
 					}
 				}

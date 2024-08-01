@@ -1094,3 +1094,6518 @@ cancel_trade_deal_generic = {
 		# }
 	}
 }
+
+#GE Trade Deal
+#
+#	offer_trade_deal_tunisian_italian = {
+#		category = relatio
+#		alert_index = 27 #34             # The alert to use for the action. Refer to static_actions for the indexes. Optional.
+#		alert_tooltip = ICON_GE_TD         # The localisation key to display in the alert tooltip. Optional.	
+#		require_acceptance = ye
+#		is_visible = {
+#			has_government_attribute = enables_italian_grain_treaties
+#			always = no
+#			FROM = {
+#				culture_group = latin
+#			}
+#			NOT = {
+#				FROM = {
+#					has_country_modifier = GE_Tunisian_Grain_Trade
+#				}
+#			}
+#		}
+#		is_allowed = {
+#			has_government_attribute = enables_italian_grain_treaties
+#			FROM = {
+#				culture_group = latin
+#				alliance_with = ROOT
+#			}
+#			# NOT = {
+#			# 	FROM = {
+#			# 		has_country_modifier = GE_Tunisian_Grain_Trade
+#			# 	}
+#			# }
+#		}
+#		on_accept = {
+#			FROM = {
+#				add_country_modifier = {
+#					name = GE_Tunisian_Grain_Trade
+#					duration = -1
+#				}
+#			}
+#			ROOT = {
+#				add_country_modifier = {
+#					name = GE_Tunisian_Grain_Production
+#					duration = -1
+#				}
+#			}
+#		}
+#		on_decline = {
+#		
+#		ai_acceptance = { # This works similarly to variable_arithmetic_trigger, but does not support triggers generally. Instead, "limit" will be evaluated first and the rest ignored if it isn't passed.
+#			add_entry = {
+#				name = GE_diplomatic_reputation    # The localisation key to display for this factor
+#	
+#				# ai_value MUST always be created within an entry first.
+#				export_to_variable = {
+#					variable_name = ai_value
+#					value = modifier:diplomatic_reputation      # Which exportable value to export
+#					who = ROOT                      # Who to export the value from
+#					with = FROM                     # Who the ai_value is for
+#				}
+#				multiply_variable = {
+#					which = ai_value
+#					value = 5
+#				}
+#				# You can then change ai_value with effects such as multiply_variable, etc
+#			}
+#			add_entry = {
+#				name = GE_base_acceptance
+#				export_to_variable = {
+#					variable_name = ai_value
+#					value = 10      # Which exportable value to export
+#					who = ROOT                      # Who to export the value from
+#					with = FROM                     # Who the ai_value is for
+#				}
+#			}
+#			add_entry = {
+#				name = GE_base_acceptance
+#				export_to_variable = {
+#					variable_name = ai_value
+#					value = 1      # Which exportable value to export
+#					who = ROOT                      # Who to export the value from
+#					with = FROM                     # Who the ai_value is for
+#				}
+#				multiply_variable = {
+#					which = ai_value
+#					value = 10
+#				}
+#			}
+#		}
+#
+#		ai_will_do = { # this is a trigger
+#			# FROM = {
+#			# 	culture_group = latin
+#			# 	alliance_with = ROOT
+#			# }
+#			always = yes
+#		}
+#	}
+#	cancel_trade_deal_tunisian_italian = {
+#		category = relation
+#		require_acceptance = no
+#		is_visible = {
+#			FROM = {
+#				OR = {
+#					has_country_modifier = GE_Tunisian_Grain_Trade
+#					has_country_modifier = GE_Tunisian_Grain_Production
+#				}
+#			}
+#			ROOT = {
+#				OR = {
+#					has_country_modifier = GE_Tunisian_Grain_Trade
+#					has_country_modifier = GE_Tunisian_Grain_Production
+#				}
+#			}
+#		}
+#		is_allowed = {
+#			FROM = {
+#				OR = {
+#					has_country_modifier = GE_Tunisian_Grain_Trade
+#					has_country_modifier = GE_Tunisian_Grain_Production
+#				}
+#			}
+#			ROOT = {
+#				OR = {
+#					has_country_modifier = GE_Tunisian_Grain_Trade
+#					has_country_modifier = GE_Tunisian_Grain_Production
+#				}
+#			}
+#		}
+#		on_accept = {
+#			FROM = {
+#				remove_country_modifier = GE_Tunisian_Grain_Trade
+#				remove_country_modifier = GE_Tunisian_Grain_Production
+#				add_stability = -1
+#			}
+#			ROOT = {
+#				remove_country_modifier = GE_Tunisian_Grain_Trade
+#				remove_country_modifier = GE_Tunisian_Grain_Production
+#				add_stability = -1
+#			}
+#		}
+#		ai_will_do = { # this is a trigger
+#			NOT = {
+#				FROM = {
+#					alliance_with = ROOT
+#				}
+#			}
+#		}
+#	}
+#}
+
+offer_trade_deal_rural_exports = {
+	category = trade
+
+    alert_index = 34 #27             # The alert to use for the action. Refer to static_actions for the indexes. Optional.
+	alert_tooltip = ICON_GE_TD         # The localisation key to display in the alert tooltip. Optional.
+	
+	require_acceptance = yes
+
+	is_visible = {
+		has_global_modifier_value = {
+			which = trade_deals_slots
+			value = 1
+		}
+		NOT = {
+			OR = {
+				AND = {
+					FROM = {
+						has_country_flag = GE_Trade_Deal_With_@Root
+					}
+					ROOT = {
+						has_country_flag = GE_Trade_Deal_From_@From
+					}
+				}
+				AND = {
+					FROM = {
+						has_country_flag = GE_Trade_Deal_From_@Root
+					}
+					ROOT = {
+						has_country_flag = GE_Trade_Deal_With_@From
+					}
+				}
+			}
+		}
+	}
+	is_allowed = {
+		Trade_Deals_Allowed = yes
+		ROOT = {
+			custom_trigger_tooltip = {
+				tooltip = GE_ROOT_produces_enough_rural_goods
+				check_variable = {
+					which = GE_percentage_of_rural_goods
+					value = 50
+				}
+			}
+		}
+		# FROM = {
+		# 	OR = {
+		# 		alliance_with = ROOT
+		# 		AND = {
+		# 			is_trade_league_leader = yes
+		# 			is_in_trade_league_with = ROOT
+		# 		}
+		# 		AND = {
+		# 			ROOT = {
+		# 				is_trade_league_leader = yes
+		# 			}
+		# 			is_in_trade_league_with = ROOT
+		# 		}
+		# 	}
+		# }
+		hidden_trigger = {
+			NOT = {
+				OR = {
+					AND = {
+						FROM = {
+							has_country_flag = GE_Trade_Deal_With_@Root
+						}
+						ROOT = {
+							has_country_flag = GE_Trade_Deal_From_@Root
+						}
+					}
+					AND = {
+						FROM = {
+							has_country_flag = GE_Trade_Deal_From_@Root
+						}
+						ROOT = {
+							has_country_flag = GE_Trade_Deal_With_@Root
+						}
+					}
+				}
+			}
+		}
+	}
+	on_accept = {
+		FROM = {
+			set_country_flag = GE_Trade_Deal_With_@Root
+			set_country_flag = GE_Rural_Trade_Deal_With_@Root
+			change_variable = {
+				which = GE_num_of_incoming_rural_trade
+				value = 1
+			}
+			add_import_effect = yes
+		}
+		ROOT = {
+			set_country_flag = GE_Trade_Deal_From_@From
+			set_country_flag = GE_Initiated_Trade_Deal_With_@From
+			set_country_flag = GE_Rural_Trade_Deal_From_@From
+			change_variable = {
+				which = GE_num_of_outgoing_rural_trade
+				value = 1
+			}
+			change_variable = {
+				which = GE_num_of_total_trade
+				value = 1
+			}
+			add_export_effect = yes
+		}
+	}
+	on_decline = {
+	}
+
+	ai_acceptance = { # This works similarly to variable_arithmetic_trigger, but does not support triggers generally. Instead, "limit" will be evaluated first and the rest ignored if it isn't passed.
+		add_entry = {#+3*DipRep
+			name = GE_diplomatic_reputation    # The localisation key to display for this factor
+			
+			# ai_value MUST always be created within an entry first.
+			export_to_variable = {
+				variable_name = ai_value
+				value = modifier:diplomatic_reputation      # Which exportable value to export
+				who = ROOT                      # Who to export the value from
+				with = FROM                     # Who the ai_value is for
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 3
+			}
+			# You can then change ai_value with effects such as multiply_variable, etc
+		}
+		add_entry = { #+20% Opinion
+			name = GE_opinion_modifier
+			export_to_variable = {
+				variable_name = ai_value
+				value = opinion
+				who = FROM 
+				with = ROOT  
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 0.1
+			}
+		}
+		add_entry = { #-10 base acceptance
+			name = GE_base_acceptance
+			export_to_variable = {
+				variable_name = ai_value
+				value = -1      # Which exportable value to export
+				who = ROOT                      # Who to export the value from
+				with = FROM                     # Who the ai_value is for
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 10 #10
+			}
+		}
+		add_entry = { #-10 if not Allied Player
+			name = GE_not_willing
+			limit = {
+				ROOT = {
+					ai = no
+				}
+				NOT = {
+					FROM = {
+						OR = {
+							alliance_with = ROOT
+							AND = {
+								is_trade_league_leader = yes
+								is_in_trade_league_with = ROOT
+							}
+							AND = {
+								ROOT = {
+									is_trade_league_leader = yes
+								}
+								is_in_trade_league_with = ROOT
+							}
+						}
+					}
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = -1      # Which exportable value to export
+				who = ROOT                      # Who to export the value from
+				with = FROM                     # Who the ai_value is for
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 10
+			}
+		}
+		add_entry = { #-100 if not Allied AI
+			name = GE_not_willing
+			limit = {
+				ROOT = {
+					ai = yes
+				}
+				NOT = {
+					FROM = {
+						OR = {
+							alliance_with = ROOT
+							AND = {
+								is_trade_league_leader = yes
+								is_in_trade_league_with = ROOT
+							}
+							AND = {
+								ROOT = {
+									is_trade_league_leader = yes
+								}
+								is_in_trade_league_with = ROOT
+							}
+							is_subject_of = ROOT
+						}
+					}
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = -1      # Which exportable value to export
+				who = ROOT                      # Who to export the value from
+				with = FROM                     # Who the ai_value is for
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 100
+			}
+		}
+		add_entry = { #-100 if broken trade treaty
+			name = GE_angry_merchants
+			limit = {
+				FROM = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = GE_Cancel_Trade_Deal_Angry
+					}
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = -1      # Which exportable value to export
+				who = ROOT                      # Who to export the value from
+				with = FROM                     # Who the ai_value is for
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 100
+			}
+		}
+		add_entry = { #+5 Merchant Republic
+			name = GE_merchant_republic
+			limit = {
+				FROM = {
+					has_government_attribute = is_merchant_republic
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = 1      # Which exportable value to export
+				who = ROOT                      # Who to export the value from
+				with = FROM                     # Who the ai_value is for
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 5
+			}
+		}
+	}
+
+	ai_will_do = { # this is a trigger
+		FROM = {
+			OR = {
+				alliance_with = ROOT
+				AND = {
+					is_trade_league_leader = yes
+					is_in_trade_league_with = ROOT
+				}
+				AND = {
+					ROOT = {
+						is_trade_league_leader = yes
+					}
+					is_in_trade_league_with = ROOT
+				}
+			}
+		}
+	}
+}
+
+offer_trade_deal_rural_imports = {
+	category = trade
+
+    alert_index = 34 #27             # The alert to use for the action. Refer to static_actions for the indexes. Optional.
+	alert_tooltip = ICON_GE_TD         # The localisation key to display in the alert tooltip. Optional.
+	
+	require_acceptance = yes
+
+	is_visible = {
+		has_global_modifier_value = {
+			which = trade_deals_slots
+			value = 1
+		}
+		NOT = {
+			OR = {
+				AND = {
+					FROM = {
+						has_country_flag = GE_Trade_Deal_With_@Root
+					}
+					ROOT = {
+						has_country_flag = GE_Trade_Deal_From_@From
+					}
+				}
+				AND = {
+					FROM = {
+						has_country_flag = GE_Trade_Deal_From_@Root
+					}
+					ROOT = {
+						has_country_flag = GE_Trade_Deal_With_@From
+					}
+				}
+			}
+		}
+	}
+	is_allowed = {
+		Trade_Deals_Allowed = yes
+		FROM = {
+			custom_trigger_tooltip = {
+				tooltip = GE_FROM_produces_enough_rural_goods
+				check_variable = {
+					which = GE_percentage_of_rural_goods
+					value = 50
+				}
+			}
+		}
+		# FROM = {
+		# 	OR = {
+		# 		alliance_with = ROOT
+		# 		AND = {
+		# 			is_trade_league_leader = yes
+		# 			is_in_trade_league_with = ROOT
+		# 		}
+		# 		AND = {
+		# 			ROOT = {
+		# 				is_trade_league_leader = yes
+		# 			}
+		# 			is_in_trade_league_with = ROOT
+		# 		}
+		# 	}
+		# }
+		hidden_trigger = {
+			NOT = {
+				OR = {
+					AND = {
+						FROM = {
+							has_country_flag = GE_Trade_Deal_With_@Root
+						}
+						ROOT = {
+							has_country_flag = GE_Trade_Deal_From_@Root
+						}
+					}
+					AND = {
+						FROM = {
+							has_country_flag = GE_Trade_Deal_From_@Root
+						}
+						ROOT = {
+							has_country_flag = GE_Trade_Deal_With_@Root
+						}
+					}
+				}
+			}
+		}
+	}
+	on_accept = {
+		FROM = {
+			set_country_flag = GE_Trade_Deal_From_@Root
+			set_country_flag = GE_Rural_Trade_Deal_From_@Root
+			change_variable = {
+				which = GE_num_of_outgoing_rural_trade
+				value = 1
+			}
+			add_export_effect = yes	
+		}
+		ROOT = {
+			set_country_flag = GE_Trade_Deal_With_@From
+			set_country_flag = GE_Rural_Trade_Deal_With_@From
+			set_country_flag = GE_Initiated_Trade_Deal_With_@From
+			change_variable = {
+				which = GE_num_of_incoming_rural_trade
+				value = 1
+			}
+			change_variable = {
+				which = GE_num_of_total_trade
+				value = 1
+			}
+			add_import_effect = yes
+		}
+	}
+	on_decline = {
+	}
+
+	ai_acceptance = { # This works similarly to variable_arithmetic_trigger, but does not support triggers generally. Instead, "limit" will be evaluated first and the rest ignored if it isn't passed.
+		add_entry = {#+3*DipRep
+			name = GE_diplomatic_reputation    # The localisation key to display for this factor
+			
+			# ai_value MUST always be created within an entry first.
+			export_to_variable = {
+				variable_name = ai_value
+				value = modifier:diplomatic_reputation      # Which exportable value to export
+				who = ROOT                      # Who to export the value from
+				with = FROM                     # Who the ai_value is for
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 3
+			}
+			# You can then change ai_value with effects such as multiply_variable, etc
+		}
+		add_entry = { #+20% Opinion
+			name = GE_opinion_modifier
+			export_to_variable = {
+				variable_name = ai_value
+				value = opinion
+				who = FROM 
+				with = ROOT  
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 0.1
+			}
+		}
+		add_entry = { #-10 base acceptance
+			name = GE_base_acceptance
+			export_to_variable = {
+				variable_name = ai_value
+				value = -1      # Which exportable value to export
+				who = ROOT                      # Who to export the value from
+				with = FROM                     # Who the ai_value is for
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 10 #10
+			}
+		}
+		add_entry = { #-10 if not Allied Player
+			name = GE_not_willing
+			limit = {
+				ROOT = {
+					ai = no
+				}
+				NOT = {
+					FROM = {
+						OR = {
+							alliance_with = ROOT
+							AND = {
+								is_trade_league_leader = yes
+								is_in_trade_league_with = ROOT
+							}
+							AND = {
+								ROOT = {
+									is_trade_league_leader = yes
+								}
+								is_in_trade_league_with = ROOT
+							}
+							is_subject_of = ROOT
+						}
+					}
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = -1      # Which exportable value to export
+				who = ROOT                      # Who to export the value from
+				with = FROM                     # Who the ai_value is for
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 10
+			}
+		}
+		add_entry = { #-100 if not Allied AI
+			name = GE_not_willing
+			limit = {
+				ROOT = {
+					ai = yes
+				}
+				NOT = {
+					FROM = {
+						OR = {
+							alliance_with = ROOT
+							AND = {
+								is_trade_league_leader = yes
+								is_in_trade_league_with = ROOT
+							}
+							AND = {
+								ROOT = {
+									is_trade_league_leader = yes
+								}
+								is_in_trade_league_with = ROOT
+							}
+						}
+					}
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = -1      # Which exportable value to export
+				who = ROOT                      # Who to export the value from
+				with = FROM                     # Who the ai_value is for
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 100
+			}
+		}
+		add_entry = { #-100 if broken trade treaty
+			name = GE_angry_merchants
+			limit = {
+				FROM = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = GE_Cancel_Trade_Deal_Angry
+					}
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = -1      # Which exportable value to export
+				who = ROOT                      # Who to export the value from
+				with = FROM                     # Who the ai_value is for
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 100
+			}
+		}
+		add_entry = { #-15 Merchant Republic
+			name = GE_merchant_republic
+			limit = {
+				FROM = {
+					has_government_attribute = is_merchant_republic
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = -1      # Which exportable value to export
+				who = ROOT                      # Who to export the value from
+				with = FROM                     # Who the ai_value is for
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 15
+			}
+		}
+	}
+
+	ai_will_do = { # this is a trigger
+		FROM = {
+			OR = {
+				alliance_with = ROOT
+				AND = {
+					is_trade_league_leader = yes
+					is_in_trade_league_with = ROOT
+				}
+				AND = {
+					ROOT = {
+						is_trade_league_leader = yes
+					}
+					is_in_trade_league_with = ROOT
+				}
+			}
+		}
+	}
+}
+
+offer_trade_deal_urban_exports = {
+	category = trade
+
+    alert_index = 34 #27             # The alert to use for the action. Refer to static_actions for the indexes. Optional.
+	alert_tooltip = ICON_GE_TD         # The localisation key to display in the alert tooltip. Optional.
+	
+	require_acceptance = yes
+
+	is_visible = {
+		has_global_modifier_value = {
+			which = trade_deals_slots
+			value = 1
+		}
+		NOT = {
+			OR = {
+				AND = {
+					FROM = {
+						has_country_flag = GE_Trade_Deal_With_@Root
+					}
+					ROOT = {
+						has_country_flag = GE_Trade_Deal_From_@From
+					}
+				}
+				AND = {
+					FROM = {
+						has_country_flag = GE_Trade_Deal_From_@Root
+					}
+					ROOT = {
+						has_country_flag = GE_Trade_Deal_With_@From
+					}
+				}
+			}
+		}
+	}
+	is_allowed = {
+		Trade_Deals_Allowed = yes
+		ROOT = {
+			custom_trigger_tooltip = {
+				tooltip = GE_ROOT_produces_enough_urban_goods
+				check_variable = {
+					which = GE_percentage_of_urban_goods
+					value = 40
+				}
+			}
+		}
+		# FROM = {
+		# 	OR = {
+		# 		alliance_with = ROOT
+		# 		AND = {
+		# 			is_trade_league_leader = yes
+		# 			is_in_trade_league_with = ROOT
+		# 		}
+		# 		AND = {
+		# 			ROOT = {
+		# 				is_trade_league_leader = yes
+		# 			}
+		# 			is_in_trade_league_with = ROOT
+		# 		}
+		# 	}
+		# }
+		hidden_trigger = {
+			NOT = {
+				OR = {
+					AND = {
+						FROM = {
+							has_country_flag = GE_Trade_Deal_With_@Root
+						}
+						ROOT = {
+							has_country_flag = GE_Trade_Deal_From_@Root
+						}
+					}
+					AND = {
+						FROM = {
+							has_country_flag = GE_Trade_Deal_From_@Root
+						}
+						ROOT = {
+							has_country_flag = GE_Trade_Deal_With_@Root
+						}
+					}
+				}
+			}
+		}
+	}
+	on_accept = {
+		FROM = {
+			set_country_flag = GE_Trade_Deal_With_@Root
+			set_country_flag = GE_Urban_Trade_Deal_With@Root
+			change_variable = {
+				which = GE_num_of_incoming_urban_trade
+				value = 1
+			}
+			add_import_effect = yes
+		}
+		ROOT = {
+			set_country_flag = GE_Trade_Deal_From_@From
+			set_country_flag = GE_Initiated_Trade_Deal_With_@From
+			set_country_flag = GE_Urban_Trade_Deal_From_@From
+			change_variable = {
+				which = GE_num_of_outgoing_urban_trade
+				value = 1
+			}
+			change_variable = {
+				which = GE_num_of_total_trade
+				value = 1
+			}
+			add_export_effect = yes
+		}
+	}
+	on_decline = {
+	}
+
+	ai_acceptance = { # This works similarly to variable_arithmetic_trigger, but does not support triggers generally. Instead, "limit" will be evaluated first and the rest ignored if it isn't passed.
+		add_entry = {#+3*DipRep
+			name = GE_diplomatic_reputation    # The localisation key to display for this factor
+			
+			# ai_value MUST always be created within an entry first.
+			export_to_variable = {
+				variable_name = ai_value
+				value = modifier:diplomatic_reputation      # Which exportable value to export
+				who = ROOT                      # Who to export the value from
+				with = FROM                     # Who the ai_value is for
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 3
+			}
+			# You can then change ai_value with effects such as multiply_variable, etc
+		}
+		add_entry = { #+20% Opinion
+			name = GE_opinion_modifier
+			export_to_variable = {
+				variable_name = ai_value
+				value = opinion
+				who = FROM 
+				with = ROOT  
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 0.1
+			}
+		}
+		add_entry = { #-10 base acceptance
+			name = GE_base_acceptance
+			export_to_variable = {
+				variable_name = ai_value
+				value = -1      # Which exportable value to export
+				who = ROOT                      # Who to export the value from
+				with = FROM                     # Who the ai_value is for
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 10 #10
+			}
+		}
+		add_entry = { #-10 if not Allied Player
+			name = GE_not_willing
+			limit = {
+				ROOT = {
+					ai = no
+				}
+				NOT = {
+					FROM = {
+						OR = {
+							alliance_with = ROOT
+							AND = {
+								is_trade_league_leader = yes
+								is_in_trade_league_with = ROOT
+							}
+							AND = {
+								ROOT = {
+									is_trade_league_leader = yes
+								}
+								is_in_trade_league_with = ROOT
+							}
+							is_subject_of = ROOT
+						}
+					}
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = -1      # Which exportable value to export
+				who = ROOT                      # Who to export the value from
+				with = FROM                     # Who the ai_value is for
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 10
+			}
+		}
+		add_entry = { #-100 if not Allied AI
+			name = GE_not_willing
+			limit = {
+				ROOT = {
+					ai = yes
+				}
+				NOT = {
+					FROM = {
+						OR = {
+							alliance_with = ROOT
+							AND = {
+								is_trade_league_leader = yes
+								is_in_trade_league_with = ROOT
+							}
+							AND = {
+								ROOT = {
+									is_trade_league_leader = yes
+								}
+								is_in_trade_league_with = ROOT
+							}
+						}
+					}
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = -1      # Which exportable value to export
+				who = ROOT                      # Who to export the value from
+				with = FROM                     # Who the ai_value is for
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 100
+			}
+		}
+		add_entry = { #-100 if broken trade treaty
+			name = GE_angry_merchants
+			limit = {
+				FROM = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = GE_Cancel_Trade_Deal_Angry
+					}
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = -1      # Which exportable value to export
+				who = ROOT                      # Who to export the value from
+				with = FROM                     # Who the ai_value is for
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 100
+			}
+		}
+		add_entry = { #+5 Merchant Republic
+			name = GE_merchant_republic
+			limit = {
+				FROM = {
+					has_government_attribute = is_merchant_republic
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = 1      # Which exportable value to export
+				who = ROOT                      # Who to export the value from
+				with = FROM                     # Who the ai_value is for
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 5
+			}
+		}
+	}
+
+	ai_will_do = { # this is a trigger
+		FROM = {
+			OR = {
+				alliance_with = ROOT
+				AND = {
+					is_trade_league_leader = yes
+					is_in_trade_league_with = ROOT
+				}
+				AND = {
+					ROOT = {
+						is_trade_league_leader = yes
+					}
+					is_in_trade_league_with = ROOT
+				}
+			}
+		}
+	}
+}
+
+offer_trade_deal_urban_imports = {
+	category = trade
+
+    alert_index = 34 #27             # The alert to use for the action. Refer to static_actions for the indexes. Optional.
+	alert_tooltip = ICON_GE_TD         # The localisation key to display in the alert tooltip. Optional.
+	
+	require_acceptance = yes
+
+	is_visible = {
+		has_global_modifier_value = {
+			which = trade_deals_slots
+			value = 1
+		}
+		NOT = {
+			OR = {
+				AND = {
+					FROM = {
+						has_country_flag = GE_Trade_Deal_With_@Root
+					}
+					ROOT = {
+						has_country_flag = GE_Trade_Deal_From_@From
+					}
+				}
+				AND = {
+					FROM = {
+						has_country_flag = GE_Trade_Deal_From_@Root
+					}
+					ROOT = {
+						has_country_flag = GE_Trade_Deal_With_@From
+					}
+				}
+			}
+		}
+	}
+	is_allowed = {
+		Trade_Deals_Allowed = yes
+		FROM = {
+			custom_trigger_tooltip = {
+				tooltip = GE_FROM_produces_enough_urban_goods
+				check_variable = {
+					which = GE_percentage_of_urban_goods
+					value = 40
+				}
+			}
+		}
+		# FROM = {
+		# 	OR = {
+		# 		alliance_with = ROOT
+		# 		AND = {
+		# 			is_trade_league_leader = yes
+		# 			is_in_trade_league_with = ROOT
+		# 		}
+		# 		AND = {
+		# 			ROOT = {
+		# 				is_trade_league_leader = yes
+		# 			}
+		# 			is_in_trade_league_with = ROOT
+		# 		}
+		# 	}
+		# }
+		hidden_trigger = {
+			NOT = {
+				OR = {
+					AND = {
+						FROM = {
+							has_country_flag = GE_Trade_Deal_With_@Root
+						}
+						ROOT = {
+							has_country_flag = GE_Trade_Deal_From_@Root
+						}
+					}
+					AND = {
+						FROM = {
+							has_country_flag = GE_Trade_Deal_From_@Root
+						}
+						ROOT = {
+							has_country_flag = GE_Trade_Deal_With_@Root
+						}
+					}
+				}
+			}
+		}
+	}
+	on_accept = {
+		FROM = {
+			set_country_flag = GE_Trade_Deal_From_@Root
+			set_country_flag = GE_Urban_Trade_Deal_From_@Root
+			change_variable = {
+				which = GE_num_of_outgoing_urban_trade
+				value = 1
+			}
+			add_export_effect = yes	
+		}
+		ROOT = {
+			set_country_flag = GE_Trade_Deal_With_@From
+			set_country_flag = GE_Urban_Trade_Deal_With_@From
+			set_country_flag = GE_Initiated_Trade_Deal_With_@From
+			change_variable = {
+				which = GE_num_of_incoming_urban_trade
+				value = 1
+			}
+			change_variable = {
+				which = GE_num_of_total_trade
+				value = 1
+			}
+			add_import_effect = yes
+		}
+	}
+	on_decline = {
+	}
+
+	ai_acceptance = { # This works similarly to variable_arithmetic_trigger, but does not support triggers generally. Instead, "limit" will be evaluated first and the rest ignored if it isn't passed.
+		add_entry = {#+3*DipRep
+			name = GE_diplomatic_reputation    # The localisation key to display for this factor
+			
+			# ai_value MUST always be created within an entry first.
+			export_to_variable = {
+				variable_name = ai_value
+				value = modifier:diplomatic_reputation      # Which exportable value to export
+				who = ROOT                      # Who to export the value from
+				with = FROM                     # Who the ai_value is for
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 3
+			}
+			# You can then change ai_value with effects such as multiply_variable, etc
+		}
+		add_entry = { #+20% Opinion
+			name = GE_opinion_modifier
+			export_to_variable = {
+				variable_name = ai_value
+				value = opinion
+				who = FROM 
+				with = ROOT  
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 0.1
+			}
+		}
+		add_entry = { #-10 base acceptance
+			name = GE_base_acceptance
+			export_to_variable = {
+				variable_name = ai_value
+				value = -1      # Which exportable value to export
+				who = ROOT                      # Who to export the value from
+				with = FROM                     # Who the ai_value is for
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 10 #10
+			}
+		}
+		add_entry = { #-10 if not Allied Player
+			name = GE_not_willing
+			limit = {
+				ROOT = {
+					ai = no
+				}
+				NOT = {
+					FROM = {
+						OR = {
+							alliance_with = ROOT
+							AND = {
+								is_trade_league_leader = yes
+								is_in_trade_league_with = ROOT
+							}
+							AND = {
+								ROOT = {
+									is_trade_league_leader = yes
+								}
+								is_in_trade_league_with = ROOT
+							}
+							is_subject_of = ROOT
+						}
+					}
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = -1      # Which exportable value to export
+				who = ROOT                      # Who to export the value from
+				with = FROM                     # Who the ai_value is for
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 10
+			}
+		}
+		add_entry = { #-100 if not Allied AI
+			name = GE_not_willing
+			limit = {
+				ROOT = {
+					ai = yes
+				}
+				NOT = {
+					FROM = {
+						OR = {
+							alliance_with = ROOT
+							AND = {
+								is_trade_league_leader = yes
+								is_in_trade_league_with = ROOT
+							}
+							AND = {
+								ROOT = {
+									is_trade_league_leader = yes
+								}
+								is_in_trade_league_with = ROOT
+							}
+						}
+					}
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = -1      # Which exportable value to export
+				who = ROOT                      # Who to export the value from
+				with = FROM                     # Who the ai_value is for
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 100
+			}
+		}
+		add_entry = { #-100 if broken trade treaty
+			name = GE_angry_merchants
+			limit = {
+				FROM = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = GE_Cancel_Trade_Deal_Angry
+					}
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = -1      # Which exportable value to export
+				who = ROOT                      # Who to export the value from
+				with = FROM                     # Who the ai_value is for
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 100
+			}
+		}
+		add_entry = { #-15 Merchant Republic
+			name = GE_merchant_republic
+			limit = {
+				FROM = {
+					has_government_attribute = is_merchant_republic
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = -1      # Which exportable value to export
+				who = ROOT                      # Who to export the value from
+				with = FROM                     # Who the ai_value is for
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 15
+			}
+		}
+	}
+
+	ai_will_do = { # this is a trigger
+		FROM = {
+			OR = {
+				alliance_with = ROOT
+				AND = {
+					is_trade_league_leader = yes
+					is_in_trade_league_with = ROOT
+				}
+				AND = {
+					ROOT = {
+						is_trade_league_leader = yes
+					}
+					is_in_trade_league_with = ROOT
+				}
+			}
+		}
+	}
+}
+
+offer_trade_deal_mining_exports = {
+	category = trade
+
+    alert_index = 34 #27             # The alert to use for the action. Refer to static_actions for the indexes. Optional.
+	alert_tooltip = ICON_GE_TD         # The localisation key to display in the alert tooltip. Optional.
+	
+	require_acceptance = yes
+
+	is_visible = {
+		has_global_modifier_value = {
+			which = trade_deals_slots
+			value = 1
+		}
+		NOT = {
+			OR = {
+				AND = {
+					FROM = {
+						has_country_flag = GE_Trade_Deal_With_@Root
+					}
+					ROOT = {
+						has_country_flag = GE_Trade_Deal_From_@From
+					}
+				}
+				AND = {
+					FROM = {
+						has_country_flag = GE_Trade_Deal_From_@Root
+					}
+					ROOT = {
+						has_country_flag = GE_Trade_Deal_With_@From
+					}
+				}
+			}
+		}
+	}
+	is_allowed = {
+		Trade_Deals_Allowed = yes
+		ROOT = {
+			custom_trigger_tooltip = {
+				tooltip = GE_ROOT_produces_enough_mining_goods
+				check_variable = {
+					which = GE_percentage_of_mining_goods
+					value = 20
+				}
+			}
+		}
+		# FROM = {
+		# 	OR = {
+		# 		alliance_with = ROOT
+		# 		AND = {
+		# 			is_trade_league_leader = yes
+		# 			is_in_trade_league_with = ROOT
+		# 		}
+		# 		AND = {
+		# 			ROOT = {
+		# 				is_trade_league_leader = yes
+		# 			}
+		# 			is_in_trade_league_with = ROOT
+		# 		}
+		# 	}
+		# }
+		hidden_trigger = {
+			NOT = {
+				OR = {
+					AND = {
+						FROM = {
+							has_country_flag = GE_Trade_Deal_With_@Root
+						}
+						ROOT = {
+							has_country_flag = GE_Trade_Deal_From_@Root
+						}
+					}
+					AND = {
+						FROM = {
+							has_country_flag = GE_Trade_Deal_From_@Root
+						}
+						ROOT = {
+							has_country_flag = GE_Trade_Deal_With_@Root
+						}
+					}
+				}
+			}
+		}
+	}
+	on_accept = {
+		FROM = {
+			set_country_flag = GE_Trade_Deal_With_@Root
+			set_country_flag = GE_Mining_Trade_Deal_From@Root
+			change_variable = {
+				which = GE_num_of_incoming_mining_trade
+				value = 1
+			}
+			add_import_effect = yes
+		}
+		ROOT = {
+			set_country_flag = GE_Trade_Deal_From_@From
+			set_country_flag = GE_Initiated_Trade_Deal_With_@From
+			set_country_flag = GE_Mining_Trade_Deal_With_@From
+			change_variable = {
+				which = GE_num_of_outgoing_mining_trade
+				value = 1
+			}
+			change_variable = {
+				which = GE_num_of_total_trade
+				value = 1
+			}
+			add_export_effect = yes
+		}
+	}
+	on_decline = {
+	}
+
+	ai_acceptance = { # This works similarly to variable_arithmetic_trigger, but does not support triggers generally. Instead, "limit" will be evaluated first and the rest ignored if it isn't passed.
+		add_entry = {#+3*DipRep
+			name = GE_diplomatic_reputation    # The localisation key to display for this factor
+			
+			# ai_value MUST always be created within an entry first.
+			export_to_variable = {
+				variable_name = ai_value
+				value = modifier:diplomatic_reputation      # Which exportable value to export
+				who = ROOT                      # Who to export the value from
+				with = FROM                     # Who the ai_value is for
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 3
+			}
+			# You can then change ai_value with effects such as multiply_variable, etc
+		}
+		add_entry = { #+10% Opinion
+			name = GE_opinion_modifier
+			export_to_variable = {
+				variable_name = ai_value
+				value = opinion
+				who = FROM 
+				with = ROOT  
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 0.1
+			}
+		}
+		add_entry = { #-10 base acceptance
+			name = GE_base_acceptance
+			export_to_variable = {
+				variable_name = ai_value
+				value = -1      # Which exportable value to export
+				who = ROOT                      # Who to export the value from
+				with = FROM                     # Who the ai_value is for
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 10 #10
+			}
+		}
+		add_entry = { #-10 if not Allied Player
+			name = GE_not_willing
+			limit = {
+				ROOT = {
+					ai = no
+				}
+				NOT = {
+					FROM = {
+						OR = {
+							alliance_with = ROOT
+							AND = {
+								is_trade_league_leader = yes
+								is_in_trade_league_with = ROOT
+							}
+							AND = {
+								ROOT = {
+									is_trade_league_leader = yes
+								}
+								is_in_trade_league_with = ROOT
+							}
+							is_subject_of = ROOT
+						}
+					}
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = -1      # Which exportable value to export
+				who = ROOT                      # Who to export the value from
+				with = FROM                     # Who the ai_value is for
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 10
+			}
+		}
+		add_entry = { #-100 if not Allied AI
+			name = GE_not_willing
+			limit = {
+				ROOT = {
+					ai = yes
+				}
+				NOT = {
+					FROM = {
+						OR = {
+							alliance_with = ROOT
+							AND = {
+								is_trade_league_leader = yes
+								is_in_trade_league_with = ROOT
+							}
+							AND = {
+								ROOT = {
+									is_trade_league_leader = yes
+								}
+								is_in_trade_league_with = ROOT
+							}
+						}
+					}
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = -1      # Which exportable value to export
+				who = ROOT                      # Who to export the value from
+				with = FROM                     # Who the ai_value is for
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 100
+			}
+		}
+		add_entry = { #-100 if broken trade treaty
+			name = GE_angry_merchants
+			limit = {
+				FROM = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = GE_Cancel_Trade_Deal_Angry
+					}
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = -1      # Which exportable value to export
+				who = ROOT                      # Who to export the value from
+				with = FROM                     # Who the ai_value is for
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 100
+			}
+		}
+		add_entry = { #+5 Merchant Republic
+			name = GE_merchant_republic
+			limit = {
+				FROM = {
+					has_government_attribute = is_merchant_republic
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = 1      # Which exportable value to export
+				who = ROOT                      # Who to export the value from
+				with = FROM                     # Who the ai_value is for
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 5
+			}
+		}
+	}
+
+	ai_will_do = { # this is a trigger
+		FROM = {
+			OR = {
+				alliance_with = ROOT
+				AND = {
+					is_trade_league_leader = yes
+					is_in_trade_league_with = ROOT
+				}
+				AND = {
+					ROOT = {
+						is_trade_league_leader = yes
+					}
+					is_in_trade_league_with = ROOT
+				}
+			}
+		}
+	}
+}
+
+offer_trade_deal_mining_imports = {
+	category = trade
+
+    alert_index = 34 #27             # The alert to use for the action. Refer to static_actions for the indexes. Optional.
+	alert_tooltip = ICON_GE_TD         # The localisation key to display in the alert tooltip. Optional.
+	
+	require_acceptance = yes
+
+	is_visible = {
+		has_global_modifier_value = {
+			which = trade_deals_slots
+			value = 1
+		}
+		NOT = {
+			OR = {
+				AND = {
+					FROM = {
+						has_country_flag = GE_Trade_Deal_With_@Root
+					}
+					ROOT = {
+						has_country_flag = GE_Trade_Deal_From_@From
+					}
+				}
+				AND = {
+					FROM = {
+						has_country_flag = GE_Trade_Deal_From_@Root
+					}
+					ROOT = {
+						has_country_flag = GE_Trade_Deal_With_@From
+					}
+				}
+			}
+		}
+	}
+	is_allowed = {
+		Trade_Deals_Allowed = yes
+		FROM = {
+			custom_trigger_tooltip = {
+				tooltip = GE_FROM_produces_enough_mining_goods
+				check_variable = {
+					which = GE_percentage_of_mining_goods
+					value = 20
+				}
+			}
+		}
+		hidden_trigger = {
+			NOT = {
+				OR = {
+					AND = {
+						FROM = {
+							has_country_flag = GE_Trade_Deal_With_@Root
+						}
+						ROOT = {
+							has_country_flag = GE_Trade_Deal_From_@Root
+						}
+					}
+					AND = {
+						FROM = {
+							has_country_flag = GE_Trade_Deal_From_@Root
+						}
+						ROOT = {
+							has_country_flag = GE_Trade_Deal_With_@Root
+						}
+					}
+				}
+			}
+		}
+	}
+	on_accept = {
+		FROM = {
+			set_country_flag = GE_Trade_Deal_From_@Root
+			set_country_flag = GE_Mining_Trade_Deal_From_@Root
+			change_variable = {
+				which = GE_num_of_outgoing_mining_trade
+				value = 1
+			}
+			add_export_effect = yes	
+		}
+		ROOT = {
+			set_country_flag = GE_Trade_Deal_With_@From
+			set_country_flag = GE_Mining_Trade_Deal_With_@From
+			set_country_flag = GE_Initiated_Trade_Deal_With_@From
+			change_variable = {
+				which = GE_num_of_incoming_mining_trade
+				value = 1
+			}
+			change_variable = {
+				which = GE_num_of_total_trade
+				value = 1
+			}
+			add_import_effect = yes
+		}
+	}
+	on_decline = {
+	}
+
+	ai_acceptance = { # This works similarly to variable_arithmetic_trigger, but does not support triggers generally. Instead, "limit" will be evaluated first and the rest ignored if it isn't passed.
+		add_entry = {#+3*DipRep
+			name = GE_diplomatic_reputation    # The localisation key to display for this factor
+			
+			# ai_value MUST always be created within an entry first.
+			export_to_variable = {
+				variable_name = ai_value
+				value = modifier:diplomatic_reputation      # Which exportable value to export
+				who = ROOT                      # Who to export the value from
+				with = FROM                     # Who the ai_value is for
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 3
+			}
+			# You can then change ai_value with effects such as multiply_variable, etc
+		}
+		add_entry = { #+20% Opinion
+			name = GE_opinion_modifier
+			export_to_variable = {
+				variable_name = ai_value
+				value = opinion
+				who = FROM 
+				with = ROOT  
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 0.1
+			}
+		}
+		add_entry = { #-10 base acceptance
+			name = GE_base_acceptance
+			export_to_variable = {
+				variable_name = ai_value
+				value = -1      # Which exportable value to export
+				who = ROOT                      # Who to export the value from
+				with = FROM                     # Who the ai_value is for
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 10 #10
+			}
+		}
+		add_entry = { #-10 if not Allied Player
+			name = GE_not_willing
+			limit = {
+				ROOT = {
+					ai = no
+				}
+				NOT = {
+					FROM = {
+						OR = {
+							alliance_with = ROOT
+							AND = {
+								is_trade_league_leader = yes
+								is_in_trade_league_with = ROOT
+							}
+							AND = {
+								ROOT = {
+									is_trade_league_leader = yes
+								}
+								is_in_trade_league_with = ROOT
+							}
+							is_subject_of = ROOT
+						}
+					}
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = -1      # Which exportable value to export
+				who = ROOT                      # Who to export the value from
+				with = FROM                     # Who the ai_value is for
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 10
+			}
+		}
+		add_entry = { #-100 if not Allied AI
+			name = GE_not_willing
+			limit = {
+				ROOT = {
+					ai = yes
+				}
+				NOT = {
+					FROM = {
+						OR = {
+							alliance_with = ROOT
+							AND = {
+								is_trade_league_leader = yes
+								is_in_trade_league_with = ROOT
+							}
+							AND = {
+								ROOT = {
+									is_trade_league_leader = yes
+								}
+								is_in_trade_league_with = ROOT
+							}
+						}
+					}
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = -1      # Which exportable value to export
+				who = ROOT                      # Who to export the value from
+				with = FROM                     # Who the ai_value is for
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 100
+			}
+		}
+		add_entry = { #-100 if broken trade treaty
+			name = GE_angry_merchants
+			limit = {
+				FROM = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = GE_Cancel_Trade_Deal_Angry
+					}
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = -1      # Which exportable value to export
+				who = ROOT                      # Who to export the value from
+				with = FROM                     # Who the ai_value is for
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 100
+			}
+		}
+		add_entry = { #-15 Merchant Republic
+			name = GE_merchant_republic
+			limit = {
+				FROM = {
+					has_government_attribute = is_merchant_republic
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = -1      # Which exportable value to export
+				who = ROOT                      # Who to export the value from
+				with = FROM                     # Who the ai_value is for
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 15
+			}
+		}
+	}
+
+	ai_will_do = { # this is a trigger
+		FROM = {
+			OR = {
+				alliance_with = ROOT
+				AND = {
+					is_trade_league_leader = yes
+					is_in_trade_league_with = ROOT
+				}
+				AND = {
+					ROOT = {
+						is_trade_league_leader = yes
+					}
+					is_in_trade_league_with = ROOT
+				}
+			}
+		}
+	}
+}
+
+offer_trade_deal_plantation_exports = {
+	category = trade
+
+    alert_index = 34 #27             # The alert to use for the action. Refer to static_actions for the indexes. Optional.
+	alert_tooltip = ICON_GE_TD         # The localisation key to display in the alert tooltip. Optional.
+	
+	require_acceptance = yes
+
+	is_visible = {
+		has_global_modifier_value = {
+			which = trade_deals_slots
+			value = 1
+		}
+		NOT = {
+			OR = {
+				AND = {
+					FROM = {
+						has_country_flag = GE_Trade_Deal_With_@Root
+					}
+					ROOT = {
+						has_country_flag = GE_Trade_Deal_From_@From
+					}
+				}
+				AND = {
+					FROM = {
+						has_country_flag = GE_Trade_Deal_From_@Root
+					}
+					ROOT = {
+						has_country_flag = GE_Trade_Deal_With_@From
+					}
+				}
+			}
+		}
+	}
+	is_allowed = {
+		Trade_Deals_Allowed = yes
+		ROOT = {
+			custom_trigger_tooltip = {
+				tooltip = GE_ROOT_produces_enough_plantation_goods
+				check_variable = {
+					which = GE_percentage_of_plantation_goods
+					value = 10
+				}
+			}
+		}
+		hidden_trigger = {
+			NOT = {
+				OR = {
+					AND = {
+						FROM = {
+							has_country_flag = GE_Trade_Deal_With_@Root
+						}
+						ROOT = {
+							has_country_flag = GE_Trade_Deal_From_@Root
+						}
+					}
+					AND = {
+						FROM = {
+							has_country_flag = GE_Trade_Deal_From_@Root
+						}
+						ROOT = {
+							has_country_flag = GE_Trade_Deal_With_@Root
+						}
+					}
+				}
+			}
+		}
+	}
+	on_accept = {
+		FROM = {
+			set_country_flag = GE_Trade_Deal_With_@Root
+			set_country_flag = GE_Plantation_Trade_Deal_With@Root
+			change_variable = {
+				which = GE_num_of_incoming_plantation_trade
+				value = 1
+			}
+			add_import_effect = yes
+		}
+		ROOT = {
+			set_country_flag = GE_Trade_Deal_From_@From
+			set_country_flag = GE_Initiated_Trade_Deal_With_@From
+			set_country_flag = GE_Plantation_Trade_Deal_From_@From
+			change_variable = {
+				which = GE_num_of_outgoing_plantation_trade
+				value = 1
+			}
+			change_variable = {
+				which = GE_num_of_total_trade
+				value = 1
+			}
+			add_export_effect = yes
+		}
+	}
+	on_decline = {
+	}
+
+	ai_acceptance = { # This works similarly to variable_arithmetic_trigger, but does not support triggers generally. Instead, "limit" will be evaluated first and the rest ignored if it isn't passed.
+		add_entry = {#+3*DipRep
+			name = GE_diplomatic_reputation    # The localisation key to display for this factor
+			
+			# ai_value MUST always be created within an entry first.
+			export_to_variable = {
+				variable_name = ai_value
+				value = modifier:diplomatic_reputation      # Which exportable value to export
+				who = ROOT                      # Who to export the value from
+				with = FROM                     # Who the ai_value is for
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 3
+			}
+			# You can then change ai_value with effects such as multiply_variable, etc
+		}
+		add_entry = { #+10% Opinion
+			name = GE_opinion_modifier
+			export_to_variable = {
+				variable_name = ai_value
+				value = opinion
+				who = FROM 
+				with = ROOT  
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 0.1
+			}
+		}
+		add_entry = { #-10 base acceptance
+			name = GE_base_acceptance
+			export_to_variable = {
+				variable_name = ai_value
+				value = -1      # Which exportable value to export
+				who = ROOT                      # Who to export the value from
+				with = FROM                     # Who the ai_value is for
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 10 #10
+			}
+		}
+		add_entry = { #-10 if not Allied Player
+			name = GE_not_willing
+			limit = {
+				ROOT = {
+					ai = no
+				}
+				NOT = {
+					FROM = {
+						OR = {
+							alliance_with = ROOT
+							AND = {
+								is_trade_league_leader = yes
+								is_in_trade_league_with = ROOT
+							}
+							AND = {
+								ROOT = {
+									is_trade_league_leader = yes
+								}
+								is_in_trade_league_with = ROOT
+							}
+							is_subject_of = ROOT
+						}
+					}
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = -1      # Which exportable value to export
+				who = ROOT                      # Who to export the value from
+				with = FROM                     # Who the ai_value is for
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 10
+			}
+		}
+		add_entry = { #-100 if not Allied AI
+			name = GE_not_willing
+			limit = {
+				ROOT = {
+					ai = yes
+				}
+				NOT = {
+					FROM = {
+						OR = {
+							alliance_with = ROOT
+							AND = {
+								is_trade_league_leader = yes
+								is_in_trade_league_with = ROOT
+							}
+							AND = {
+								ROOT = {
+									is_trade_league_leader = yes
+								}
+								is_in_trade_league_with = ROOT
+							}
+						}
+					}
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = -1      # Which exportable value to export
+				who = ROOT                      # Who to export the value from
+				with = FROM                     # Who the ai_value is for
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 100
+			}
+		}
+		add_entry = { #-100 if broken trade treaty
+			name = GE_angry_merchants
+			limit = {
+				FROM = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = GE_Cancel_Trade_Deal_Angry
+					}
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = -1      # Which exportable value to export
+				who = ROOT                      # Who to export the value from
+				with = FROM                     # Who the ai_value is for
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 100
+			}
+		}
+		add_entry = { #+5 Merchant Republic
+			name = GE_merchant_republic
+			limit = {
+				FROM = {
+					has_government_attribute = is_merchant_republic
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = 1      # Which exportable value to export
+				who = ROOT                      # Who to export the value from
+				with = FROM                     # Who the ai_value is for
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 5
+			}
+		}
+	}
+
+	ai_will_do = { # this is a trigger
+		FROM = {
+			OR = {
+				alliance_with = ROOT
+				AND = {
+					is_trade_league_leader = yes
+					is_in_trade_league_with = ROOT
+				}
+				AND = {
+					ROOT = {
+						is_trade_league_leader = yes
+					}
+					is_in_trade_league_with = ROOT
+				}
+			}
+		}
+	}
+}
+
+offer_trade_deal_plantation_imports = {
+	category = trade
+
+    alert_index = 34 #27             # The alert to use for the action. Refer to static_actions for the indexes. Optional.
+	alert_tooltip = ICON_GE_TD         # The localisation key to display in the alert tooltip. Optional.
+	
+	require_acceptance = yes
+
+	is_visible = {
+		has_global_modifier_value = {
+			which = trade_deals_slots
+			value = 1
+		}
+		NOT = {
+			OR = {
+				AND = {
+					FROM = {
+						has_country_flag = GE_Trade_Deal_With_@Root
+					}
+					ROOT = {
+						has_country_flag = GE_Trade_Deal_From_@From
+					}
+				}
+				AND = {
+					FROM = {
+						has_country_flag = GE_Trade_Deal_From_@Root
+					}
+					ROOT = {
+						has_country_flag = GE_Trade_Deal_With_@From
+					}
+				}
+			}
+		}
+	}
+	is_allowed = {
+		Trade_Deals_Allowed = yes
+		FROM = {
+			custom_trigger_tooltip = {
+				tooltip = GE_FROM_produces_enough_plantation_goods
+				check_variable = {
+					which = GE_percentage_of_plantation_goods
+					value = 10
+				}
+			}
+		}
+		hidden_trigger = {
+			NOT = {
+				OR = {
+					AND = {
+						FROM = {
+							has_country_flag = GE_Trade_Deal_With_@Root
+						}
+						ROOT = {
+							has_country_flag = GE_Trade_Deal_From_@Root
+						}
+					}
+					AND = {
+						FROM = {
+							has_country_flag = GE_Trade_Deal_From_@Root
+						}
+						ROOT = {
+							has_country_flag = GE_Trade_Deal_With_@Root
+						}
+					}
+				}
+			}
+		}
+	}
+	on_accept = {
+		FROM = {
+			set_country_flag = GE_Trade_Deal_From_@Root
+			set_country_flag = GE_Plantation_Trade_Deal_From_@Root
+			change_variable = {
+				which = GE_num_of_outgoing_plantation_trade
+				value = 1
+			}
+			add_export_effect = yes	
+		}
+		ROOT = {
+			set_country_flag = GE_Trade_Deal_With_@From
+			set_country_flag = GE_Plantation_Trade_Deal_With_@From
+			set_country_flag = GE_Initiated_Trade_Deal_With_@From
+			change_variable = {
+				which = GE_num_of_incoming_plantation_trade
+				value = 1
+			}
+			change_variable = {
+				which = GE_num_of_total_trade
+				value = 1
+			}
+			add_import_effect = yes
+		}
+	}
+	on_decline = {
+	}
+
+	ai_acceptance = { # This works similarly to variable_arithmetic_trigger, but does not support triggers generally. Instead, "limit" will be evaluated first and the rest ignored if it isn't passed.
+		add_entry = {#+3*DipRep
+			name = GE_diplomatic_reputation    # The localisation key to display for this factor
+			
+			# ai_value MUST always be created within an entry first.
+			export_to_variable = {
+				variable_name = ai_value
+				value = modifier:diplomatic_reputation      # Which exportable value to export
+				who = ROOT                      # Who to export the value from
+				with = FROM                     # Who the ai_value is for
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 3
+			}
+			# You can then change ai_value with effects such as multiply_variable, etc
+		}
+		add_entry = { #+10% Opinion
+			name = GE_opinion_modifier
+			export_to_variable = {
+				variable_name = ai_value
+				value = opinion
+				who = FROM 
+				with = ROOT  
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 0.1
+			}
+		}
+		add_entry = { #-10 base acceptance
+			name = GE_base_acceptance
+			export_to_variable = {
+				variable_name = ai_value
+				value = -1      # Which exportable value to export
+				who = ROOT                      # Who to export the value from
+				with = FROM                     # Who the ai_value is for
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 10 #10
+			}
+		}
+		add_entry = { #-10 if not Allied Player
+			name = GE_not_willing
+			limit = {
+				ROOT = {
+					ai = no
+				}
+				NOT = {
+					FROM = {
+						OR = {
+							alliance_with = ROOT
+							AND = {
+								is_trade_league_leader = yes
+								is_in_trade_league_with = ROOT
+							}
+							AND = {
+								ROOT = {
+									is_trade_league_leader = yes
+								}
+								is_in_trade_league_with = ROOT
+							}
+							is_subject_of = ROOT
+						}
+					}
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = -1      # Which exportable value to export
+				who = ROOT                      # Who to export the value from
+				with = FROM                     # Who the ai_value is for
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 10
+			}
+		}
+		add_entry = { #-100 if not Allied AI
+			name = GE_not_willing
+			limit = {
+				ROOT = {
+					ai = yes
+				}
+				NOT = {
+					FROM = {
+						OR = {
+							alliance_with = ROOT
+							AND = {
+								is_trade_league_leader = yes
+								is_in_trade_league_with = ROOT
+							}
+							AND = {
+								ROOT = {
+									is_trade_league_leader = yes
+								}
+								is_in_trade_league_with = ROOT
+							}
+							is_subject_of = ROOT
+						}
+					}
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = -1      # Which exportable value to export
+				who = ROOT                      # Who to export the value from
+				with = FROM                     # Who the ai_value is for
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 100
+			}
+		}
+		add_entry = { #-100 if broken trade treaty
+			name = GE_angry_merchants
+			limit = {
+				FROM = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = GE_Cancel_Trade_Deal_Angry
+					}
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = -1      # Which exportable value to export
+				who = ROOT                      # Who to export the value from
+				with = FROM                     # Who the ai_value is for
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 100
+			}
+		}
+		add_entry = { #-15 Merchant Republic
+			name = GE_merchant_republic
+			limit = {
+				FROM = {
+					has_government_attribute = is_merchant_republic
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = -1      # Which exportable value to export
+				who = ROOT                      # Who to export the value from
+				with = FROM                     # Who the ai_value is for
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 15
+			}
+		}
+	}
+
+	ai_will_do = { # this is a trigger
+		FROM = {
+			OR = {
+				alliance_with = ROOT
+				AND = {
+					is_trade_league_leader = yes
+					is_in_trade_league_with = ROOT
+				}
+				AND = {
+					ROOT = {
+						is_trade_league_leader = yes
+					}
+					is_in_trade_league_with = ROOT
+				}
+			}
+		}
+	}
+}
+
+cancel_trade_deal_generic = {
+	category = trade
+	require_acceptance = no
+	is_visible = {
+		OR = {
+			AND = {
+				FROM = {
+					has_country_flag = GE_Trade_Deal_With_@Root
+				}
+				ROOT = {
+					has_country_flag = GE_Trade_Deal_From_@From
+				}
+			}
+			AND = {
+				FROM = {
+					has_country_flag = GE_Trade_Deal_From_@Root
+				}
+				ROOT = {
+					has_country_flag = GE_Trade_Deal_With_@From
+				}
+			}
+		}
+	}
+	is_allowed = {
+		hidden_trigger = {
+			OR = {
+				AND = {
+					FROM = {
+						has_country_flag = GE_Trade_Deal_With_@Root
+					}
+					ROOT = {
+						has_country_flag = GE_Trade_Deal_From_@From
+					}
+				}
+				AND = {
+					FROM = {
+						has_country_flag = GE_Trade_Deal_From_@Root
+					}
+					ROOT = {
+						has_country_flag = GE_Trade_Deal_With_@From
+					}
+				}
+			}
+		}
+	}
+	on_accept = {
+		FROM = {
+			if = {
+				limit = {
+					has_country_flag = GE_Trade_Deal_With_@Root
+				}
+				change_variable = {
+					which = GE_num_of_incoming_trade
+					value = -1
+				}
+				add_import_effect = yes
+				clr_country_flag = GE_Trade_Deal_With_@Root
+			}
+			if = {
+				limit = {
+					has_country_flag = GE_Trade_Deal_From_@Root
+				}
+				change_variable = {
+					which = GE_num_of_outgoing_trade
+					value = -1
+				}
+				add_export_effect = yes
+				clr_country_flag = GE_Trade_Deal_From_@Root
+			}	
+			if = {
+				limit = {
+					has_country_flag = GE_Initiated_Trade_Deal_With_@Root
+				}
+				change_variable = {
+					which = GE_num_of_total_trade
+					value = -1
+				}
+				clr_country_flag = GE_Initiated_Trade_Deal_With_@Root
+			}
+			if = {
+				limit = {
+					has_country_flag = GE_Rural_Trade_Deal_From_@Root
+				}
+				change_variable = {
+					which = GE_num_of_outgoing_rural_trade
+					value = -1
+				}
+				add_export_effect = yes
+				clr_country_flag = GE_Rural_Trade_Deal_From_@Root
+			}
+			if = {
+				limit = {
+					has_country_flag = GE_Urban_Trade_Deal_From_@Root
+				}
+				change_variable = {
+					which = GE_num_of_outgoing_urban_trade
+					value = -1
+				}
+				add_export_effect = yes
+				clr_country_flag = GE_Urban_Trade_Deal_From_@Root
+			}
+			if = {
+				limit = {
+					has_country_flag = GE_Mining_Trade_Deal_From_@Root
+				}
+				change_variable = {
+					which = GE_num_of_outgoing_mining_trade
+					value = -1
+				}
+				add_export_effect = yes
+				clr_country_flag = GE_Mining_Trade_Deal_From_@Root
+			}
+			if = {
+				limit = {
+					has_country_flag = GE_Plantation_Trade_Deal_From_@Root
+				}
+				change_variable = {
+					which = GE_num_of_outgoing_plantation_trade
+					value = -1
+				}
+				add_export_effect = yes
+				clr_country_flag = GE_Plantation_Trade_Deal_From_@Root
+			}
+			if = {
+				limit = {
+					has_country_flag = GE_Rural_Trade_Deal_With_@ROOT
+				}
+				change_variable = {
+					which = GE_num_of_incoming_rural_trade
+					value = -1
+				}
+				clr_country_flag = GE_Rural_Trade_Deal_With_@ROOT
+				add_import_effect = yes
+			}
+			if = {
+				limit = {
+					has_country_flag = GE_Urban_Trade_Deal_With_@ROOT
+				}
+				change_variable = {
+					which = GE_num_of_incoming_urban_trade
+					value = -1
+				}
+				clr_country_flag = GE_Urban_Trade_Deal_With_@ROOT
+				add_import_effect = yes
+			}
+			if = {
+				limit = {
+					has_country_flag = GE_Mining_Trade_Deal_With_@ROOT
+				}
+				change_variable = {
+					which = GE_num_of_incoming_mining_trade
+					value = -1
+				}
+				clr_country_flag = GE_Mining_Trade_Deal_With_@ROOT
+				add_import_effect = yes
+			}
+			if = {
+				limit = {
+					has_country_flag = GE_Plantation_Trade_Deal_With_@ROOT
+				}
+				change_variable = {
+					which = GE_num_of_incoming_plantation_trade
+					value = -1
+				}
+				clr_country_flag = GE_Plantation_Trade_Deal_With_@ROOT
+				add_import_effect = yes
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = GE_Cancel_Trade_Deal_Angry
+			}
+		}
+		ROOT = {
+			if = {
+				limit = {
+					has_country_flag = GE_Trade_Deal_With_@From
+				}
+				change_variable = {
+					which = GE_num_of_incoming_trade
+					value = -1
+				}
+				# change_variable = {
+				# 	which = GE_num_of_total_trade
+				# 	value = -1
+				# }
+				add_import_effect = yes
+				clr_country_flag = GE_Trade_Deal_With_@From
+			}
+			if = {
+				limit = {
+					has_country_flag = GE_Trade_Deal_From_@From
+				}
+				change_variable = {
+					which = GE_num_of_outgoing_trade
+					value = -1
+				}
+				# change_variable = {
+				# 	which = GE_num_of_total_trade
+				# 	value = -1
+				# }
+				add_export_effect = yes
+				clr_country_flag = GE_Trade_Deal_From_@From
+			}
+			if = {
+				limit = {
+					has_country_flag = GE_Initiated_Trade_Deal_With_@From
+				}
+				change_variable = {
+					which = GE_num_of_total_trade
+					value = -1
+				}
+				clr_country_flag = GE_Initiated_Trade_Deal_With_@From
+			}
+			if = {
+				limit = {
+					has_country_flag = GE_Rural_Trade_Deal_From_@From
+				}
+				change_variable = {
+					which = GE_num_of_outgoing_rural_trade
+					value = -1
+				}
+				add_export_effect = yes
+				clr_country_flag = GE_Rural_Trade_Deal_From_@From
+			}
+			if = {
+				limit = {
+					has_country_flag = GE_Urban_Trade_Deal_From_@From
+				}
+				change_variable = {
+					which = GE_num_of_outgoing_urban_trade
+					value = -1
+				}
+				add_export_effect = yes
+				clr_country_flag = GE_Urban_Trade_Deal_From_@From
+			}
+			if = {
+				limit = {
+					has_country_flag = GE_Mining_Trade_Deal_From_@From
+				}
+				change_variable = {
+					which = GE_num_of_outgoing_mining_trade
+					value = -1
+				}
+				add_export_effect = yes
+				clr_country_flag = GE_Mining_Trade_Deal_From_@From
+			}
+			if = {
+				limit = {
+					has_country_flag = GE_Plantation_Trade_Deal_From_@From
+				}
+				change_variable = {
+					which = GE_num_of_outgoing_plantation_trade
+					value = -1
+				}
+				add_export_effect = yes
+				clr_country_flag = GE_Plantation_Trade_Deal_From_@From
+			}
+			if = {
+				limit = {
+					has_country_flag = GE_Rural_Trade_Deal_With_@From
+				}
+				change_variable = {
+					which = GE_num_of_incoming_rural_trade
+					value = -1
+				}
+				clr_country_flag = GE_Rural_Trade_Deal_With_@From
+				add_import_effect = yes
+			}
+			if = {
+				limit = {
+					has_country_flag = GE_Urban_Trade_Deal_With_@From
+				}
+				change_variable = {
+					which = GE_num_of_incoming_urban_trade
+					value = -1
+				}
+				clr_country_flag = GE_Urban_Trade_Deal_With_@From
+				add_import_effect = yes
+			}
+			if = {
+				limit = {
+					has_country_flag = GE_Mining_Trade_Deal_With_@From
+				}
+				change_variable = {
+					which = GE_num_of_incoming_mining_trade
+					value = -1
+				}
+				clr_country_flag = GE_Mining_Trade_Deal_With_@From
+				add_import_effect = yes
+			}
+			if = {
+				limit = {
+					has_country_flag = GE_Plantation_Trade_Deal_With_@From
+				}
+				change_variable = {
+					which = GE_num_of_incoming_plantation_trade
+					value = -1
+				}
+				clr_country_flag = GE_Plantation_Trade_Deal_With_@From
+				add_import_effect = yes
+			}
+		}
+	}
+	ai_will_do = { # this is a trigger
+		AND = {
+			NOT = {
+				FROM = {
+					has_opinion = {
+						who = ROOT
+						value = 100
+					}
+				}
+			}
+			NOT = {
+				FROM = {
+					OR = {
+						alliance_with = ROOT
+						AND = {
+							is_trade_league_leader = yes
+							is_in_trade_league_with = ROOT
+						}
+						AND = {
+							ROOT = {
+								is_trade_league_leader = yes
+							}
+							is_in_trade_league_with = ROOT
+						}
+					}
+				}
+			}
+		}
+		# variable_arithmetic_trigger = {
+		# 	export_to_variable = {
+		# 		variable_name = GE_Cancel_Trade_Deal_DipRep
+		# 		value = modifier:diplomatic_reputation      # Which exportable value to export
+		# 		who = ROOT                      # Who to export the value from
+		# 	}
+		# 	export_to_variable = {
+		# 		variable_name = GE_Cancel_Trade_Deal_Opinion
+		# 		value = opinion
+		# 		who = FROM 
+		# 		with = ROOT  
+		# 	}
+		# 	multiply_variable = {
+		# 		which = GE_Cancel_Trade_Deal_DipRep
+		# 		value = 3
+		# 	}
+		# 	multiply_variable = {
+		# 		which = GE_Cancel_Trade_Deal_Opinion
+		# 		value = 0.1
+		# 	}
+		# 	export_to_variable = {
+		# 		variable_name = GE_Cancel_Trade_Deal_Total
+		# 		value = 0
+		# 	}
+		# 	if = { #ALLY
+		# 		limit = {
+		# 			FROM = {
+		# 				OR = {
+		# 					alliance_with = ROOT
+		# 					AND = {
+		# 						is_trade_league_leader = yes
+		# 						is_in_trade_league_with = ROOT
+		# 					}
+		# 					AND = {
+		# 						ROOT = {
+		# 							is_trade_league_leader = yes
+		# 						}
+		# 						is_in_trade_league_with = ROOT
+		# 					}
+		# 				}
+		# 			}
+		# 		}
+		# 		change_variable = {
+		# 			which = GE_Cancel_Trade_Deal_Total
+		# 			value = 10
+		# 		}
+		# 	}
+		# 	if = { #MR
+		# 		limit = {
+		# 			FROM = {
+		# 				has_government_attribute = is_merchant_republic
+		# 			}
+		# 		}
+		# 		change_variable = {
+		# 			which = GE_Cancel_Trade_Deal_Total
+		# 			value = 5
+		# 		}
+		# 	}
+		# 	change_variable = {
+		# 		which = GE_Cancel_Trade_Deal_Total
+		# 		which = GE_Cancel_Trade_Deal_DipRep
+		# 	}
+		# 	change_variable = {
+		# 		which = GE_Cancel_Trade_Deal_Total
+		# 		which = GE_Cancel_Trade_Deal_Opinion
+		# 	}
+		# 	NOT = { #under 20 = cancel
+		# 		check_variable = {
+		# 			which = GE_Cancel_Trade_Deal_Total
+		# 			value = 20
+		# 		}
+		# 	}
+		# }
+	}
+}
+
+#country specific new diplomatic actions
+#Andalusia
+#ADU_send_religious_mission = {
+#	category = influence
+#
+#	require_acceptance = no
+#
+#	is_visible = {
+#		has_country_flag = GRA_religious_mission_flag
+#		FROM = {
+#			is_primitive = yes
+#		}
+#	}
+#	
+#	is_allowed = {
+#		hidden_trigger = {
+#			has_country_flag = GRA_religious_mission_flag
+#			FROM = {
+#				is_primitive = yes
+#			}
+#		}
+#		FROM = {
+#			NOT = { religion_group = muslim }
+#		#	custom_trigger_tooltip = { #missing a tooltip : TODO
+#				NOT = { has_country_flag = GRA_religious_mission_sent_here }
+#		#	}
+#		}
+#		
+#	}
+#	
+#	on_accept = {
+#		add_dip_power = -50
+#		FROM = {
+#			save_event_target_as = Granada_that_target
+#			set_country_flag = GRA_religious_mission_sent_here
+#		}
+#		set_country_flag = GRA_running_a_religious_mission
+#		country_event = { id = ME_Granada_Events.48 }
+#	}
+#	
+#	ai_will_do = {
+#		NOT = { has_country_flag = GRA_running_a_religious_mission }
+#	}
+#}
+
+#Austrian
+austria_increase_relations = {
+	category = influence
+
+	require_acceptance = no
+
+	is_visible = {
+		has_government_mechanic = habsburg_glory
+		dynasty = "von Habsburg"
+	}
+
+	is_allowed = {
+		hidden_trigger = {
+			has_government_mechanic = habsburg_glory
+			dynasty = "von Habsburg"
+		}
+		has_government_power = {
+			mechanic_type = habsburg_glory
+			power_type = habsburg_glory_power
+			value = 20
+		}
+	}
+
+	on_accept = {
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = me_hab_spent_glory
+			}
+		}
+		HAB_change_habsburg_glory = { remove = 20 }
+		clr_country_flag = me_hab_improved_relations
+		set_country_flag = me_hab_improved_relations
+	}
+
+	ai_will_do = {
+		has_government_power = {
+			mechanic_type = habsburg_glory
+			power_type = habsburg_glory_power
+			value = 60
+		}
+		FROM = {
+			is_elector = yes
+			NOT = { preferred_emperor = ROOT }
+		}
+		OR = {
+			NOT = { has_country_flag = me_hab_add_favors }
+			had_country_flag = { flag = me_hab_add_favors days = 1825 }
+		}
+	}
+}
+
+austria_add_favors = {
+	category = influence
+
+	require_acceptance = no
+
+	is_visible = {
+		has_government_mechanic = habsburg_glory
+		has_country_flag = me_hab_more_actions
+		dynasty = "von Habsburg"
+	}
+
+	is_allowed = {
+		hidden_trigger = {
+			has_government_mechanic = habsburg_glory
+			dynasty = "von Habsburg"
+		}
+		has_government_power = {
+			mechanic_type = habsburg_glory
+			power_type = habsburg_glory_power
+			value = 25
+		}
+	}
+
+	on_accept = {
+		add_favors = {
+		   who = FROM
+		   amount = 10
+		}
+		add_favors = {
+		   who = FROM
+		   amount = 5
+		}
+		HAB_change_habsburg_glory = { remove = 25 }
+		clr_country_flag = me_hab_add_favors
+		set_country_flag = me_hab_add_favors
+	}
+
+	ai_will_do = {
+		has_government_power = {
+			mechanic_type = habsburg_glory
+			power_type = habsburg_glory_power
+			value = 60
+		}
+		FROM = {
+			is_elector = yes
+			NOT = { preferred_emperor = ROOT }
+		}
+		OR = {
+			NOT = { has_country_flag = me_hab_add_favors }
+			had_country_flag = { flag = me_hab_add_favors days = 1825 }
+		}
+	}
+}
+
+austria_put_relative_as_heir = {
+	category = influence
+
+	require_acceptance = yes
+
+	is_visible = {
+		has_government_mechanic = habsburg_glory
+		dynasty = "von Habsburg"
+		FROM = {
+			government = monarchy
+			has_government_attribute = heir
+			religion_group = ROOT
+			NOT = { dynasty = ROOT }
+		}
+	}
+
+	is_allowed = {
+		hidden_trigger = {
+			has_government_mechanic = habsburg_glory
+			dynasty = "von Habsburg"
+			FROM = {
+				government = monarchy
+				has_government_attribute = heir
+				religion_group = ROOT
+				NOT = { dynasty = ROOT }
+			}
+		}
+		has_government_power = {
+			mechanic_type = habsburg_glory
+			power_type = habsburg_glory_power
+			value = 80
+		}
+		FROM = {
+			has_heir = no
+		}
+	}
+
+	on_accept = {
+		FROM = {
+			define_heir = {
+				dynasty = ROOT
+				culture = ROOT
+				religion = ROOT
+				claim = 50
+				male = yes
+				adm = 2
+				dip = 2
+				mil = 2
+				hidden = yes
+				block_disinherit = yes
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = me_hab_spread_dynasty_cheaper
+			}
+			HAB_change_habsburg_glory = { remove = 25 }
+		}
+		else = {
+			HAB_change_habsburg_glory = { remove = 50 }
+		}
+		
+		change_variable = {
+			which = MEHABUsedSpreadDynasty
+			value = 1
+		}
+	}
+
+	on_decline = {
+		FROM = {
+			clr_country_flag = declined_heir_from_@ROOT
+			set_country_flag = declined_heir_from_@ROOT
+		}
+	}
+
+	ai_acceptance = {
+		add_entry = {
+			name = HAB_FROM_ATTITUDE_TOWARDS_ROOT
+			limit = {
+				FROM = {
+					OR = {
+						ai_attitude = { who = ROOT attitude = attitude_allied }
+						ai_attitude = { who = ROOT attitude = attitude_friendly }
+					}
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 50
+			}
+		}
+		add_entry = {
+			name = HAB_FROM_ATTITUDE_TOWARDS_ROOT
+			limit = {
+				FROM = {
+					ai_attitude = { who = ROOT attitude = attitude_threatened }
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 60
+			}
+		}
+		add_entry = {
+			name = HAB_FROM_ATTITUDE_TOWARDS_ROOT
+			limit = {
+				FROM = {
+					OR = {
+						ai_attitude = { who = ROOT attitude = attitude_hostile }
+						ai_attitude = { who = ROOT attitude = attitude_rivalry }
+						ai_attitude = { who = ROOT attitude = attitude_outraged }
+					}
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 1000
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = HAB_FROM_ROOT_ARE_RIVALS
+			limit = {
+				OR = {
+					is_rival = FROM
+					is_enemy = FROM
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 1000
+			}
+			divide_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = HAB_FROM_HAS_MARRIAGE_WITH_ROOT
+			limit = {
+				marriage_with = FROM
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 10
+			}
+		}
+		add_entry = {
+			name = HAB_ROOT_FROM_NOT_SAME_RELIGION
+			limit = {
+				NOT = { religion = FROM }
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 50
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = OPINION
+			export_to_variable = {
+				which = ai_value
+				value = opinion
+				who = FROM
+				with = ROOT
+			}
+		}
+		add_entry = {
+			name = HAB_ROOT_FROM_ARE_HISTORICAL_FRIENDS
+			limit = {
+				FROM = {
+					historical_friend_with = ROOT
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 10
+			}
+		}
+		add_entry = {
+			name = HAB_ROOT_FROM_ARE_HISTORICAL_RIVALS
+			limit = {
+				FROM = {
+					historical_rival_with = ROOT
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 100
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+	}
+
+	ai_will_do = {
+		has_government_power = {
+			mechanic_type = habsburg_glory
+			power_type = habsburg_glory_power
+			value = 100
+		}
+		FROM = {
+			total_development = 200
+			religion = ROOT
+			NOT = {	historical_rival_with = ROOT }
+			NOT = { is_rival = ROOT }
+			NOT = {	is_enemy = ROOT	}
+			OR = {
+				ai_attitude = { who = ROOT attitude = attitude_allied }
+				ai_attitude = { who = ROOT attitude = attitude_friendly }
+				ai_attitude = { who = ROOT attitude = attitude_threatened }
+			}
+			OR = {
+				NOT = { has_country_flag = declined_heir_from_@ROOT }
+				had_country_flag = { flag = declined_heir_from_@ROOT days = 1825 }
+			}
+		}
+	}
+}
+
+################
+#HRE Unique ones
+################
+
+austria_establish_imperial_treasurer = {
+	category = emperor
+
+	require_acceptance = no
+
+	is_visible = {
+		has_country_flag = me_hab_new_diplo_actions
+		FROM = {
+			capital_scope = {
+				is_part_of_hre = yes
+			}
+		}
+	}
+
+	is_allowed = {
+		hidden_trigger = {
+			has_country_flag = me_hab_new_diplo_actions
+		}
+		NOT = { has_global_flag = imperial_treasurer_established }
+		NOT = { has_country_modifier = me_hab_imperial_court_chaplain }
+		NOT = { has_country_modifier = me_hab_imperial_marshall }
+	}
+
+	on_accept = {
+		hidden_effect = {
+			FROM = {
+				country_event = { id = ME_Austria_Events.58 }
+			}
+			set_global_flag = imperial_treasurer_established
+		}
+		tooltip = {
+			FROM = {
+				add_country_modifier = {
+					name = me_hab_imperial_treasurer
+					duration = -1
+				}
+			}
+		}
+	}
+
+	ai_will_do = {
+		NOT = { has_global_flag = imperial_treasurer_established }
+	}
+}
+
+austria_establish_imperial_marshall = {
+	category = emperor
+
+	require_acceptance = no
+
+	is_visible = {
+		has_country_flag = me_hab_new_diplo_actions
+		FROM = {
+			capital_scope = {
+				is_part_of_hre = yes
+			}
+		}
+	}
+
+	is_allowed = {
+		hidden_trigger = {
+			has_country_flag = me_hab_new_diplo_actions
+		}
+		NOT = { has_global_flag = imperial_marshall_established }
+		NOT = { has_country_modifier = me_hab_imperial_court_chaplain  }
+		NOT = { has_country_modifier = me_hab_imperial_treasurer }
+	}
+
+	on_accept = {
+		hidden_effect = {
+			FROM = {
+				country_event = { id = ME_Austria_Events.59 }
+			}
+			set_global_flag = imperial_marshall_established
+		}
+		tooltip = {
+			FROM = {
+				add_country_modifier = {
+					name = me_hab_imperial_marshall
+					duration = -1
+				}
+			}
+		}
+	}
+
+	ai_will_do = {
+		NOT = { has_global_flag = imperial_marshall_established }
+	}
+}
+
+austria_establish_imperial_court_chaplain = {
+	category = emperor
+
+	require_acceptance = no
+
+	is_visible = {
+		has_country_flag = me_hab_new_diplo_actions
+		FROM = {
+			capital_scope = {
+				is_part_of_hre = yes
+			}
+			government = theocracy
+		}
+	}
+
+	is_allowed = {
+		hidden_trigger = {
+			has_country_flag = me_hab_new_diplo_actions
+		}
+		NOT = { has_global_flag = imperial_court_chaplain_established }
+		NOT = { has_country_modifier = me_hab_imperial_marshall }
+		NOT = { has_country_modifier = me_hab_imperial_treasurer }
+	}
+
+	on_accept = {
+		hidden_effect = {
+			FROM = {
+				country_event = { id = ME_Austria_Events.60 }
+			}
+			set_global_flag = imperial_court_chaplain_established
+		}
+		tooltip = {
+			FROM = {
+				add_country_modifier = {
+					name = me_hab_imperial_court_chaplain
+					duration = -1
+				}
+			}
+		}
+	}
+
+	ai_will_do = {
+		NOT = { has_global_flag = imperial_court_chaplain_established }
+	}
+}
+
+##Subject stuff
+call_pu_subject = {
+	category = influence
+
+	require_acceptance = no
+
+	is_visible = {
+		FROM = {
+			is_subject_of = ROOT
+			is_subject_of_type = ME_Austrian_personal_union
+		}
+		is_at_war = yes
+		OR = {
+			is_in_war = {
+				attacker_leader = ROOT
+			}
+			is_in_war = {
+				defender_leader = ROOT
+			}
+		}
+		any_country = {
+			OR = {
+				is_in_war = {
+					attacker_leader = ROOT
+					defender_leader = THIS
+				}
+				is_in_war = {
+					attacker_leader = THIS
+					defender_leader = ROOT
+				}
+			}
+			NOT = { war_with = FROM }
+		}
+	}
+
+	is_allowed = {
+		hidden_trigger = {
+			FROM = {
+				is_subject_of = ROOT
+				is_subject_of_type = ME_Austrian_personal_union
+			}
+			is_at_war = yes
+			OR = {
+				is_in_war = {
+					attacker_leader = ROOT
+				}
+				is_in_war = {
+					defender_leader = ROOT
+				}
+			}
+			any_country = {
+				OR = {
+					is_in_war = {
+						attacker_leader = ROOT
+						defender_leader = THIS
+					}
+					is_in_war = {
+						attacker_leader = THIS
+						defender_leader = ROOT
+					}
+				}
+				NOT = { war_with = FROM }
+			}
+		}
+		FROM = { NOT = { liberty_desire = 50 } }
+	}
+
+	on_accept = {
+		if = {
+			limit = {
+				FROM = {
+					is_subject_of = ROOT
+					is_subject_of_type = ME_Austrian_personal_union
+				}
+				is_at_war = yes
+				OR = {
+					is_in_war = {
+						attacker_leader = ROOT
+					}
+					is_in_war = {
+						defender_leader = ROOT
+					}
+				}
+				any_country = {
+					OR = {
+						is_in_war = {
+							attacker_leader = ROOT
+							defender_leader = THIS
+						}
+						is_in_war = {
+							attacker_leader = THIS
+							defender_leader = ROOT
+						}
+					}
+					NOT = { war_with = FROM }
+				}
+				FROM = { NOT = { liberty_desire = 50 } }
+			}
+			FROM = {
+				add_liberty_desire = 25
+				join_all_defensive_wars_of = ROOT
+				join_all_offensive_wars_of = ROOT
+			}
+		}
+	}
+
+	ai_will_do = {
+		is_at_war = yes
+		NOT = { war_score = -20 }
+		FROM = {
+			army_size = 5
+			NOT = { liberty_desire = 30 }
+		}
+	}
+}
+
+#Crimean
+cancel_timar =  {
+	category = influence
+	require_acceptance = no
+	is_visible = {
+		overlord_of = FROM
+		FROM = {
+			is_subject_of_type = timar
+		}
+	}
+	is_allowed = {
+		always = yes
+	}
+	on_accept = {
+		add_trust = {
+			who = FROM
+			value = -100
+			mutual = yes
+		}
+		FROM = {
+			grant_independence = yes
+		}
+	}
+	ai_will_do = {
+		always = no
+	}
+}
+
+#daimyo_diplomatic_actions
+onin_war_bribe_action = {
+	category = influence
+	
+	require_acceptance = no
+	
+	is_visible = {
+		OR = {
+			tag = HSK
+			tag = YMN
+		}
+		has_global_flag = JAP_crisis
+		FROM = {
+			has_reform = daimyo
+			NOT = { tag = ASK }
+			NOT = { tag = HSK }
+			NOT = { tag = YMN }
+			ai = yes
+		}
+	}
+	
+	is_allowed = {
+		hidden_trigger = {
+			OR = {
+				tag = HSK
+				tag = YMN
+			}
+			has_global_flag = JAP_crisis
+			FROM = {
+				has_reform = daimyo
+				NOT = { tag = ASK }
+				NOT = { tag = HSK }
+				NOT = { tag = YMN }
+				ai = yes
+			}
+		}
+		treasury = 25
+		custom_trigger_tooltip = {
+			tooltip = ONIN_WAR_DIP_ACTION_ONLY_EVERY_2_YEARS
+			FROM = {
+				OR = {
+					NOT = { has_country_flag = onin_war_bribe_action_used_by_@ROOT }
+					had_country_flag = { flag = onin_war_bribe_action_used_by_@ROOT days = 730 }
+				}
+			}
+		}
+	}
+	
+	on_accept = {
+		if = {
+			limit = {
+				OR = {
+					tag = HSK
+					tag = YMN
+				}
+				has_global_flag = JAP_crisis
+				FROM = {
+					has_reform = daimyo
+					NOT = { tag = ASK }
+					NOT = { tag = HSK }
+					NOT = { tag = YMN }
+					ai = yes
+				}
+				treasury = 25
+				FROM = {
+					OR = {
+						NOT = { has_country_flag = onin_war_bribe_action_used_by_@ROOT }
+						had_country_flag = { flag = onin_war_bribe_action_used_by_@ROOT days = 730 }
+					}
+				}
+			}
+			add_treasury = -25
+			FROM = {
+				add_treasury = 25
+				if = {
+					limit = {
+						ROOT = { tag = HSK }
+					}
+					change_variable = { which = Daimyo_Support_for_HSK value = 10 }
+				}
+				else = {
+					change_variable = { which = Daimyo_Support_for_YMN value = 10 }
+				}
+				clr_country_flag = onin_war_bribe_action_used_by_@ROOT
+				set_country_flag = onin_war_bribe_action_used_by_@ROOT
+			}
+		}
+	}
+	
+	ai_will_do = {
+		treasury = 100
+		NOT = { is_rival = FROM }
+		OR = {
+			FROM = {
+				NOT = {
+					variable_arithmetic_trigger = {
+						export_to_variable = {
+							variable_name = Daimyo_Support_for_YMN_temp
+							value = 0
+						}
+						change_variable = {
+							which = Daimyo_Support_for_YMN_temp
+							which = Daimyo_Support_for_YMN
+						}
+						export_to_variable = {
+							variable_name = Daimyo_Support_for_HSK_temp
+							value = 0
+						}
+						change_variable = {
+							which = Daimyo_Support_for_HSK_temp
+							which = Daimyo_Support_for_HSK
+						}
+						
+						change_variable = {
+							which = Daimyo_Support_for_HSK_temp
+							value = 25
+						}
+
+						check_variable = {
+							which = Daimyo_Support_for_YMN_temp
+							which = Daimyo_Support_for_HSK_temp
+						}
+					}
+				}
+				NOT = {
+					variable_arithmetic_trigger = {
+						export_to_variable = {
+							variable_name = Daimyo_Support_for_YMN_temp
+							value = 0
+						}
+						change_variable = {
+							which = Daimyo_Support_for_YMN_temp
+							which = Daimyo_Support_for_YMN
+						}
+						export_to_variable = {
+							variable_name = Daimyo_Support_for_HSK_temp
+							value = 0
+						}
+						change_variable = {
+							which = Daimyo_Support_for_HSK_temp
+							which = Daimyo_Support_for_HSK
+						}
+						
+						change_variable = {
+							which = Daimyo_Support_for_YMN_temp
+							value = 25
+						}
+
+						check_variable = {
+							which = Daimyo_Support_for_HSK_temp
+							which = Daimyo_Support_for_YMN_temp
+						}
+					}
+				}
+			}
+			AND = {
+				tag = HSK
+				NOT = {
+					any_country = {
+						has_reform = daimyo
+						NOT = { tag = ASK }
+						NOT = { tag = HSK }
+						NOT = { tag = YMN }
+						ai = yes
+						NOT = {
+							variable_arithmetic_trigger = {
+								export_to_variable = {
+									variable_name = Daimyo_Support_for_YMN_temp
+									value = 0
+								}
+								change_variable = {
+									which = Daimyo_Support_for_YMN_temp
+									which = Daimyo_Support_for_YMN
+								}
+								export_to_variable = {
+									variable_name = Daimyo_Support_for_HSK_temp
+									value = 0
+								}
+								change_variable = {
+									which = Daimyo_Support_for_HSK_temp
+									which = Daimyo_Support_for_HSK
+								}
+								
+								change_variable = {
+									which = Daimyo_Support_for_HSK_temp
+									value = 25
+								}
+
+								check_variable = {
+									which = Daimyo_Support_for_YMN_temp
+									which = Daimyo_Support_for_HSK_temp
+								}
+							}
+						}
+					}
+				}
+			}
+			AND = {
+				tag = YMN
+				NOT = {
+					any_country = {
+						has_reform = daimyo
+						NOT = { tag = ASK }
+						NOT = { tag = HSK }
+						NOT = { tag = YMN }
+						ai = yes
+						NOT = {
+							variable_arithmetic_trigger = {
+								export_to_variable = {
+									variable_name = Daimyo_Support_for_YMN_temp
+									value = 0
+								}
+								change_variable = {
+									which = Daimyo_Support_for_YMN_temp
+									which = Daimyo_Support_for_YMN
+								}
+								export_to_variable = {
+									variable_name = Daimyo_Support_for_HSK_temp
+									value = 0
+								}
+								change_variable = {
+									which = Daimyo_Support_for_HSK_temp
+									which = Daimyo_Support_for_HSK
+								}
+								
+								change_variable = {
+									which = Daimyo_Support_for_HSK_temp
+									value = 25
+								}
+
+								check_variable = {
+									which = Daimyo_Support_for_YMN_temp
+									which = Daimyo_Support_for_HSK_temp
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+onin_war_send_men_action = {
+	category = influence
+	
+	require_acceptance = no
+	
+	is_visible = {
+		OR = {
+			tag = HSK
+			tag = YMN
+		}
+		has_global_flag = JAP_crisis
+		FROM = {
+			has_reform = daimyo
+			NOT = { tag = ASK }
+			NOT = { tag = HSK }
+			NOT = { tag = YMN }
+			ai = yes
+		}
+	}
+	
+	is_allowed = {
+		hidden_trigger = {
+			OR = {
+				tag = HSK
+				tag = YMN
+			}
+			has_global_flag = JAP_crisis
+			FROM = {
+				has_reform = daimyo
+				NOT = { tag = ASK }
+				NOT = { tag = HSK }
+				NOT = { tag = YMN }
+				ai = yes
+			}
+		}
+		manpower = 1
+		custom_trigger_tooltip = {
+			tooltip = ONIN_WAR_DIP_ACTION_ONLY_EVERY_2_YEARS
+			FROM = {
+				OR = {
+					NOT = { has_country_flag = onin_war_send_men_action_used_by_@ROOT }
+					had_country_flag = { flag = onin_war_send_men_action_used_by_@ROOT days = 730 }
+				}
+			}
+		}
+	}
+	
+	on_accept = {
+		if = {
+			limit = {
+				OR = {
+					tag = HSK
+					tag = YMN
+				}
+				has_global_flag = JAP_crisis
+				FROM = {
+					has_reform = daimyo
+					NOT = { tag = ASK }
+					NOT = { tag = HSK }
+					NOT = { tag = YMN }
+					ai = yes
+				}
+				manpower = 1
+				FROM = {
+					OR = {
+						NOT = { has_country_flag = onin_war_send_men_action_used_by_@ROOT }
+						had_country_flag = { flag = onin_war_send_men_action_used_by_@ROOT days = 730 }
+					}
+				}
+			}
+			add_manpower = -1
+			FROM = {
+				add_manpower = 1
+				if = {
+					limit = {
+						ROOT = { tag = HSK }
+					}
+					change_variable = { which = Daimyo_Support_for_HSK value = 10 }
+				}
+				else = {
+					change_variable = { which = Daimyo_Support_for_YMN value = 10 }
+				}
+				clr_country_flag = onin_war_send_men_action_used_by_@ROOT
+				set_country_flag = onin_war_send_men_action_used_by_@ROOT
+			}
+		}
+	}
+	
+	ai_will_do = {
+		is_at_war = no
+		manpower = 3
+		NOT = { is_rival = FROM }
+		OR = {
+			FROM = {
+				NOT = {
+					variable_arithmetic_trigger = {
+						export_to_variable = {
+							variable_name = Daimyo_Support_for_YMN_temp
+							value = 0
+						}
+						change_variable = {
+							which = Daimyo_Support_for_YMN_temp
+							which = Daimyo_Support_for_YMN
+						}
+						export_to_variable = {
+							variable_name = Daimyo_Support_for_HSK_temp
+							value = 0
+						}
+						change_variable = {
+							which = Daimyo_Support_for_HSK_temp
+							which = Daimyo_Support_for_HSK
+						}
+						
+						change_variable = {
+							which = Daimyo_Support_for_HSK_temp
+							value = 25
+						}
+
+						check_variable = {
+							which = Daimyo_Support_for_YMN_temp
+							which = Daimyo_Support_for_HSK_temp
+						}
+					}
+				}
+				NOT = {
+					variable_arithmetic_trigger = {
+						export_to_variable = {
+							variable_name = Daimyo_Support_for_YMN_temp
+							value = 0
+						}
+						change_variable = {
+							which = Daimyo_Support_for_YMN_temp
+							which = Daimyo_Support_for_YMN
+						}
+						export_to_variable = {
+							variable_name = Daimyo_Support_for_HSK_temp
+							value = 0
+						}
+						change_variable = {
+							which = Daimyo_Support_for_HSK_temp
+							which = Daimyo_Support_for_HSK
+						}
+						
+						change_variable = {
+							which = Daimyo_Support_for_YMN_temp
+							value = 25
+						}
+
+						check_variable = {
+							which = Daimyo_Support_for_HSK_temp
+							which = Daimyo_Support_for_YMN_temp
+						}
+					}
+				}
+			}
+			AND = {
+				tag = HSK
+				NOT = {
+					any_country = {
+						has_reform = daimyo
+						NOT = { tag = ASK }
+						NOT = { tag = HSK }
+						NOT = { tag = YMN }
+						ai = yes
+						NOT = {
+							variable_arithmetic_trigger = {
+								export_to_variable = {
+									variable_name = Daimyo_Support_for_YMN_temp
+									value = 0
+								}
+								change_variable = {
+									which = Daimyo_Support_for_YMN_temp
+									which = Daimyo_Support_for_YMN
+								}
+								export_to_variable = {
+									variable_name = Daimyo_Support_for_HSK_temp
+									value = 0
+								}
+								change_variable = {
+									which = Daimyo_Support_for_HSK_temp
+									which = Daimyo_Support_for_HSK
+								}
+								
+								change_variable = {
+									which = Daimyo_Support_for_HSK_temp
+									value = 25
+								}
+
+								check_variable = {
+									which = Daimyo_Support_for_YMN_temp
+									which = Daimyo_Support_for_HSK_temp
+								}
+							}
+						}
+					}
+				}
+			}
+			AND = {
+				tag = YMN
+				NOT = {
+					any_country = {
+						has_reform = daimyo
+						NOT = { tag = ASK }
+						NOT = { tag = HSK }
+						NOT = { tag = YMN }
+						ai = yes
+						NOT = {
+							variable_arithmetic_trigger = {
+								export_to_variable = {
+									variable_name = Daimyo_Support_for_YMN_temp
+									value = 0
+								}
+								change_variable = {
+									which = Daimyo_Support_for_YMN_temp
+									which = Daimyo_Support_for_YMN
+								}
+								export_to_variable = {
+									variable_name = Daimyo_Support_for_HSK_temp
+									value = 0
+								}
+								change_variable = {
+									which = Daimyo_Support_for_HSK_temp
+									which = Daimyo_Support_for_HSK
+								}
+								
+								change_variable = {
+									which = Daimyo_Support_for_HSK_temp
+									value = 25
+								}
+
+								check_variable = {
+									which = Daimyo_Support_for_YMN_temp
+									which = Daimyo_Support_for_HSK_temp
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+onin_war_send_generals_action = {
+	category = influence
+	
+	require_acceptance = no
+	
+	is_visible = {
+		OR = {
+			tag = HSK
+			tag = YMN
+		}
+		has_global_flag = JAP_crisis
+		FROM = {
+			has_reform = daimyo
+			NOT = { tag = ASK }
+			NOT = { tag = HSK }
+			NOT = { tag = YMN }
+			ai = yes
+		}
+	}
+	
+	is_allowed = {
+		hidden_trigger = {
+			OR = {
+				tag = HSK
+				tag = YMN
+			}
+			has_global_flag = JAP_crisis
+			FROM = {
+				has_reform = daimyo
+				NOT = { tag = ASK }
+				NOT = { tag = HSK }
+				NOT = { tag = YMN }
+				ai = yes
+			}
+		}
+		army_tradition = 10
+		custom_trigger_tooltip = {
+			tooltip = ONIN_WAR_DIP_ACTION_ONLY_EVERY_5_YEARS
+			FROM = {
+				OR = {
+					NOT = { has_country_flag = onin_war_send_generals_action_used_by_@ROOT }
+					had_country_flag = { flag = onin_war_send_generals_action_used_by_@ROOT days = 1825 }
+				}
+			}
+		}
+	}
+	
+	on_accept = {
+		if = {
+			limit = {
+				OR = {
+					tag = HSK
+					tag = YMN
+				}
+				has_global_flag = JAP_crisis
+				FROM = {
+					has_reform = daimyo
+					NOT = { tag = ASK }
+					NOT = { tag = HSK }
+					NOT = { tag = YMN }
+					ai = yes
+				}
+				army_tradition = 10
+				FROM = {
+					OR = {
+						NOT = { has_country_flag = onin_war_send_generals_action_used_by_@ROOT }
+						had_country_flag = { flag = onin_war_send_generals_action_used_by_@ROOT days = 1825 }
+					}
+				}
+			}
+			add_army_tradition = -10
+			FROM = {
+				add_army_tradition = 10
+				if = {
+					limit = {
+						ROOT = { tag = HSK }
+					}
+					change_variable = { which = Daimyo_Support_for_HSK value = 15 }
+				}
+				else = {
+					change_variable = { which = Daimyo_Support_for_YMN value = 15 }
+				}
+				clr_country_flag = onin_war_send_generals_action_used_by_@ROOT
+				set_country_flag = onin_war_send_generals_action_used_by_@ROOT
+			}
+		}
+	}
+	
+	ai_will_do = {
+		army_tradition = 20
+		NOT = { is_rival = FROM }
+		OR = {
+			FROM = {
+				NOT = {
+					variable_arithmetic_trigger = {
+						export_to_variable = {
+							variable_name = Daimyo_Support_for_YMN_temp
+							value = 0
+						}
+						change_variable = {
+							which = Daimyo_Support_for_YMN_temp
+							which = Daimyo_Support_for_YMN
+						}
+						export_to_variable = {
+							variable_name = Daimyo_Support_for_HSK_temp
+							value = 0
+						}
+						change_variable = {
+							which = Daimyo_Support_for_HSK_temp
+							which = Daimyo_Support_for_HSK
+						}
+						
+						change_variable = {
+							which = Daimyo_Support_for_HSK_temp
+							value = 25
+						}
+
+						check_variable = {
+							which = Daimyo_Support_for_YMN_temp
+							which = Daimyo_Support_for_HSK_temp
+						}
+					}
+				}
+				NOT = {
+					variable_arithmetic_trigger = {
+						export_to_variable = {
+							variable_name = Daimyo_Support_for_YMN_temp
+							value = 0
+						}
+						change_variable = {
+							which = Daimyo_Support_for_YMN_temp
+							which = Daimyo_Support_for_YMN
+						}
+						export_to_variable = {
+							variable_name = Daimyo_Support_for_HSK_temp
+							value = 0
+						}
+						change_variable = {
+							which = Daimyo_Support_for_HSK_temp
+							which = Daimyo_Support_for_HSK
+						}
+						
+						change_variable = {
+							which = Daimyo_Support_for_YMN_temp
+							value = 25
+						}
+
+						check_variable = {
+							which = Daimyo_Support_for_HSK_temp
+							which = Daimyo_Support_for_YMN_temp
+						}
+					}
+				}
+			}
+			AND = {
+				tag = HSK
+				NOT = {
+					any_country = {
+						has_reform = daimyo
+						NOT = { tag = ASK }
+						NOT = { tag = HSK }
+						NOT = { tag = YMN }
+						ai = yes
+						NOT = {
+							variable_arithmetic_trigger = {
+								export_to_variable = {
+									variable_name = Daimyo_Support_for_YMN_temp
+									value = 0
+								}
+								change_variable = {
+									which = Daimyo_Support_for_YMN_temp
+									which = Daimyo_Support_for_YMN
+								}
+								export_to_variable = {
+									variable_name = Daimyo_Support_for_HSK_temp
+									value = 0
+								}
+								change_variable = {
+									which = Daimyo_Support_for_HSK_temp
+									which = Daimyo_Support_for_HSK
+								}
+								
+								change_variable = {
+									which = Daimyo_Support_for_HSK_temp
+									value = 25
+								}
+
+								check_variable = {
+									which = Daimyo_Support_for_YMN_temp
+									which = Daimyo_Support_for_HSK_temp
+								}
+							}
+						}
+					}
+				}
+			}
+			AND = {
+				tag = YMN
+				NOT = {
+					any_country = {
+						has_reform = daimyo
+						NOT = { tag = ASK }
+						NOT = { tag = HSK }
+						NOT = { tag = YMN }
+						ai = yes
+						NOT = {
+							variable_arithmetic_trigger = {
+								export_to_variable = {
+									variable_name = Daimyo_Support_for_YMN_temp
+									value = 0
+								}
+								change_variable = {
+									which = Daimyo_Support_for_YMN_temp
+									which = Daimyo_Support_for_YMN
+								}
+								export_to_variable = {
+									variable_name = Daimyo_Support_for_HSK_temp
+									value = 0
+								}
+								change_variable = {
+									which = Daimyo_Support_for_HSK_temp
+									which = Daimyo_Support_for_HSK
+								}
+								
+								change_variable = {
+									which = Daimyo_Support_for_HSK_temp
+									value = 25
+								}
+
+								check_variable = {
+									which = Daimyo_Support_for_YMN_temp
+									which = Daimyo_Support_for_HSK_temp
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#france_diplomatic_actions
+make_french_hre_subject_action = {
+	category = influence
+
+	alert_index = 6
+	alert_tooltip = make_french_hre_subject_action_alert_tooltip
+
+	require_acceptance = yes
+
+	is_visible = {
+		has_country_flag = french_hre_subject_enabled
+		can_be_overlord = french_hre_subject
+		FROM = {
+			is_subject = no
+			capital_scope = {
+				OR = {
+					region = north_german_region
+					region = south_german_region
+					region = low_countries_region
+				}
+			}
+		}
+	}
+
+	is_allowed = {
+		has_country_flag = french_hre_subject_enabled
+		hidden_trigger = {
+			can_be_overlord = french_hre_subject
+			FROM = {
+				is_subject = no
+				capital_scope = {
+					OR = {
+						region = north_german_region
+						region = south_german_region
+						region = low_countries_region
+					}
+				}
+			}
+		}
+		is_at_war = no
+		FROM = {
+			is_at_war = no
+		}
+		NOT = { truce_with = FROM }
+	}
+
+	on_accept = {
+		if = {
+			limit = {
+				can_be_overlord = french_hre_subject
+				FROM = {
+					is_subject = no
+					capital_scope = {
+						OR = {
+							region = north_german_region
+							region = south_german_region
+							region = low_countries_region
+						}
+					}
+				}
+				is_at_war = no
+				FROM = {
+					is_at_war = no
+				}
+				NOT = { truce_with = FROM }
+			}
+			create_subject = {
+				subject = FROM
+				subject_type = french_hre_subject
+			}
+			add_truce_with = FROM
+			change_variable = {
+				which = french_authority
+				value = 1
+			}
+		}
+	}
+
+	on_decline = {
+		if = {
+			limit = {
+				can_be_overlord = french_hre_subject
+				FROM = {
+					is_subject = no
+					capital_scope = {
+						OR = {
+							region = north_german_region
+							region = south_german_region
+							region = low_countries_region
+						}
+					}
+				}
+				is_at_war = no
+				FROM = {
+					is_at_war = no
+				}
+				NOT = { truce_with = FROM }
+			}
+			FROM = {
+				clr_country_flag = declined_make_french_hre_subject_@ROOT
+				set_country_flag = declined_make_french_hre_subject_@ROOT
+			}
+			add_opinion = {
+				who = FROM
+				modifier = declined_make_french_hre_subject_opinion
+			}
+		}
+	}
+
+	ai_acceptance = {
+		add_entry = {
+			name = ME_FROM_ATTITUDE_TOWARDS_ROOT
+			limit = {
+				FROM = {
+					OR = {
+						ai_attitude = { who = ROOT attitude = attitude_allied }
+						ai_attitude = { who = ROOT attitude = attitude_friendly }
+					}
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 10
+			}
+		}
+		add_entry = {
+			name = ME_FROM_ATTITUDE_TOWARDS_ROOT
+			limit = {
+				FROM = {
+					ai_attitude = { who = ROOT attitude = attitude_threatened }
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 20
+			}
+		}
+		add_entry = {
+			name = ME_FROM_ATTITUDE_TOWARDS_ROOT
+			limit = {
+				FROM = {
+					ai_attitude = { who = ROOT attitude = attitude_neutral }
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 10
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = ME_FROM_ATTITUDE_TOWARDS_ROOT
+			limit = {
+				FROM = {
+					OR = {
+						ai_attitude = { who = ROOT attitude = attitude_hostile }
+						ai_attitude = { who = ROOT attitude = attitude_rivalry }
+						ai_attitude = { who = ROOT attitude = attitude_outraged }
+					}
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 1000
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = MODIFIER_DIPLO_SKILL
+			limit = {
+				diplomatic_reputation = 0
+			}
+			export_to_variable = {
+				which = ai_value
+				value = modifier:diplomatic_reputation
+			}
+			multiply_variable = { which = ai_value value = 2 }
+		}
+		add_entry = {
+			name = MODIFIER_DIPLO_SKILL
+			limit = {
+				NOT = { diplomatic_reputation = 0 }
+			}
+			export_to_variable = {
+				which = ai_value
+				value = modifier:diplomatic_reputation
+			}
+			multiply_variable = { which = ai_value value = 5 }
+		}
+		add_entry = {
+			name = ME_ROOT_FROM_MILITARY_POWER_COMPARED
+			limit = {
+				variable_arithmetic_trigger = {
+					export_to_variable = {
+						which = our_mil_tech
+						value = mil_tech
+					}
+					export_to_variable = {
+						which = their_mil_tech
+						value = mil_tech
+						who = FROM
+					}
+					export_to_variable = {
+						which = our_army_size
+						value = trigger_value:army_size
+					}
+					export_to_variable = {
+						which = their_army_size
+						value = trigger_value:army_size
+						who = FROM
+					}
+					export_to_variable = {
+						which = military_power
+						value = 0
+					}
+					divide_variable = { which = our_army_size value = 10 }
+					divide_variable = { which = their_army_size value = -10 }
+					change_variable = { which = our_army_size which = their_army_size }
+					multiply_variable = { which = their_mil_tech value = -1 }
+					change_variable = { which = our_mil_tech which = their_mil_tech }
+					multiply_variable = { which = our_mil_tech value = 3 }
+					change_variable = { which = military_power which = our_army_size }
+					change_variable = { which = military_power which = our_mil_tech }
+
+					NOT = { check_variable = { which = military_power value = -39 } }
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 40
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = ME_ROOT_FROM_MILITARY_POWER_COMPARED
+			limit = {
+				variable_arithmetic_trigger = {
+					export_to_variable = {
+						which = our_mil_tech
+						value = mil_tech
+					}
+					export_to_variable = {
+						which = their_mil_tech
+						value = mil_tech
+						who = FROM
+					}
+					export_to_variable = {
+						which = our_army_size
+						value = trigger_value:army_size
+					}
+					export_to_variable = {
+						which = their_army_size
+						value = trigger_value:army_size
+						who = FROM
+					}
+					export_to_variable = {
+						which = military_power
+						value = 0
+					}
+					divide_variable = { which = our_army_size value = 10 }
+					divide_variable = { which = their_army_size value = -10 }
+					change_variable = { which = our_army_size which = their_army_size }
+					multiply_variable = { which = their_mil_tech value = -1 }
+					change_variable = { which = our_mil_tech which = their_mil_tech }
+					multiply_variable = { which = our_mil_tech value = 3 }
+					change_variable = { which = military_power which = our_army_size }
+					change_variable = { which = military_power which = our_mil_tech }
+
+					check_variable = { which = military_power value = -39 }
+					NOT = { check_variable = { which = military_power value = 30 } }
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 0
+			}
+			export_to_variable = {
+				which = our_mil_tech
+				value = mil_tech
+			}
+			export_to_variable = {
+				which = their_mil_tech
+				value = mil_tech
+				who = FROM
+			}
+			export_to_variable = {
+				which = our_army_size
+				value = trigger_value:army_size
+			}
+			export_to_variable = {
+				which = their_army_size
+				value = trigger_value:army_size
+				who = FROM
+			}
+			divide_variable = { which = our_army_size value = 10 }
+			divide_variable = { which = their_army_size value = -10 }
+			change_variable = { which = our_army_size which = their_army_size }
+			multiply_variable = { which = their_mil_tech value = -1 }
+			change_variable = { which = our_mil_tech which = their_mil_tech }
+			multiply_variable = { which = our_mil_tech value = 3 }
+			change_variable = { which = ai_value which = our_army_size }
+			change_variable = { which = ai_value which = our_mil_tech }
+		}
+		add_entry = {
+			name = ME_ROOT_FROM_MILITARY_POWER_COMPARED
+			limit = {
+				variable_arithmetic_trigger = {
+					export_to_variable = {
+						which = our_mil_tech
+						value = mil_tech
+					}
+					export_to_variable = {
+						which = their_mil_tech
+						value = mil_tech
+						who = FROM
+					}
+					export_to_variable = {
+						which = our_army_size
+						value = trigger_value:army_size
+					}
+					export_to_variable = {
+						which = their_army_size
+						value = trigger_value:army_size
+						who = FROM
+					}
+					export_to_variable = {
+						which = military_power
+						value = 0
+					}
+					divide_variable = { which = our_army_size value = 10 }
+					divide_variable = { which = their_army_size value = -10 }
+					change_variable = { which = our_army_size which = their_army_size }
+					multiply_variable = { which = their_mil_tech value = -1 }
+					change_variable = { which = our_mil_tech which = their_mil_tech }
+					multiply_variable = { which = our_mil_tech value = 3 }
+					change_variable = { which = military_power which = our_army_size }
+					change_variable = { which = military_power which = our_mil_tech }
+					check_variable = { which = military_power value = 30 }
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 30
+			}
+		}
+		add_entry = {
+			name = ME_FROM_HAS_SUBJECTS
+			limit = {
+				FROM = {
+					num_of_subjects = 1
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 100
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = ME_FROM_DEVELOPMENT
+			export_to_variable = {
+				which = ai_value
+				value = trigger_value:total_development
+				who = FROM
+			}
+			divide_variable = { which = ai_value value = -3 }
+		}
+		add_entry = {
+			name = ME_ROOT_OWNS_FROM_CORE_PROVINCES
+			limit = {
+				OR = {
+					any_owned_province = {
+						is_core = FROM
+					}
+					any_subject_country = {
+						is_subject_other_than_tributary_trigger = yes
+						any_owned_province = {
+							is_core = FROM
+						}
+					}
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 1000
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = BORDER_DISTANCE
+			export_to_variable = {
+				which = ai_value
+				value = border_distance
+				who = FROM
+				with = ROOT
+			}
+			divide_variable = { which = ai_value value = -4 }
+		}
+		add_entry = {
+			name = ME_ROOT_FROM_ARE_ALLIED
+			limit = {
+				alliance_with = FROM
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 10
+			}
+		}
+		add_entry = {
+			name = ME_FROM_ROOT_ARE_RIVALS
+			limit = {
+				OR = {
+					is_rival = FROM
+					is_enemy = FROM
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 1000
+			}
+			divide_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = ME_FROM_HAS_STRONG_NEIGHBOR_OUTSIDE_FRANCE
+			limit = {
+				FROM = {
+					any_neighbor_country = {
+						NOT = { tag = ROOT }
+						NOT = { is_subject_of = ROOT }
+						variable_arithmetic_trigger = {
+							export_to_variable = {
+								which = this_army_size
+								value = trigger_value:army_size
+							}
+							export_to_variable = {
+								which = our_army_size
+								value = trigger_value:army_size
+								who = ROOT
+							}
+							export_to_variable = {
+								which = their_army_size
+								value = trigger_value:army_size
+								who = FROM
+							}
+							divide_variable = { which = this_army_size value = 2 }
+							divide_variable = { which = our_army_size value = 3 }
+							check_variable = { which = this_army_size which = their_army_size }
+							check_variable = { which = our_army_size which = this_army_size }
+						}
+					}
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 30
+			}
+		}
+		add_entry = {
+			name = ME_FROM_HAS_STRONG_NEIGHBOR_OUTSIDE_FRANCE
+			limit = {
+				FROM = {
+					any_neighbor_country = {
+						NOT = { tag = ROOT }
+						NOT = { is_subject_of = ROOT }
+						variable_arithmetic_trigger = {
+							export_to_variable = {
+								which = this_army_size
+								value = trigger_value:army_size
+							}
+							export_to_variable = {
+								which = our_army_size
+								value = trigger_value:army_size
+								who = ROOT
+							}
+							export_to_variable = {
+								which = their_army_size
+								value = trigger_value:army_size
+								who = FROM
+							}
+							divide_variable = { which = this_army_size value = 2 }
+							divide_variable = { which = our_army_size value = 3 }
+							check_variable = { which = this_army_size which = their_army_size }
+							NOT = { check_variable = { which = our_army_size which = this_army_size } }
+						}
+					}
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 15
+			}
+		}
+		add_entry = {
+			name = ME_FROM_HAS_MARRIAGE_WITH_ROOT
+			limit = {
+				marriage_with = FROM
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 10
+			}
+		}
+		add_entry = {
+			name = ME_ROOT_FROM_NOT_SAME_RELIGION
+			limit = {
+				NOT = { religion = FROM }
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 10
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = ME_FROM_IS_PAPAL_STATE
+			limit = {
+				FROM = {
+					tag = PAP
+					is_papal_controller = no
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 50
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = ME_FROM_IS_CURIA_CONTROLLER
+			limit = {
+				FROM = {
+					is_papal_controller = yes
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 50
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = ME_FROM_IS_DEFENDER_OF_FAITH
+			limit = {
+				FROM = {
+					is_defender_of_faith = yes
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 50
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = OPINION
+			export_to_variable = {
+				which = ai_value
+				value = opinion
+				who = FROM
+				with = ROOT
+			}
+			divide_variable = { which = ai_value value = 4 }
+		}
+		add_entry = {
+			name = ME_ROOT_FROM_ARE_HISTORICAL_FRIENDS
+			limit = {
+				FROM = {
+					historical_friend_with = ROOT
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 10
+			}
+		}
+		add_entry = {
+			name = ME_FROM_AI_PERSONALITY
+			limit = {
+				FROM = {
+					personality = ai_militarist
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 1000
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = ME_ROOT_IS_DEFENDER_OF_FROM_FAITH
+			limit = {
+				is_defender_of_faith = yes
+				religion = FROM
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 15
+			}
+		}
+	}
+
+	ai_will_do = {
+		FROM = {
+			OR = {
+				NOT = { has_country_flag = declined_make_french_hre_subject_@ROOT }
+				had_country_flag = { flag = declined_make_french_hre_subject_@ROOT days = 1825 }
+			}
+		}
+	}
+}
+
+french_hre_subject_independence_action = {
+	category = influence
+
+	require_acceptance = no
+
+	is_visible = {
+		is_subject_of = FROM
+		is_subject_of_type = french_hre_subject
+	}
+
+	is_allowed = {
+		hidden_trigger = {
+			is_subject_of = FROM
+			is_subject_of_type = french_hre_subject
+		}
+		is_at_war = no
+		FROM = {
+			is_at_war = no
+		}
+		NOT = { truce_with = FROM }
+	}
+
+	on_accept = {
+		if = {
+			limit = {
+				is_subject_of = FROM
+				is_subject_of_type = french_hre_subject
+				is_at_war = no
+				FROM = {
+					is_at_war = no
+				}
+				NOT = { truce_with = FROM }
+			}
+			FROM = {
+				ROOT = { grant_independence = yes }
+				add_casus_belli = {
+					target = ROOT
+					type = cb_disloyal_french_hre_subject
+				}
+			}
+			add_truce_with = FROM
+			FROM = {
+				country_event = { id = ME_France_Events.59 }
+			}
+		}
+	}
+
+	ai_will_do = {
+		liberty_desire = 55
+	}
+}
+
+#malaya_diplomatic_actions
+#ME_tributary_state_interaction = {
+#	category = influenc
+#	alert_index = 6
+#	alert_tooltip = ME_tributary_state_interaction_toolti
+#	require_acceptance = ye
+#	is_visible = {
+#		has_country_flag = MSA_tributary_interaction_enabled
+#		FROM = {
+#			is_subject_of = ROOT
+#			is_subject_of_type = vassal
+#		}
+#	}
+#
+#	is_allowed = {
+#		FROM = {
+#			years_in_vassalage_under = {
+#				who = ROOT
+#				years = 30
+#			}
+#		}
+#		is_at_war = no
+#		dip_power = 100
+#		FROM = { is_at_war = no }
+#	}
+#
+#	on_accept = {
+#		if = {
+#			limit = {
+#				has_country_flag = MSA_tributary_interaction_enabled
+#				FROM = {
+#					is_subject_of = ROOT
+#					is_subject_of_type = vassal
+#					years_in_vassalage_under = {
+#						who = ROOT
+#						years = 30
+#					}
+#					NOT = { liberty_desire = 5 }
+#				}
+#			}
+#			FROM = {
+#				create_subject = {
+#					subject = ROOT
+#					subject_type = tributary_state
+#				}
+#			}
+#			add_dip_power = -100
+#		}
+#	}
+#
+#	on_decline = {
+#		if = {
+#			limit = {
+#				FROM = {
+#					is_subject = no
+#					can_create_subject_type = {
+#						subject = ROOT
+#						subject_type = agricultural_march
+#					}
+#				}
+#				is_at_war = no
+#				FROM = { is_at_war = no }
+#			}
+#			FROM = {
+#				clr_country_flag = declined_become_agricultural_march_@ROOT
+#				set_country_flag = declined_become_agricultural_march_@ROOT
+#			}
+#			add_opinion = {
+#				who = FROM
+#				modifier = declined_ask_to_become_agricultural_march
+#			}
+#		}
+#	}
+#
+#	ai_acceptance = {
+#		add_entry = {
+#			name = OPINION
+#			export_to_variable = {
+#				which = ai_value
+#				value = opinion
+#				who = FROM
+#				with = ROOT
+#			}
+#			divide_variable = { which = ai_value value = 4 }
+#		}
+#		add_entry = {
+#			name = MODIFIER_DIPLO_SKILL
+#			export_to_variable = {
+#				which = ai_value
+#				value = modifier:diplomatic_reputation
+#			}
+#			multiply_variable = { which = ai_value value = 5 }
+#		}
+#		add_entry = {
+#			name = ROOT_IS_VASSAL_FOR_AT_LEAST_10_YEARS
+#			limit = {
+#				years_in_vassalage_under = {
+#					who = FROM
+#					years = 10
+#					all_subject_country = yes
+#				}
+#			}
+#			export_to_variable = {
+#				which = ai_value
+#				value = 1000
+#			}
+#			multiply_variable = { which = ai_value value = -1 }
+#		}
+#		add_entry = {
+#			name = ROOT_IS_NOT_A_NEIGHBOR_OF_FROMS_RIVALS
+#			limit = {
+#				NOT = {
+#					any_neighbor_country = {
+#						OR = {
+#							is_rival = FROM
+#							is_enemy = FROM
+#						}
+#					}
+#				}
+#			}
+#			export_to_variable = {
+#				which = ai_value
+#				value = 1000
+#			}
+#			multiply_variable = { which = ai_value value = -1 }
+#		}
+#		add_entry = {
+#			name = ROOT_HAS_MORE_THAN_25_PERCENT_OF_OVERLORD_DEVELOPMENT
+#			limit = {
+#				development_of_overlord_fraction = 0.25
+#			}
+#			export_to_variable = {
+#				which = ai_value
+#				value = 1000
+#			}
+#			multiply_variable = { which = ai_value value = -1 }
+#		}
+#		add_entry = {
+#			name = ROOT_HAS_TOO_FEW_PRODUCTION_INCOME
+#			limit = {
+#				OR = {
+#					NOT = { monthly_income = 20 }
+#					NOT = { production_income_percentage = 0.35 }
+#				}
+#			}
+#			export_to_variable = {
+#				which = ai_value
+#				value = 1000
+#			}
+#			multiply_variable = { which = ai_value value = -1 }
+#		}
+#		add_entry = {
+#			name = ROOT_HAS_TOO_FEW_MAX_MANPOWER
+#			limit = {
+#				NOT = { max_manpower = 20 }
+#			}
+#			export_to_variable = {
+#				which = ai_value
+#				value = 1000
+#			}
+#			multiply_variable = { which = ai_value value = -1 }
+#		}
+#	}
+#
+#	ai_will_do = {
+#		NOT = { liberty_desire = 50 }
+#		NOT = { is_different_march_subject = yes }
+#		army_size = 20
+#		OR = {
+#			is_subject_of_type = march
+#			FROM = { ai = no }
+#		}
+#		production_income_percentage = 0.2
+#		any_neighbor_country = {
+#			OR = {
+#				is_rival = FROM
+#				is_enemy = FROM
+#			}
+#		}
+#		FROM = {
+#			OR = {
+#				NOT = { has_country_flag = declined_become_agricultural_march_@ROOT }
+#				had_country_flag = { flag = declined_become_agricultural_march_@ROOT days = 1825 }
+#			}
+#		}
+#	}
+#}
+
+#mamluks_diplomatic_actions
+mamluks_purchase_new_mamluks = {
+	category = alliance
+
+	require_acceptance = no
+
+	is_visible = {
+		has_country_flag = MAM_purchase_new_mamluks_flag 
+		FROM = {
+			NOT = {
+				religion_group = muslim
+			}
+		}
+		has_reform = mamluk_government
+	}
+	
+	is_allowed = {
+		hidden_trigger = {
+			has_country_flag = MAM_purchase_new_mamluks_flag 
+			FROM = {
+				NOT = {
+					religion_group = muslim
+				}
+			}
+			has_reform = mamluk_government
+		}
+		NOT = { has_country_modifier = MAM_new_mamluks }
+	}
+	
+	on_accept = {
+		add_yearly_manpower = 0.5
+		add_country_modifier = {
+			name = MAM_new_mamluks
+			duration = 9125
+		} #this will have other influence, I promise!
+		hidden_effect = {
+			FROM = { save_global_event_target_as = MAM_new_mamluk_target }
+		}
+	}
+	
+	ai_will_do = {
+		always = yes
+	}
+}
+
+#ME_abbasid_diplomatic_actions
+abbasid_denounce_actions = {
+	category = subsidies
+
+	require_acceptance = no
+
+	is_visible = {
+		#ME_has_abbasid_caliph = yes #Was this but changed to 'caliphate_reform' as it is already in the base game - by SF
+		has_reform = caliphate_reform #VU - ET entry used by PDX that they've not given any credit to ET for. 
+		ME_can_benefit_from_abbasid_caliph = yes
+	}
+	
+	is_allowed = {
+		hidden_trigger = {
+			#ME_has_abbasid_caliph = yes #Was this but changed to 'caliphate_reform' as it is already in the base game - by SF
+			has_reform = caliphate_reform #VU - ET entry used by PDX that they've not given any credit to ET for. 
+			# FROM = {
+				# is_enemy = ROOT
+				# religion = ROOT
+			# }
+		}
+		if = {
+			limit = {
+				NOT = {
+					ME_is_caliphate_trigger = yes
+				}
+			}
+			FROM = {
+				OR = {
+					is_enemy = ROOT
+					is_rival = ROOT
+				}
+			}
+			dip_power = 50
+		}
+		FROM = {
+			religion = ROOT
+		}
+		custom_trigger_tooltip = {
+			tooltip = Abbasid_has_not_denounced_in_10_years
+			OR = {
+				NOT = { has_country_flag = abbasid_recently_denounced }
+				had_country_flag = {
+					flag = abbasid_recently_denounced
+					days = 3650
+				}
+			}
+		}
+	}
+	
+	on_accept = {
+		if = {
+			limit = {
+				NOT = {
+					ME_is_caliphate_trigger = yes
+				}
+			}
+			add_dip_power = -50
+		}
+		FROM = {
+			add_country_modifier = {
+				name = Abbasid_got_denounced
+				duration = 3650
+			}
+			hidden_effect = { 
+				country_event = { id = ME_Abbasid_Events.5 } 
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = abbasid_denounced_us
+			}
+			every_neighbor_country = {
+				add_opinion = {
+					who = PREV
+					modifier = abbasid_got_denounced_by_caliph_opinion
+				}
+			}
+		}
+		add_power_projection = {
+			type = forced_to_denounce_rival
+			amount = 10
+		}
+		set_country_flag = abbasid_recently_denounced
+		if = {
+			limit = {
+				has_country_flag = me_tim_abbasid_completion
+			}
+			change_variable = {
+				which = METimCaliphActions
+				value = 1
+			}
+		}
+	}
+	
+	ai_will_do = {
+		always = yes
+	}
+}
+
+abbasid_call_jihad = {
+	category = subsidies
+
+	require_acceptance = no
+
+	is_visible = {
+		has_reform = caliphate_reform #VU - ET entry used by PDX that they've not given any credit to ET for. 
+		ME_can_benefit_from_abbasid_caliph = yes
+		# FROM = {
+			# NOT = { religion_group = ROOT }
+		# }
+	}
+	
+	is_allowed = {
+		hidden_trigger = {
+			has_reform = caliphate_reform #VU - ET entry used by PDX that they've not given any credit to ET for. 
+		}
+		FROM = {
+			NOT = { religion_group = ROOT }
+		}
+		if = {
+			limit = {
+				NOT = {
+					ME_is_caliphate_trigger = yes
+				}
+			}
+			dip_power = 100
+		}
+		custom_trigger_tooltip = {
+			tooltip = Abbasid_has_not_called_jihad_in_25_years
+			OR = {
+				NOT = { has_country_flag = abbasid_recently_called_jihad }
+				had_country_flag = {
+					flag = abbasid_recently_called_jihad
+					days = 9125
+				}
+			}
+		}
+	}
+	
+	on_accept = {
+		if = {
+			limit = {
+				NOT = {
+					ME_is_caliphate_trigger = yes
+				}
+			}
+			add_dip_power = -100
+		}
+		add_casus_belli = {
+			target = FROM
+			type = cb_abbasid_jihad
+			months = 60
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = abbasid_called_jihad_on_us
+			}
+			country_event = { id = ME_Abbasid_Events.7 }
+		}
+		set_country_flag = abbasid_recently_called_jihad
+		if = {
+			limit = {
+				has_country_flag = me_tim_abbasid_completion
+			}
+			change_variable = {
+				which = METimCaliphActions
+				value = 1
+			}
+		}
+	}
+	
+	ai_will_do = {
+		FROM = { is_neighbor_of = ROOT }
+		OR = {
+			ai_attitude = {
+				who = FROM
+				attitude = attitude_hostile
+			}
+			ai_attitude = {
+				who = FROM
+				attitude = attitude_rivalry
+			}
+		}
+	}
+}
+
+abbasid_praise = {
+	category = subsidies
+
+	require_acceptance = no
+
+	is_visible = {
+		has_reform = caliphate_reform #VU - ET entry used by PDX that they've not given any credit to ET for. 
+		ME_can_benefit_from_abbasid_caliph = yes
+	}
+	
+	is_allowed = {
+		hidden_trigger = {
+			has_reform = caliphate_reform #VU - ET entry used by PDX that they've not given any credit to ET for. 
+			# FROM = {
+				# religion = ROOT
+			# }
+		}
+		FROM = {
+			religion = ROOT
+		}
+		custom_trigger_tooltip = {
+			tooltip = Abbasid_has_not_called_praised_in_5_years
+			OR = {
+				NOT = { has_country_flag = abbasid_recently_praised }
+				had_country_flag = {
+					flag = abbasid_recently_praised
+					days = 1825
+				}
+			}
+		}
+	}
+	
+	on_accept = {
+		FROM = {
+			hidden_effect = { 
+				country_event = { id = ME_Abbasid_Events.6 } 
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = abbasid_praised_us
+			}
+			
+		}
+		add_trust = {
+			who = FROM
+			value = 5
+			mutual = yes
+		}
+		set_country_flag = abbasid_recently_praised
+		if = {
+			limit = {
+				has_country_flag = me_tim_abbasid_completion
+			}
+			change_variable = {
+				which = METimCaliphActions
+				value = 1
+			}
+		}
+	}
+	
+	ai_will_do = {
+		FROM = {
+			alliance_with = ROOT
+		}
+	}
+}
+
+abbasid_invite_scholar = {
+	category = subsidies
+
+	require_acceptance = no
+
+	is_visible = {
+		ME_is_caliphate_trigger = yes
+	}
+	
+	is_allowed = {
+		hidden_trigger = {
+			ME_is_caliphate_trigger = yes
+		}
+		FROM = {
+			religion = ROOT
+		}
+		custom_trigger_tooltip = {
+			tooltip = Abbasid_has_not_invited_scholar_in_20_years
+			OR = {
+				NOT = { has_country_flag = abbasid_recently_invited_scholars }
+				had_country_flag = {
+					flag = abbasid_recently_invited_scholars
+					days = 7300
+				}
+			}
+		}
+	}
+	
+	on_accept = {
+		set_variable = {
+			which = invited_scholar_reduction
+			value = 0
+		}
+		if = {
+			limit = {
+				has_country_flag = ARB_caliphal_invite_scholars_diplomatic_action
+			}
+			change_variable = {
+				which = invited_scholar_reduction
+				value = 25
+			}
+		}
+		
+		if = {
+			limit = {
+				FROM = {
+					has_opinion = {
+						who = ROOT
+						value = 25
+					}
+				}
+			}
+			change_variable = {
+				which = invited_scholar_reduction
+				value = 5
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_opinion = {
+							who = ROOT
+							value = 50
+						}
+					}
+				}
+				change_variable = {
+					which = invited_scholar_reduction
+					value = 5
+				}
+				if = {
+					limit = {
+						FROM = {
+							has_opinion = {
+								who = ROOT
+								value = 75
+							}
+						}
+					}
+					change_variable = {
+						which = invited_scholar_reduction
+						value = 5
+					}
+					if = {
+						limit = {
+							FROM = {
+								has_opinion = {
+									who = ROOT
+									value = 100
+								}
+							}
+						}
+						change_variable = {
+							which = invited_scholar_reduction
+							value = 5
+						}
+						if = {
+							limit = {
+								FROM = {
+									has_opinion = {
+										who = ROOT
+										value = 125
+									}
+								}
+							}
+							change_variable = {
+								which = invited_scholar_reduction
+								value = 5
+							}
+							if = {
+								limit = {
+									FROM = {
+										has_opinion = {
+											who = ROOT
+											value = 150
+										}
+									}
+								}
+								change_variable = {
+									which = invited_scholar_reduction
+									value = 5
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		if = {
+			limit = {
+				FROM = {
+					innovativeness = 10
+				}
+			}
+			change_variable = {
+				which = invited_scholar_reduction
+				value = 5
+			}
+			if = {
+				limit = {
+					FROM = {
+						innovativeness = 20
+					}
+				}
+				change_variable = {
+					which = invited_scholar_reduction
+					value = 5
+				}
+				if = {
+					limit = {
+						FROM = {
+							innovativeness = 30
+						}
+					}
+					change_variable = {
+						which = invited_scholar_reduction
+						value = 5
+					}
+					if = {
+						limit = {
+							FROM = {
+								innovativeness = 40
+							}
+						}
+						change_variable = {
+							which = invited_scholar_reduction
+							value = 5
+						}
+						if = {
+							limit = {
+								FROM = {
+									innovativeness = 50
+								}
+							}
+							change_variable = {
+								which = invited_scholar_reduction
+								value = 5
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		set_country_flag = abbasid_recently_invited_scholars
+		
+		if = {
+			limit = {
+				has_country_flag = me_tim_abbasid_completion
+			}
+			change_variable = {
+				which = METimCaliphActions
+				value = 1
+			}
+		}
+		
+		FROM = {
+			save_event_target_as = temp_aba_target
+		}
+		country_event = { id = ME_Abbasid_Events.30 }
+	}
+	
+	ai_will_do = {
+		OR = {
+			FROM = {
+				has_opinion = {
+					who = ROOT
+					value = 100
+				}
+				innovativeness = 25
+			}
+		}
+		# FROM = {
+			# alliance_with = ROOT
+		# }
+	}
+}
+
+abbasid_send_help = {
+	category = subsidies
+
+	require_acceptance = no
+
+	is_visible = {
+		ME_is_caliphate_trigger = yes
+	}
+	
+	is_allowed = {
+		hidden_trigger = {
+			ME_is_caliphate_trigger = yes
+		}
+		FROM = {
+			religion = ROOT
+			at_war_with_religious_enemy = yes
+		}
+		mil_power = 50
+		custom_trigger_tooltip = {
+			tooltip = Abbasid_has_not_sent_help_in_30_years
+			OR = {
+				NOT = { has_country_flag = abbasid_recently_sent_help }
+				had_country_flag = {
+					flag = abbasid_recently_sent_help
+					days = 10950
+				}
+			}
+		}
+	}
+	
+	on_accept = {
+		set_country_flag = abbasid_recently_sent_help
+		add_mil_power = -50
+		
+		if = {
+			limit = {
+				has_country_flag = me_tim_abbasid_completion
+			}
+			change_variable = {
+				which = METimCaliphActions
+				value = 1
+			}
+		}
+		
+		save_event_target_as = temp_caliph
+		FROM = { 
+			country_event = { id = ME_Abbasid_Events.31 }
+		}
+	}
+	
+	ai_will_do = {
+		FROM = {
+			NOT = { is_rival = ROOT }
+		}
+		
+		mil_power = 500
+		# FROM = {
+			# alliance_with = ROOT
+		# }
+	}
+}
+
+abbasid_zakat = {
+	category = subsidies
+
+	require_acceptance = yes
+
+	is_visible = {
+		ME_is_caliphate_trigger = yes
+		has_country_flag = ARB_can_ask_for_zakat
+	}
+	
+	is_allowed = {
+		hidden_trigger = {
+			ME_is_caliphate_trigger = yes
+			has_country_flag = ARB_can_ask_for_zakat
+		}
+		FROM = {
+			religion = ROOT
+			years_of_income = 0.5
+		}
+		custom_trigger_tooltip = {
+			tooltip = Abbasid_has_not_asked_for_zakat_in_10_years
+			OR = {
+				NOT = { has_country_flag = abbasid_recently_asked_for_zakat }
+				had_country_flag = {
+					flag = abbasid_recently_asked_for_zakat
+					days = 3650
+				}
+			}
+		}
+	}
+	
+	on_accept = {
+		set_country_flag = abbasid_recently_asked_for_zakat
+		FROM = {
+			add_stability = 1
+		}
+		export_to_variable = {
+			which = ABA_Temp
+			value = years_of_income
+			who = FROM
+		}
+		multiply_variable = {
+			which = ABA_Temp
+			value = 0.5
+		}
+		while = {
+			limit = {
+				check_variable = {
+					which = ABA_Temp
+					value = 10
+				}
+			}
+			ROOT = {
+				add_treasury = 10
+			}
+			FROM = {
+				add_treasury = -10
+			}
+			change_variable = {
+				which = ABA_Temp
+				value = -10
+			}
+		}
+		while = {
+			limit = {
+				check_variable = {
+					which = ABA_Temp
+					value = 1
+				}
+			}
+			ROOT = {
+				add_treasury = 1
+			}
+			FROM = {
+				add_treasury = -1
+			}
+			change_variable = {
+				which = ABA_Temp
+				value = -1
+			}
+		}
+		while = {
+			limit = {
+				check_variable = {
+					which = ABA_Temp
+					value = 0.1
+				}
+			}
+			ROOT = {
+				add_treasury = 0.1
+			}
+			FROM = {
+				add_treasury = -0.1
+			}
+			change_variable = {
+				which = ABA_Temp
+				value = -0.1
+			}
+		}
+		set_variable = {
+			which = ABA_Temp
+			value = 0
+		}
+		if = {
+			limit = {
+				has_country_flag = me_tim_abbasid_completion
+			}
+			change_variable = {
+				which = METimCaliphActions
+				value = 1
+			}
+		}
+	}
+	
+	ai_acceptance = { # This works similarly to variable_arithmetic_trigger, but does not support triggers generally. Instead, "limit" will be evaluated first and the rest ignored if it isn't passed.
+		add_entry = {
+			name = TRUST
+			export_to_variable = {
+				variable_name = ai_value
+				value = trust
+				who = FROM
+				with = ROOT
+			}			
+			subtract_variable = { 
+				which = ai_value
+				value = 50
+			}
+			#1 trust = +4 ai points
+			multiply_variable = {
+				which = ai_value
+				value = 0.4
+			}
+		}
+		add_entry = {
+			name = OPINION
+			export_to_variable = {
+				variable_name = ai_value
+				value = opinion
+				who = FROM
+				with = ROOT
+			}
+			multiply_variable = {
+				which = ai_value 
+				value = 0.2
+			}
+		}
+		add_entry = {
+			name = DIPLO_IS_RIVAL
+			limit = {
+				FROM = {
+					ai_attitude = {
+						who = ROOT
+						attitude = attitude_rivalry
+					}
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = 1
+			}
+			
+			multiply_variable = {
+				which = ai_value
+				value = -1000
+			}
+		}
+		add_entry = {
+			name = diplomatic_reputation
+			limit = { }
+			export_to_variable = {
+				variable_name = ai_value
+				value = trigger_value:diplomatic_reputation
+			}
+			#1 rep = 2
+			multiply_variable = {
+				which = ai_value
+				value = 2
+			}
+		}
+		add_entry = {
+			name = STABILITY_AI_MODIFIER
+			export_to_variable = {
+				variable_name = ai_value
+				value = stability
+				who = FROM
+				with = ROOT
+			}
+			multiply_variable = {
+				which = ai_value 
+				value = -25
+			}
+		}
+	}
+	
+	ai_will_do = {
+		FROM = {
+			NOT = { is_rival = ROOT }
+		}
+		
+		mil_power = 500
+		# FROM = {
+			# alliance_with = ROOT
+		# }
+	}
+}
+
+abbasid_ransom = {
+	category = subsidies
+
+	require_acceptance = yes
+
+	is_visible = {
+		has_reform = caliphate_reform #VU - ET entry used by PDX that they've not given any credit to ET for. 
+		has_country_flag = ABA_ransom_abbasid
+	}
+	
+	is_allowed = {
+		hidden_trigger = {
+			has_reform = caliphate_reform #VU - ET entry used by PDX that they've not given any credit to ET for. 
+			has_country_flag = ABA_ransom_abbasid
+		}
+		FROM = {
+			religion = sunni
+			is_at_war = no
+			is_subject = no
+		}
+	}
+	
+	on_accept = {
+		FROM = {
+			capital_scope = {
+				ME_set_abbasid_caliph_province = yes
+			}
+		}
+		export_to_variable = {
+			which = ABA_Temp
+			value = years_of_income
+			who = FROM
+		}
+		while = {
+			limit = {
+				check_variable = {
+					which = ABA_Temp
+					value = 10
+				}
+			}
+			ROOT = {
+				add_treasury = 10
+			}
+			FROM = {
+				add_treasury = -10
+			}
+			change_variable = {
+				which = ABA_Temp
+				value = -10
+			}
+		}
+		while = {
+			limit = {
+				check_variable = {
+					which = ABA_Temp
+					value = 1
+				}
+			}
+			ROOT = {
+				add_treasury = 1
+			}
+			FROM = {
+				add_treasury = -1
+			}
+			change_variable = {
+				which = ABA_Temp
+				value = -1
+			}
+		}
+		while = {
+			limit = {
+				check_variable = {
+					which = ABA_Temp
+					value = 0.1
+				}
+			}
+			ROOT = {
+				add_treasury = 0.1
+			}
+			FROM = {
+				add_treasury = -0.1
+			}
+			change_variable = {
+				which = ABA_Temp
+				value = -0.1
+			}
+		}
+		set_variable = {
+			which = ABA_Temp
+			value = 0
+		}
+	}
+	
+	ai_acceptance = {
+		add_entry = {
+			name = TRUST
+			export_to_variable = {
+				variable_name = ai_value # Each "add_entry" must create one variable called "ai_value", the value of which will be extracted after executing all effects
+				value = trust
+				who = FROM
+				with = ROOT
+			}
+			subtract_variable = { which = ai_value value = 50 }
+			multiply_variable = { which = ai_value value = 2 }
+		}
+		
+		add_entry = {
+			name = OPINION
+			export_to_variable = {
+				variable_name = ai_value
+				value = opinion
+				who = FROM
+				with = ROOT
+			}
+			divide_variable = { which = ai_value value = 4 }
+		}
+		add_entry = {
+			name = ME_DOESNT_HAVE_ENOUGH_IN_BANK
+			export_to_variable = {
+				variable_name = ai_value
+				value = 0
+			}
+			
+			export_to_variable = {
+				variable_name = ai_value
+				value = treasury
+				who = FROM
+			}
+			
+			export_to_variable = {
+				variable_name = ai_value
+				value = years_of_income
+				who = FROM
+			}
+			
+			divide_variable = {
+				which = their_treasury
+				which = their_years_of_income
+			}
+			
+			change_variable = {
+				which = their_treasury
+				value = -1
+			}
+			
+			multiply_variable = {
+				which = their_treasury
+				value = 5
+			}
+			
+			change_variable = {
+				which = ai_value
+				which = their_treasury
+			}
+		}
+		
+		add_entry = {
+			name = ME_OUR_BALANCE
+			export_to_variable = {
+				variable_name = ai_value
+				value = 0
+			}
+			
+			export_to_variable = {
+				variable_name = ai_value
+				value = trigger_value:current_income_balance
+				who = FROM
+			}
+			
+			export_to_variable = {
+				variable_name = ai_value
+				value = trigger_value:monthly_income
+				who = FROM
+			}
+			
+			divide_variable = {
+				which = their_balance
+				which = their_monthly_income
+			}
+			
+			multiply_variable = {
+				which = their_balance
+				value = 10
+			}
+			
+			change_variable = {
+				which = their_balance
+				value = -10
+			}
+			
+			change_variable = {
+				which = ai_value
+				which = their_balance
+			}
+		}
+		
+		add_entry = {
+			name = ME_will_pay_any_price_for_caliph
+			limit = { 
+				FROM = {
+					OR = {
+						AND = {
+							OR = {
+								tag = ADU
+								tag = GRA
+							}
+							NOT = { mission_completed = gra_restore_the_andalusian_caliphate } #Was GRA_the_fake_caliph
+						}
+						AND = {
+							OR = {
+								tag = MAM
+								tag = EGY 
+							}
+							#NOT = { mission_completed = MAM_protectors_of_the_caliph }
+						}
+						AND = {
+							tag = NAJ
+							NOT = { mission_completed = NAJ_challenge_the_ummah }
+						}
+					}
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = 100
+			}
+		}
+	}
+	
+	ai_will_do = {
+		FROM = {
+			OR = {
+				alliance_with = ROOT
+				AND = {
+					total_development = 300 
+					OR = {
+						ai_attitude = {
+							who = ROOT
+							attitude = attitude_friendly
+						}
+						ai_attitude = {
+							who = ROOT
+							attitude = attitude_neutral
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#Prussia
+prussia_make_prussian_vassal = {
+	category = influence
+	
+	require_acceptance = no
+	
+	is_visible = {
+		has_country_modifier = PRU_vassal_play
+		FROM = {
+			is_subject_of_type = vassal
+			is_subject_of = ROOT
+		}
+	}
+	
+	is_allowed = {
+		hidden_trigger = {
+			has_country_modifier = PRU_vassal_play
+			FROM = {
+				is_subject_of_type = vassal
+				is_subject_of = ROOT
+			}
+		}
+		FROM = { is_at_war = no }
+		if = {
+			limit = {
+				has_country_flag = PRU_vassal_more
+			}
+			NOT = {
+				calc_true_if = {
+					all_subject_country = {
+						is_subject_of_type = prussian_vassal
+					}
+					amount = 5
+				}
+			}
+		}
+		else = {
+			NOT = {
+				calc_true_if = {
+					all_subject_country = {
+						is_subject_of_type = prussian_vassal
+					}
+					amount = 3
+				}
+			}
+		}
+	}
+	
+	on_accept = {
+		create_subject = {
+			subject_type = prussian_vassal 
+			subject = FROM
+		}
+	}
+	
+	ai_will_do = {
+	}
+}
+
+#Sus
+SOS_turn_claim_into_perma_claim = {
+	category = covert
+
+	require_acceptance = no
+
+	is_visible = {
+		has_country_flag = ME_diplo_action_to_convert_claim_to_perma_claim_flag 
+	}
+	
+	is_allowed = {
+		hidden_trigger = {
+			has_country_flag = ME_diplo_action_to_convert_claim_to_perma_claim_flag 
+		}
+		FROM = {
+			custom_trigger_tooltip = {
+				tooltip = SOS_any_owned_province_is_regular_claim_of_root
+				any_owned_province = {
+					is_claim = ROOT
+					NOT = { is_permanent_claim = ROOT }
+				}
+			}
+			has_spy_network_from = {
+				who = ROOT
+				value = 30
+			}
+		}
+		
+		custom_trigger_tooltip = {	
+			tooltip = SOS_window_isnt_open_tt
+			NOT = { has_country_flag = SOS_window_is_open }
+		}
+		
+	}
+	
+	on_accept = {
+		hidden_effect = {
+			FROM = {
+				save_event_target_as = Sus_target_for_claims
+			}
+		}
+		country_event = { id = ME_Sus_Events.7 }
+		
+		FROM = {
+			add_spy_network_from = {
+				who = ROOT 
+				value = -30
+			}
+		}
+	}
+	
+	ai_will_do = {
+		always = yes
+	}
+}
+
+#Swiss
+request_canton = {
+	category = influence
+
+	alert_index = 6
+	alert_tooltip = request_canton_alert_tooltip
+
+	require_acceptance = yes # Whether the recipient gets an option to decline
+
+	is_visible = {
+		can_be_overlord = canton
+		FROM = { 
+			NOT = { is_subject = yes } 
+		}
+		FROM = { NOT = { is_subject_of = ROOT } }
+	}
+	is_allowed = {
+		FROM = {
+			has_opinion = {
+				who = ROOT
+				value = 190
+			}
+			alliance_with = ROOT
+			NOT = { is_at_war = yes }
+			is_subject = no 
+			NOT = { total_development = 25 }
+			OR = {
+				technology_group = western
+				technology_group = dutch_tech_group
+				technology_group = english_tech_group
+				technology_group = french_tech_group
+				technology_group = german_tech_group
+				technology_group = italian_tech_group
+				technology_group = portuguese_tech_group
+				technology_group = roman_tech_group
+				technology_group = scandinavian_tech_group
+				technology_group = spanish_tech_group
+				technology_group = swiss_tech_group
+			}
+		}
+		
+	}
+	on_accept = {
+		add_trust = {
+			who = FROM
+			value = 20
+			mutual = yes
+		}
+		create_subject = {
+			subject_type = canton
+			subject = FROM
+		}
+	}
+	on_decline = {
+		add_trust = {
+			who = FROM
+			value = -100
+			mutual = yes
+		}
+	}
+
+	ai_acceptance = { # This works similarly to variable_arithmetic_trigger, but does not support triggers generally. Instead, "limit" will be evaluated first and the rest ignored if it isn't passed.
+		#Size of Trade League
+		add_entry = {
+			name = SIZE_CANTON
+			limit = {
+				canton = 4
+			}
+			export_to_variable = { #needs testing
+				which = ai_value
+				value = -1000
+			}
+		}
+		
+		#Attitude towards proposer
+		add_entry = {
+			name = ATTITUDE_CANTON
+			limit = {
+				FROM = {
+					OR = {
+						ai_attitude = { who = ROOT attitude = attitude_friendly }
+						ai_attitude = { who = ROOT attitude = attitude_allied }
+					}
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 50
+			}
+		}
+		add_entry = {
+			name = ATTITUDE_CANTON
+			limit = {
+				FROM = {
+					ai_attitude = { who = ROOT attitude = attitude_threatened }
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 20
+			}
+		}
+		add_entry = {
+			name = ATTITUDE_CANTON
+			limit = {
+				FROM = {
+					ai_attitude = { who = ROOT attitude = attitude_neutral }
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = -20
+			}
+		}
+		add_entry = {
+			name = ATTITUDE_CANTON
+			limit = {
+				FROM = {
+					OR = {
+						ai_attitude = { who = ROOT attitude = attitude_hostile }
+						ai_attitude = { who = ROOT attitude = attitude_outraged }
+						ai_attitude = { who = ROOT attitude = attitude_rivalry }
+					}
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = -1000
+			}
+		}
+		
+		#We have a royal marriage
+		add_entry = {
+			name = MARRIAGE_CANTON
+			limit = {
+				marriage_with = FROM
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 10
+			}
+		}
+		
+		#Proposer's diplomatic reputation 
+		add_entry = {
+			name = REPUTATION_CANTON
+			export_to_variable = {
+				which = ai_value
+				value = modifier:diplomatic_reputation
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 5
+			}
+		}
+		
+		#Target's opinion of Proposer
+		add_entry = {
+			name = OPINION_CANTON
+			export_to_variable = {
+				which = ai_value
+				value = opinion
+				who = FROM
+				with = ROOT
+			}
+			divide_variable = {
+				which = ai_value
+				value = 4
+			}
+		}
+		
+		#Nation has a religion not in the same religious group
+		add_entry = {
+			name = RELIGION_CANTON
+			limit = {
+				NOT = { religion_group = FROM }
+			}
+			export_to_variable = {
+				which = ai_value
+				value = -20
+			}
+		}
+		
+		#Nation has a different religion within the same religious group
+		add_entry = {
+			name = SAME_GROUP_DIFFERENT_RELIGION_CANTON
+			limit = {
+				NOT = { religion = FROM }
+				religion_group = FROM
+			}
+			export_to_variable = {
+				which = ai_value
+				value = -10
+			}
+		}
+		
+		
+		#Proposer army strength power compared to target nation
+		add_entry = {
+			name = ARMY_CANTON
+			limit = {
+				NOT = {
+					army_strength = {
+						who = FROM
+						value = 0.25
+					}
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = -20
+			}
+		}
+		add_entry = {
+			name = ARMY_CANTON
+			limit = {
+				army_strength = {
+					who = FROM
+					value = 0.25
+				}
+				NOT = {
+					army_strength = {
+						who = FROM
+						value = 1
+					}
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = trigger_value:army_size
+			}
+			export_to_variable = {
+				which = army_from
+				value = trigger_value:army_size
+				who = FROM
+			}
+			divide_variable = {
+				which = ai_value
+				which = army_from
+			}
+			subtract_variable = {
+				which = ai_value
+				value = 1
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 80
+			}
+			divide_variable = {
+				which = ai_value
+				value = 3
+			}
+		}
+		add_entry = {
+			name = ARMY_CANTON
+			limit = {
+				army_strength = {
+					who = FROM
+					value = 1
+				}
+				NOT = {
+					army_strength = {
+						who = FROM
+						value = 4
+					}
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = trigger_value:army_size
+			}
+			export_to_variable = {
+				which = army_from
+				value = trigger_value:army_size
+				who = FROM
+			}
+			divide_variable = {
+				which = ai_value
+				which = army_from
+			}
+			subtract_variable = {
+				which = ai_value
+				value = 1
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 20
+			}
+			divide_variable = {
+				which = ai_value
+				value = 3
+			}
+		}
+		add_entry = {
+			name = ARMY_CANTON
+			limit = {
+				army_strength = {
+					who = FROM
+					value = 4
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 20
+			}
+		}
+	}
+
+	ai_will_do = { # this is a trigger
+		always = yes
+	}
+}
+
+cancel_canton =  {
+	category = influence
+	require_acceptance = no
+	is_visible = {
+		overlord_of = FROM
+		FROM = {
+			is_subject_of_type = canton
+		}
+	}
+	is_allowed = {
+		FROM = { prestige = 0 }
+	}
+	on_accept = {
+		add_trust = {
+			who = FROM
+			value = -25
+			mutual = yes
+		}
+		FROM = {
+			grant_independence = yes
+			add_prestige = -25
+		}
+	}
+	ai_will_do = {
+		always = no
+	}
+}
+

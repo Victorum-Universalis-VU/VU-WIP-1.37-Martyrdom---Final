@@ -1,24 +1,21 @@
 namespace = vu_cv
-
 #Put Subject Types in 00_on_actions
-
 country_event = {
 	id = vu_cv.1
 	title = "vu_cv_title"
 	picture = "RELIGIOUS_WARS_eventPicture"
 	desc = "vu_cv_desc"
-
 	hidden = yes
-
 	#Put Subject Types Here
-	trigger = { 
-		NOT = { has_country_flag = vu_cv_done }
-		OR = { 
+	trigger = {
+		NOT = {
+			has_country_flag = vu_cv_done
+		}
+		OR = {
 			is_subject_of_type = scottish_clan
 			is_subject_of_type = english_peerage
 		}
 	}
-
 	immediate = {
 		restore_country_color = yes
 		set_country_flag = vu_cv_done
@@ -31,3 +28,372 @@ country_event = {
 		name = vu_cv.1a
 	}
 }
+
+country_event = {
+	#Don's shenanagins... removes AIs allies after they reach their cap
+	#no more 20+ allies of Saxony/Palatinate, to be used in cojunction
+	#with historical rivals, as this only fixes the number of allies,
+	#rather than who they ally... (though I tried to make them remove bad
+	#allies, but It's still the AI)
+	id = vu_remove_ai_allies
+	title = "vu_cv_title"
+	picture = "RELIGIOUS_WARS_eventPicture"
+	desc = "vu_cv_desc"
+	#hidden = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	trigger = {
+		AI = yes
+		NOT = {
+			OR = {
+				is_great_power = yes
+				num_of_free_diplomatic_relations = 1
+			}
+		}
+		OR = {
+			if = {
+				limit = {
+					is_elector = no
+					government_rank = 1
+					NOT = {
+						OR = {
+							technology_group = italian_tech_group
+							technology_group = english_tech_group
+							technology_group = indian
+							technology_group = chinese
+							technology_group = japanese
+							full_idea_group = diplomatic_ideas
+						}
+					}
+				}
+				num_of_allies = 3
+			}
+			else_if = {
+				limit = {
+					government_rank = 1
+					OR = {
+						is_elector = yes
+						technology_group = italian_tech_group
+						technology_group = english_tech_group
+						technology_group = indian
+						technology_group = chinese
+						technology_group = japanese
+					}
+					NOT = {
+						full_idea_group = diplomatic_ideas
+					}
+				}
+				num_of_allies = 4
+			}
+			else_if = {
+				limit = {
+					OR = {
+						government_rank = 2
+						AND = {
+							government_rank = 1
+							OR = {
+								is_elector = yes
+								technology_group = italian_tech_group
+								technology_group = english_tech_group
+								technology_group = indian
+								technology_group = chinese
+								technology_group = japanese
+								full_idea_group = diplomatic_ideas
+							}
+						}
+					}
+				}
+				num_of_allies = 5
+			}
+			else_if = {
+				limit = {
+					government_rank = 3
+				}
+				num_of_allies = 6
+			}
+		}
+	}
+	immediate = {
+	}
+	option = {
+		name = vu_remove_ai_allies.1.desc
+		random_ally = {
+			limit = {
+				AI = yes
+			}
+			break_alliance = root
+			break_marriage = root			#added cause AI would get over diplo relations as they
+			#refuse to break royal marriages with anybody	
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = {
+		trigger = {
+			OR = {
+				AND = {
+					AI = yes
+					is_part_of_hre = yes
+					any_ally = {
+						is_part_of_hre = no
+					}
+				}
+				AND = {
+					AI = yes
+					is_part_of_hre = no
+					any_ally = {
+						is_part_of_hre = yes
+					}
+				}
+			}
+		}
+		name = vu_remove_ai_allies.2.desc
+		if = {
+			limit = {
+				is_part_of_hre = yes
+			}
+			random_ally = {
+				limit = {
+					AI = yes
+					is_part_of_hre = no
+				}
+				break_alliance = root
+				break_marriage = root
+			}
+		}
+		else_if = {
+			limit = {
+				is_part_of_hre = no
+			}
+			random_ally = {
+				limit = {
+					AI = yes
+					is_part_of_hre = yes
+				}
+				break_alliance = root
+				break_marriage = root
+			}
+		}
+		ai_chance = {
+			factor = 0
+			modifier = {
+				factor = 2
+				OR = {
+					AND = {
+						AI = yes
+						is_part_of_hre = yes
+						any_ally = {
+							is_part_of_hre = no
+						}
+					}
+					AND = {
+						AI = yes
+						is_part_of_hre = no
+						any_ally = {
+							is_part_of_hre = yes
+						}
+					}
+				}
+			}
+		}
+	}
+	option = {
+		trigger = {
+			any_ally = {
+				AI = yes
+				is_at_war = yes
+			}
+			is_at_war = no
+		}
+		name = vu_remove_ai_allies.3.desc
+		random_ally = {
+			limit = {
+				AI = yes
+				is_at_war = yes
+			}
+			break_alliance = root
+			break_marriage = root
+		}
+		ai_chance = {
+			factor = 0
+			modifier = {
+				factor = 2
+				any_ally = {
+					AI = yes
+					is_at_war = yes
+				}
+				is_at_war = no
+			}
+		}
+	}
+	option = {
+		trigger = {
+			any_ally = {
+				AI = yes
+				NOT = {
+					religion = root
+				}
+			}
+		}
+		name = vu_remove_ai_allies.4.desc
+		random_ally = {
+			limit = {
+				AI = yes
+				NOT = {
+					religion = root
+				}
+			}
+			break_alliance = root
+			break_marriage = root
+		}
+		ai_chance = {
+			factor = 0
+			modifier = {
+				factor = 3
+				any_ally = {
+					AI = yes
+					NOT = {
+						religion = root
+					}
+				}
+			}
+			modifier = {
+				factor = 4
+				any_ally = {
+					NOT = {
+						religion = root
+					}
+				}
+				OR = {
+					current_age = age_of_reformation
+					hre_leagues_enabled = yes
+				}
+			}
+		}
+	}
+	option = {
+		trigger = {
+			any_ally = {
+				AI = yes
+				army_strength = {
+					who = root
+					value = 2
+				}
+			}
+		}
+		name = vu_remove_ai_allies.5.desc
+		random_ally = {
+			limit = {
+				AI = yes
+				army_strength = {
+					who = root
+					value = 2
+				}
+			}
+			break_alliance = root
+			break_marriage = root
+		}
+		ai_chance = {
+			factor = 0
+			modifier = {
+				factor = 1
+				any_ally = {
+					AI = yes
+					army_strength = {
+						who = root
+						value = 2
+					}
+				}
+			}
+		}
+	}
+	option = {
+		trigger = {
+			any_ally = {
+				AI = yes
+				coalition_target = from
+			}
+		}
+		name = vu_remove_ai_allies.6.desc
+		random_ally = {
+			limit = {
+				AI = yes
+				coalition_target = from
+			}
+			break_alliance = root
+			break_marriage = root
+		}
+		ai_chance = {
+			factor = 0
+			modifier = {
+				factor = 3
+				any_ally = {
+					AI = yes
+					coalition_target = from
+				}
+			}
+		}
+	}
+	option = {
+		trigger = {
+			any_ally = {
+				AI = yes
+				colony_claim = root
+			}
+		}
+		name = vu_remove_ai_allies.7.desc
+		random_ally = {
+			limit = {
+				AI = yes
+				colony_claim = root
+			}
+			break_alliance = root
+			break_marriage = root
+		}
+		ai_chance = {
+			factor = 0
+			modifier = {
+				factor = 2
+				any_ally = {
+					AI = yes
+					colony_claim = root
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = vu_constantinople_to_istambul.1
+	title = "vu_constantinople_to_istambul"
+	picture = "RELIGIOUS_WARS_eventPicture"
+	desc = "vu_constantinople_to_istambul_desc"
+	hidden = yes
+	fire_only_once = yes
+	trigger = {
+		151 = {
+			AND = {
+				NOT = {
+					owned_by = BYZ
+				}
+				owner = {
+					religion_group = muslim
+				}
+			}
+		}
+	}
+	immediate = {
+		151 = {
+			destroy_great_project = {
+				type = vu_university_of_constantinople
+			}
+		}
+	}
+	option = {
+		name = vu_constantinople_to_istambul.1a
+	}
+}
+
+

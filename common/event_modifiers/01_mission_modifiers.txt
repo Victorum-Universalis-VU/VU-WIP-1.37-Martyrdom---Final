@@ -15322,4 +15322,8 @@ greece_is_ours = {
 dacian_gold = {
 	local_tax_modifier = 0.15
 }
+
+me_mug_mughal_ties = {
+	core_creation = -0.1
+}
 #End of VU additions by San Felipe

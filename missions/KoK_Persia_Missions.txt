@@ -1,4 +1,4 @@
-#VU - Updated by San Felipe for 1.36.*
+#VU - Updated by San Felipe for 1.37.*
 #Conquest + Religious Branches
 kok_persia_conquest_mission_slot_1 = {
 	slot = 1
@@ -39,6 +39,7 @@ kok_persia_conquest_mission_slot_1 = {
 			add_permanent_claim_multi_provinces = { target = shirvan_area }
 			add_permanent_claim_multi_provinces = { target = samtskhe_area }
 			add_permanent_claim_multi_provinces = { target = imereti_area }
+			#add_permanent_claim_multi_provinces = { target = kartli_kakheti_area }
 		}
 	}
 	per_caucasian_conquest = {
@@ -68,7 +69,6 @@ kok_persia_conquest_mission_slot_1 = {
 					add_accepted_culture_or_dip_power = {
 						culture = georgian
 						free = yes
-						new_line = yes
 					}
 					add_accepted_culture_or_dip_power = {
 						culture = armenian
@@ -584,7 +584,6 @@ kok_persia_conquest_mission_slot_2 = {
 			add_accepted_culture_or_dip_power = {
 				culture = al_iraqiya_arabic
 				free = yes
-				new_line = yes
 			}
 			add_accepted_culture_or_dip_power = {
 				culture = al_suryah_arabic
@@ -2181,6 +2180,7 @@ kok_persia_mission_sunni_slot_3 = {
 			add_permanent_claim_multi_provinces = { target = baleares_area }
 			add_permanent_claim_multi_provinces = { target = corsica_sardinia_area }
 			add_permanent_claim_multi_provinces = { target = sicily_area }
+			#add_permanent_claim_multi_provinces = { target = western_sicily_area }
 		}
 	}
 	per_unify_islam = {
@@ -3175,17 +3175,25 @@ kok_persia_culture_mission_slot_1 = {
 			}
 		}
 		trigger = {
-			OR = {
-				production_leader = { trade_goods = silk } 
-				trade_goods_produced_amount = { trade_goods = silk amount = 20 }
+			if = {
+				limit = {
+					mission_completed = TIM_rugs
+				}
+				mission_completed = TIM_rugs
 			}
-			OR = {
-				production_leader = { trade_goods = cloth } 
-				trade_goods_produced_amount = { trade_goods = cloth amount = 20 }
-			}
-			OR = {
-				production_leader = { trade_goods = dyes } 
-				trade_goods_produced_amount = { trade_goods = dyes amount = 20 }
+			else = {
+			    OR = {
+			    	production_leader = { trade_goods = silk } 
+			    	trade_goods_produced_amount = { trade_goods = silk amount = 20 }
+			    }
+			    OR = {
+			    	production_leader = { trade_goods = cloth } 
+			    	trade_goods_produced_amount = { trade_goods = cloth amount = 20 }
+			    }
+			    OR = {
+			    	production_leader = { trade_goods = dyes } 
+			    	trade_goods_produced_amount = { trade_goods = dyes amount = 20 }
+			    }
 			}
 		}
 		effect = {

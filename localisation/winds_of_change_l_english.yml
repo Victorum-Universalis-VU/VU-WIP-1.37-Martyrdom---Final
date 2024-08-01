@@ -2966,7 +2966,7 @@
 
 #Government
  FEJEDELEMSEG:0 "Fejedelemség"
- KIRALYSAG:0 "Királyság"
+ KIRALYSAG:0 "Kingdom" #Was Királyság
  BIRODALOM:0 "Birodalom"
  HERCEGNO:0 "Hercegno"
  KIRALY:0 "Király"
@@ -4785,7 +4785,7 @@
  KRALOVNA:0 "Královna"
  CISAROVNA:0 "Císarovna"
  KNIZECTVI:0 "Knízectví"
- KRALOVSTVI:0 "Království"
+ KRALOVSTVI:0 "Kingdom" #Was Království
  CISARSTVI:0 "Císarství"
  KNIEZATSTVO:0 "Kniezatstvo"
  KRALOVSTVO:0 "Královstvo"

@@ -5759,19 +5759,19 @@ guiTypes = {
 		}
 		
 		iconType = {
-			name = "counting_house_to_treasury_arrow"
+			name = "counting_house_factory_arrow"
 			position = { x = 118 y = 51 }
 			spriteType = "GFX_building_upgrade_icon"
 		}
 		
 		checkboxType = {
-			name = "build_treasury"
+			name = "build_factory"
 			position = { x = 126 y = 42 }
 			quadTextureSprite = "GFX_courthouse_muslimgfx" #Placeholder, real sprite is decided by game (based on button name).
 		}
 
 		instantTextBoxType={
-			name = "treasury_cost"
+			name = "factory_cost"
 			position = { x = 126 y = 92 }
 			font = "vic_18"
 			borderSize = { x = 0 y = 0}
@@ -5780,20 +5780,20 @@ guiTypes = {
 			text = "2000¤"
 		}
 
-		iconType = {
-			name = "treasury_to_factory_arrow"
-			position = { x = 170 y = 51 }
-			spriteType = "GFX_building_upgrade_icon"
-		}
+		#iconType = {
+		#	name = "factory_to_treasury_arrow"
+		#	position = { x = 170 y = 51 }
+		#	spriteType = "GFX_building_upgrade_icon"
+		#}
 
 		checkboxType = {
-			name = "build_factory"
+			name = "build_treasury"
 			position = { x = 178 y = 42 }
 			quadTextureSprite = "GFX_courthouse_muslimgfx" #Placeholder, real sprite is decided by game (based on button name).
 		}
 
 		instantTextBoxType={
-			name = "factory_cost"
+			name = "treasury_cost"
 			position = { x = 178 y = 92 }
 			font = "vic_18"
 			borderSize = { x = 0 y = 0}
@@ -5949,19 +5949,19 @@ guiTypes = {
 		}
 
 		iconType = {
-			name = "trade_depot_to_stock_exchange_arrow"
+			name = "trade_depot_to_corporative_headquarters_arrow"
 			position = { x = 118 y = 151 }
 			spriteType = "GFX_building_upgrade_icon"
 		}
 		
 		checkboxType = {
-			name = "build_stock_exchange"
+			name = "build_corporative_headquarters"
 			position = { x = 126 y = 142 }
 			quadTextureSprite = "GFX_courthouse_muslimgfx" #Placeholder, real sprite is decided by game (based on button name).
 		}
 		
 		instantTextBoxType={
-			name = "stock_exchange_cost"
+			name = "corporative_headquarters_cost"
 			position = {x = 126 y = 192 }
 			font = "vic_18"
 			borderSize = {x = 0 y = 0}	
@@ -5970,20 +5970,20 @@ guiTypes = {
 			text = "2000¤"	
 		}
 		
-		iconType = {
-			name = "stock_exchange_to_corporative_headquarters_arrow"
-			position = { x = 170 y = 151 }
-			spriteType = "GFX_building_upgrade_icon"
-		}			
+		#iconType = {
+		#	name = "corporative_headquarters_to_stock_exchange_arrow"
+		#	position = { x = 170 y = 151 }
+		#	spriteType = "GFX_building_upgrade_icon"
+		#}			
 		
 		checkboxType = {
-			name = "build_corporative_headquarters"
+			name = "build_stock_exchange"
 			position = { x = 178 y = 142 }
 			quadTextureSprite = "GFX_courthouse_muslimgfx" #Placeholder, real sprite is decided by game (based on button name).
 		}
 		
 		instantTextBoxType={
-			name = "corporative_headquarters_cost"
+			name = "stock_exchange_cost"
 			position = {x = 178 y = 192 }
 			font = "vic_18"
 			borderSize = { x = 0 y = 0 }	
@@ -6491,13 +6491,13 @@ guiTypes = {
 		#}
 
 		checkboxType = {
-			name = "build_theatrics"
+			name = "build_cinema" #brothel
 			position = { x = 74 y = 442 }
 			quadTextureSprite = "GFX_courthouse_muslimgfx" #Placeholder, real sprite is decided by game (based on button name).
 		}
 
 		instantTextBoxType={
-			name = "theatrics_cost"
+			name = "cinema_cost" #brothel
 			position = { x = 74 y = 492 }
 			font = "vic_18"
 			borderSize = { x = 0 y = 0 }	
@@ -6507,19 +6507,19 @@ guiTypes = {
 		}
 
 		#iconType = {
-		#	name = "theatrics_to_operatics_arrow"
-		#	position = { x = 105 y = 441 }
+		#	name = "cinema_to_theatrics_arrow"
+		#	position = { x = 118 y = 450 }
 		#	spriteType = "GFX_building_upgrade_icon"
 		#}		
 
 		checkboxType = {
-			name = "build_operatics"
+			name = "build_theatrics"
 			position = { x = 126 y = 442 }
 			quadTextureSprite = "GFX_courthouse_muslimgfx" #Placeholder, real sprite is decided by game (based on button name).
 		}
 
 		instantTextBoxType={
-			name = "operatics_cost"
+			name = "theatrics_cost"
 			position = { x = 126 y = 492 }
 			font = "vic_18"
 			borderSize = { x = 0 y = 0 }	
@@ -6528,20 +6528,20 @@ guiTypes = {
 			text = "2000¤"	
 		}
 
-		#iconType = {
-		#	name = "operatics_to_cinema_arrow"
-		#	position = { x = 157 y = 441 }
-		#	spriteType = "GFX_building_upgrade_icon"
-		#}
+		iconType = {
+			name = "theatrics_to_operatics_arrow"
+			position = { x = 170 y = 450 }
+			spriteType = "GFX_building_upgrade_icon"
+		}
 
 		checkboxType = {
-			name = "build_cinema"
+			name = "build_operatics"
 			position = { x = 178 y = 442 }
 			quadTextureSprite = "GFX_courthouse_muslimgfx" #Placeholder, real sprite is decided by game (based on button name).
 		}
 
 		instantTextBoxType={
-			name = "cinema_cost"
+			name = "operatics_cost"
 			position = { x = 178 y = 492 }
 			font = "vic_18"
 			borderSize = { x = 0 y = 0 }	

@@ -173,17 +173,17 @@
  building_wrestling: "Wrestling"
  #building_wrestling_desc: "§TCountry Requirements:§!\n-Military Technology (0)\n"
 
+ cinema: "Brothel"
+ building_cinema: "Brothel"
+ #building_cinema_desc: "§TCountry Requirements:§!\n-Diplomatic Technology (14)\n"
+
  theatrics: "Theatrics"
  building_theatrics: "Theatrics"
- #building_theatrics_desc: "§TCountry Requirements:§!\n-Diplomatic Technology (14)\n"
+ #building_theatrics_desc: "§TCountry Requirements:§!\n-Diplomatic Technology (18)\n"
 
  operatics: "Operatics"
  building_operatics: "Operatics"
- #building_operatics_desc: "§TCountry Requirements:§!\n-Diplomatic Technology (18)\n"
-
- cinema: "Cinema"
- building_cinema: "Cinema"
- #building_cinema_desc: "§TCountry Requirements:§!\n-Diplomatic Technology (38)\n"
+ #building_operatics_desc: "§TCountry Requirements:§!\n-Diplomatic Technology (38)\n"
 
  #Leisure
  park: "Park"

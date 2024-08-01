@@ -28,12 +28,12 @@
  construct_vu_at_turaif_title: "Construct At-Turaif."
  construct_vu_at_turaif_desc: "The At-Turaif is a Great Landmark"
 
-
- great_project_vu_bahla_fort: "Qal'at Bahla"
- vu_bahla_fort: "Qal'at Bahla"
- vu_bahla_fort_title: "Construct Qal'at Bahla."
- construct_vu_bahla_fort_title: "Construct Qal'at Bahla."
- construct_vu_bahla_fort_desc: "The Qal'at Bahla is a Great Landmark"
+ #Removed by SF in 1.37
+ #great_project_vu_bahla_fort: "Qal'at Bahla"
+ #vu_bahla_fort: "Qal'at Bahla"
+ #vu_bahla_fort_title: "Construct Qal'at Bahla."
+ #construct_vu_bahla_fort_title: "Construct Qal'at Bahla."
+ #construct_vu_bahla_fort_desc: "The Qal'at Bahla is a Great Landmark"
 
 
  great_project_vu_qalhat: "Qalhat"

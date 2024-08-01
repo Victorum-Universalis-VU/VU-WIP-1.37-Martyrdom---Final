@@ -513,3 +513,15 @@ vu_potential_archaeological_dig = {
 vu_book_of_grudges_modifier = {
 	cb_on_religious_enemies = yes
 }
+
+vu_fancifur_novels = {	
+	heir_chance = -0.50
+	prestige = -1
+	global_unrest = 1
+	discipline = -0.05
+	global_tax_income = -24
+	great_project_upgrade_cost = 1
+	defensiveness = -1
+	ship_durability = -0.5
+	diplomatic_reputation = -2 #It makes so much sense! xD
+}

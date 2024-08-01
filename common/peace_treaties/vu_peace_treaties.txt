@@ -62,6 +62,7 @@ vu_civilwar_full_annex = {
 #	}
 #}
 
+#Canton_peace_treaties
 make_canton = {
 	category = 6 
 	power_projection = vassalized_rival 
@@ -118,3 +119,4 @@ make_canton = {
 		}
 	}
 }
+

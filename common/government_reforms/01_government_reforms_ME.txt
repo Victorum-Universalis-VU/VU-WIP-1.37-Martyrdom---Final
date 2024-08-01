@@ -349,11 +349,11 @@ tur_reform_beylerbeys = {
 	modifiers = {
 	}
 	trigger = {
-		mission_completed = TUR_beylerbeys
+		mission_completed = tur_conquer_anatolian_beyliks #Was TUR_beylerbeys
 	}
 	potential = {
 		tag = TUR
-		NOT = { mission_completed = TUR_eyalets }
+		NOT = { mission_completed = tur_develop_the_devshime_system_further } #Was TUR_eyalets
 	}
 }
 
@@ -364,10 +364,10 @@ tur_reform_eyalets = {
 		state_maintenance_modifier = -0.05
 	}
 	trigger = {
-		mission_completed = TUR_beylerbeys
+		mission_completed = tur_conquer_anatolian_beyliks #Was TUR_beylerbeys
 	}
 	potential = {
 		tag = TUR
-		mission_completed = TUR_eyalets
+		mission_completed = tur_develop_the_devshime_system_further #Was TUR_eyalets
 	}
 }

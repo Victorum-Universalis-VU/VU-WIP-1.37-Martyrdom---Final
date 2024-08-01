@@ -13,9 +13,15 @@
 			tag = QOM
 			tag = KHO
 		}
+		NOT = {
+			AND = {
+				has_dlc = "Winds of Change"
+				tag = TIM
+			}
+		}
 		has_dlc = "Dharma"
 		NOT = { map_setup = map_setup_random }
-		has_country_flag = use_paradox_missions
+		#has_country_flag = use_paradox_missions
 	}
 	has_country_shield = yes
 	
@@ -88,7 +94,7 @@
 	}
 	
 	dh_tim_khorasan_one = {
-		icon = mission_non-western_cavalry_raid
+		icon = per_establish_western_defenses
 		required_missions = { dh_tim_army_built }
 		position = 3
 		
@@ -150,7 +156,7 @@
 	}
 	
 	dh_tim_khorasan_two = {
-		icon = mission_unite_home_region
+		icon = per_establish_eastern_defenses
 		required_missions = { dh_tim_khorasan_one }
 		position = 5
 		

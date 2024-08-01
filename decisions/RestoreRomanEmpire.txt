@@ -1,10 +1,12 @@
+#Updated by SF for VU v1.37
 country_decisions = {
-
 	restore_roman_empire = {
 		major = yes
 		potential = {
 			normal_or_historical_nations = yes
-			NOT = { has_country_flag = restored_rome_flag }
+			NOT = {
+				has_country_flag = restored_rome_flag
+			}
 			OR = {
 				owns = 118
 				tag = BYZ
@@ -17,11 +19,21 @@ country_decisions = {
 				is_free_or_tributary_trigger = yes
 				ai = no
 			}
-			NOT = { tag = HLR }
-			NOT = { tag = ROM }
-			NOT = { tag = PAP }
-			NOT = { tag = RMN }
-			NOT = { exists = ROM }
+			NOT = {
+				tag = HLR
+			}
+			NOT = {
+				tag = ROM
+			}
+			NOT = {
+				tag = PAP
+			}
+			NOT = {
+				tag = RMN
+			}
+			NOT = {
+				exists = ROM
+			}
 			OR = {
 				religion_group = christian
 				religion_group = pagan
@@ -35,59 +47,41 @@ country_decisions = {
 				region = balkan_region
 				region = anatolia_region
 				region = mashriq_region
-				province_id = 343 # Fez
-				province_id = 341 # Tunis
-				province_id = 361 # Cairo
-				province_id = 236 # London
-				province_id = 245 # Yorkshire
-				province_id = 96 # Zeeland
-				province_id = 134 # Vienna
+				province_id = 343				# Fez
+				province_id = 341				# Tunis
+				province_id = 361				# Cairo
+				province_id = 236				# London
+				province_id = 245				# Yorkshire
+				province_id = 96				# Zeeland
+				province_id = 134				# Vienna
 			}
-			NOT = { owned_by = ROOT }
+			NOT = {
+				owned_by = ROOT
+			}
 		}
 		allow = {
-			italy_region = {
-				type = all
-				owned_by = ROOT
-			}
-			france_region = {
-				type = all
-				owned_by = ROOT
-			}
-			iberia_region = {
-				type = all
-				owned_by = ROOT
-			}
-			balkan_region = {
-				type = all
-				owned_by = ROOT
-			}
-			anatolia_region = {
-				type = all
-				owned_by = ROOT
-			}
-			mashriq_region = {
-				type = all
-				owned_by = ROOT
-			}
-			owns = 343 # Fez
-			owns = 341 # Tunis
-			owns = 361 # Cairo
-			owns = 236 # London
-			owns = 245 # Yorkshire
-			owns = 96 # Zeeland
-			owns = 134 # Vienna
-			is_at_war = no
-			is_free_or_tributary_trigger = yes
-			is_nomad = no
-			118 = {
-				is_state = yes
+			AND = {
+				is_at_war = no
+				118 = {
+					is_capital = yes
+				}
+				italy_region = {
+					type = all
+					owned_by = ROOT
+				}
+				owns = 136				# Split
+				136 = {
+					has_great_project = {
+						type = diocletian_palace
+						tier = 2
+					}
+				}
+				owns = 341				# Carthago
+				owns = 146				# Athens
+				owns = 151				# Byzantion
 			}
 		}
 		effect = {
-			118 = {
-				move_capital_effect = yes
-			}
 			restore_country_name_effect = yes
 			change_tag = ROM
 			on_change_tag_effect = yes
@@ -112,7 +106,9 @@ country_decisions = {
 				}
 			}
 			set_government_rank = 3
-			add_prestige_or_monarch_power = { amount = 50 }
+			add_prestige_or_monarch_power = {
+				amount = 50
+			}
 			if = {
 				limit = {
 					has_dlc = "Domination"
@@ -121,7 +117,9 @@ country_decisions = {
 					limit = {
 						government = monarchy
 						is_revolutionary = no
-						NOT = { has_reform = celestial_empire }
+						NOT = {
+							has_reform = celestial_empire
+						}
 					}
 					hidden_effect = {
 						unlock_government_reform = {
@@ -157,22 +155,18 @@ country_decisions = {
 					}
 				}
 			}
-			add_core = 118 # Rome
-			#if = {
-			#	limit = {
-			#		is_part_of_hre = yes
-			#		is_elector = no
-			#	}
-			#	every_owned_province = {
-			#		limit = {
-			#			is_part_of_hre = yes
-			#		}
-			#		set_in_empire = no
-			#	}
-			#}
+			add_core = 118			# Rome
+			add_core = 136
+			add_core = 341
+			add_core = 146
+			add_core = 151
 			if = {
-				limit = { has_custom_ideas = no }
-				country_event = { id = ideagroups.1 } #Swap Ideas
+				limit = {
+					has_custom_ideas = no
+				}
+				country_event = {
+					id = ideagroups.1
+				}				#Swap Ideas
 			}
 			add_country_modifier = {
 				name = "centralization_modifier"
@@ -184,5 +178,4 @@ country_decisions = {
 			factor = 1
 		}
 	}
-	
 }

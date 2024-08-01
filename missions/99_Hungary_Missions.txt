@@ -1,12 +1,15 @@
-#VU - Updated by San Felipe for 1.36.*
+#VU - Updated by San Felipe for 1.37.*
 hun_north_group = {
 	slot = 1
 	generic = no
 	ai = yes
 	potential = {
 		tag = HUN
+		NOT = {
+			has_dlc = "Winds of Change"
+		}
 		NOT = { map_setup = map_setup_random }
-		has_country_flag = use_paradox_missions
+		#has_country_flag = use_paradox_missions
 	}
 	has_country_shield = yes
 	
@@ -42,7 +45,6 @@ hun_north_group = {
 						OR = { 
 							has_reform = polish_elective_monarchy
 							has_reform = elective_monarchy
-							has_reform = phoenician_elective_monarchical_republic
 						}
 					}
 				}
@@ -99,7 +101,7 @@ hun_north_group = {
 					}
 				}
 			}
-			is_subject = no
+			#is_subject = no
 		}
 		
 		effect = {
@@ -154,7 +156,7 @@ hun_north_group = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
-			is_subject = no
+			#is_subject = no
 		}
 		
 		effect = {
@@ -210,7 +212,7 @@ hun_north_group = {
 					area = rascia_area
 				}
 			}
-			is_subject = no
+			#is_subject = no
 		}
 		
 		effect = {
@@ -261,8 +263,11 @@ hun_south_group = {
 	ai = yes
 	potential = {
 		tag = HUN
+		NOT = {
+			has_dlc = "Winds of Change"
+		}
 		NOT = { map_setup = map_setup_random }
-		has_country_flag = use_paradox_missions
+		#has_country_flag = use_paradox_missions
 	}
 	has_country_shield = yes
 	
@@ -281,7 +286,7 @@ hun_south_group = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
-			is_subject = no
+			#is_subject = no
 		}
 		
 		effect = {
@@ -353,7 +358,7 @@ hun_south_group = {
 				country_or_non_sovereign_subject_holds = ROOT
 			}
 			owns_or_non_sovereign_subject_of = 4754
-			is_subject = no
+			#is_subject = no
 		}
 		
 		effect = {
@@ -429,8 +434,11 @@ hun_ottoman_group = {
 	ai = yes
 	potential = {
 		tag = HUN
+		NOT = {
+			has_dlc = "Winds of Change"
+		}
 		NOT = { map_setup = map_setup_random }
-		has_country_flag = use_paradox_missions
+		#has_country_flag = use_paradox_missions
 	}
 	has_country_shield = yes
 	
@@ -464,7 +472,7 @@ hun_ottoman_group = {
 					}
 				}
 			}
-			is_subject = no
+			#is_subject = no
 		}
 		
 		effect = {
@@ -510,7 +518,7 @@ hun_ottoman_group = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
-			is_subject = no
+			#is_subject = no
 		}
 		
 		effect = {
@@ -544,7 +552,7 @@ hun_ottoman_group = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
-			is_subject = no
+			#is_subject = no
 		}
 		
 		effect = {
@@ -580,7 +588,7 @@ hun_ottoman_group = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
-			is_subject = no
+			#is_subject = no
 		}
 		
 		effect = {

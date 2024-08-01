@@ -287,8 +287,7 @@ released_vassal = {
 	yearly_decay = 5
 }
 
-helped_support_rebels =
-{
+helped_support_rebels = {
 	opinion = 100
 	yearly_decay = 5
 }
@@ -363,8 +362,7 @@ claimed_throne_on_us = {
 	min = -100
 }
 
-claimed_throne_other_rm =
-{
+claimed_throne_other_rm = {
 	opinion = -50
 	yearly_decay = 3
 	min = -50

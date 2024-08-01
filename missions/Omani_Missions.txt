@@ -1,4 +1,4 @@
-#VU - Updated by San Felipe for 1.36.*
+#VU - Updated by San Felipe for 1.37.*
 oman_conquest_group = {
 	slot = 1
 	generic = no
@@ -6,7 +6,8 @@ oman_conquest_group = {
 	potential = {
 		tag = OMA
 		NOT = { map_setup = map_setup_random }
-		has_country_flag = use_paradox_missions
+		NOT = { has_dlc = "Winds of Change" }
+		#has_country_flag = use_paradox_missions
 	}
 	has_country_shield = yes
 	

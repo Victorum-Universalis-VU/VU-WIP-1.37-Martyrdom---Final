@@ -363,14 +363,7 @@ spriteTypes = {
 		name = "GFX_great_project_gme_kasteel_de_haar"
 		texturefile = "gfx//interface//great_projects//GME//great_project_gme_kasteel_de_haar.dds"
 	}
-	spriteType = {
-		name = "GFX_great_project_gme_leiden_university"
-		texturefile = "gfx//interface//great_projects//GME//great_project_gme_leiden_university.dds"
-	}
-	spriteType = {
-		name = "GFX_great_project_gme_old_leuven_university"
-		texturefile = "gfx//interface//great_projects//GME//great_project_gme_old_leuven_university.dds"
-	}
+	
 	spriteType = {
 		name = "GFX_great_project_gme_paleis_koudenberg"
 		texturefile = "gfx//interface//great_projects//GME//great_project_gme_paleis_koudenberg.dds"
@@ -628,10 +621,7 @@ spriteTypes = {
 		name = "GFX_great_project_gme_cathedral_poznan"
 		texturefile = "gfx//interface//great_projects//GME//great_project_gme_cathedral_poznan.dds"
 	}
-	spriteType = {
-		name = "GFX_great_project_gme_jagielon_university"
-		texturefile = "gfx//interface//great_projects//GME//great_project_gme_jagielon_university.dds"
-	}
+
 	spriteType = {
 		name = "GFX_great_project_gme_lazienki_park"
 		texturefile = "gfx//interface//great_projects//GME//great_project_gme_lazienki_park.dds"

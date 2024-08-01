@@ -459,55 +459,55 @@ vu_at_turaif = {
 	}
 }
 
-vu_bahla_fort = {
-	start = 403
-	date = 1444.01.01
-	time = { months = 0 }
-	build_cost = 0
-	can_be_moved = no
-	move_days_per_unit_distance = 7
-	starting_tier = 1
-	type = monument
-	build_trigger = { owner = { culture_group = turko_semitic } }
-	on_built = { }
-	on_destroyed = { }
-	can_use_modifiers_trigger = { owner = { culture_group = turko_semitic } }
-	can_upgrade_trigger =  { owner = { culture_group = turko_semitic } }
-	keep_trigger = {}
-
-	tier_0 = {
-		upgrade_time = { months = 0	}
-		cost_to_upgrade = {	factor = 0 }
-		province_modifiers = {}
-		area_modifier = {}
-		country_modifiers = {}
-		on_upgraded = {}
-	}
-	tier_1 = {
-		upgrade_time = { months = 240 }
-		cost_to_upgrade = {	factor = 1500 }
-		province_modifiers = { local_production_efficiency = 0.05 local_development_cost = -0.1 local_garrison_size = 0.11 local_defensiveness = 0.05}
-		area_modifier = {  }
-		country_modifiers = {  }
-		on_upgraded = {}
-	}
-	tier_2 = {
-		upgrade_time = { months = 480 }
-		cost_to_upgrade = {	factor = 3000 }
-		province_modifiers = { local_production_efficiency = 0.1 local_development_cost = -0.2 local_garrison_size = 0.22 local_defensiveness = 0.10}
-		area_modifier = { local_development_cost = -0.05 }
-		country_modifiers = {}
-		on_upgraded = {}
-	}
-	tier_3 = {
-		upgrade_time = { months = 960 }
-		cost_to_upgrade = {	factor = 9000 }
-		province_modifiers = { local_production_efficiency = 0.15  local_development_cost = -0.3 local_garrison_size = 0.33 local_defensiveness = 0.15 fort_level = 1}
-		area_modifier = { local_production_efficiency = 0.05 local_development_cost = -0.1 }
-		country_modifiers = { core_creation = -0.1 fort_maintenance_modifier = -0.10 }
-		on_upgraded = {  }
-	}
-}
+#vu_bahla_fort = {
+#	start = 403
+#	date = 1444.01.01
+#	time = { months = 0 }
+#	build_cost = 0
+#	can_be_moved = no
+#	move_days_per_unit_distance = 7
+#	starting_tier = 1
+#	type = monument
+#	build_trigger = { owner = { culture_group = turko_semitic } }
+#	on_built = { }
+#	on_destroyed = { }
+#	can_use_modifiers_trigger = { owner = { culture_group = turko_semitic } }
+#	can_upgrade_trigger =  { owner = { culture_group = turko_semitic } }
+#	keep_trigger = {}
+#
+#	tier_0 = {
+#		upgrade_time = { months = 0	}
+#		cost_to_upgrade = {	factor = 0 }
+#		province_modifiers = {}
+#		area_modifier = {}
+#		country_modifiers = {}
+#		on_upgraded = {}
+#	}
+#	tier_1 = {
+#		upgrade_time = { months = 240 }
+#		cost_to_upgrade = {	factor = 1500 }
+#		province_modifiers = { local_production_efficiency = 0.05 local_development_cost = -0.1 local_garrison_size = 0.11 local_defensiveness = 0.05}
+#		area_modifier = {  }
+#		country_modifiers = {  }
+#		on_upgraded = {}
+#	}
+#	tier_2 = {
+#		upgrade_time = { months = 480 }
+#		cost_to_upgrade = {	factor = 3000 }
+#		province_modifiers = { local_production_efficiency = 0.1 local_development_cost = -0.2 local_garrison_size = 0.22 local_defensiveness = 0.10}
+#		area_modifier = { local_development_cost = -0.05 }
+#		country_modifiers = {}
+#		on_upgraded = {}
+#	}
+#	tier_3 = {
+#		upgrade_time = { months = 960 }
+#		cost_to_upgrade = {	factor = 9000 }
+#		province_modifiers = { local_production_efficiency = 0.15  local_development_cost = -0.3 local_garrison_size = 0.33 local_defensiveness = 0.15 fort_level = 1}
+#		area_modifier = { local_production_efficiency = 0.05 local_development_cost = -0.1 }
+#		country_modifiers = { core_creation = -0.1 fort_maintenance_modifier = -0.10 }
+#		on_upgraded = {  }
+#	}
+#}
 
 vu_qalhat = {
 	start = 5333

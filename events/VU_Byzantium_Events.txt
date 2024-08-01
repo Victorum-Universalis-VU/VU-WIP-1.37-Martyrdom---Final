@@ -2834,7 +2834,7 @@ province_event = { #Conversion of Anatolia
 				area = karaman_area
 				area = dulkadir_area
 			}
-			change_culture = cappadocian
+			change_culture = cappadocian_greek
 		}
 		else_if = {
 			limit = {

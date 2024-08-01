@@ -4344,13 +4344,12 @@ is_not_eligible_for_trade_good_gems = {
 			NOT = { area = venezuela_area }
 			NOT = { area = guyana_area }
 			NOT = { area = upper_guyana_area }
-			NOT = { area = guapore_area } #Removed from VU
-			NOT = { area = amapa_area } #Removed from VU
+			#NOT = { area = guapore_area } #Removed from VU
+			#NOT = { area = amapa_area } #Removed from VU
 			NOT = { area = grao_para_area }
 			NOT = { area = goias_area }
 			NOT = { area = mato_grosso_area } #Removed from VU
-			NOT = { area = pontal_area } #Removed from VU
-			NOT = { area = guapore_area } #Removed from VU
+			#NOT = { area = pontal_area } #Removed from VU
 		}
 		AND = {
 			is_random_new_world = yes

@@ -882,7 +882,9 @@ country_decisions = {
 					mission_completed = ENG_conquer_scotland
 					has_dlc = "Rule Britannia"
 				}
-				give_permaclaims_for_mission = { mission=eng_take_shetland_and_faro_isles }
+				#give_permaclaims_for_mission = { mission=eng_take_shetland_and_faro_isles }
+				give_claims = { province = 369 }
+				give_claims = { province = 1978 }
 				iceland_area = {
 					limit = {
 						NOT = { is_core = ROOT }
@@ -896,7 +898,11 @@ country_decisions = {
 					mission_completed = ENG_chart_india
 					has_dlc = "Rule Britannia"
 				}
-				give_permaclaims_for_mission = { mission=eng_rb_british_india }
+				give_claims = { region = bengal_region }
+				give_claims = { region = coromandel_region }
+				give_claims = { region = deccan_region }
+				give_claims = { region = west_india_region }
+				#give_permaclaims_for_mission = { mission=eng_rb_british_india }
 			}
 		}
 		ai_will_do = {

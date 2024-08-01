@@ -4,7 +4,7 @@
 owner = KAR
 controller = KAR
 add_core = KAR
-culture = cappadocian
+culture = cappadocian_greek
 religion = orthodox
 capital = "Kayseri"
 trade_goods = copper

@@ -2,55 +2,56 @@
 # For specific government types
 # Will pick the first valid one it finds in list
 
-hungarian_kingdom = {
-	rank = {
-		1 = FEJEDELEMSEG
-		2 = KIRALYSAG
-		3 = BIRODALOM
-	}
-
-	ruler_male = {
-		1 = HERCEG
-		2 = KIRALY
-		3 = CSASZAR
-	}
-
-	ruler_female = {
-		1 = HERCEGNO
-		2 = KIRALYNO
-		3 = CSASZARNO
-	}
-
-	consort_male = {
-		1 = HERCEG
-		2 = KIRALY
-		3 = CSASZAR
-	}
-
-	consort_female = {
-		1 = HERCEGNO
-		2 = KIRALYNO
-		3 = CSASZARNO
-	}
-
-	heir_male = {
-		1 = HEIR
-		2 = HEIR
-		3 = HEIR
-	}
-
-	heir_female = {
-		1 = HEIR_fem
-		2 = HEIR_fem
-		3 = HEIR_fem
-	}
-
-
-	trigger = {
-		primary_culture = hungarian
-		government = monarchy
-	}
-}
+#Hashed out because it triggered Don
+#hungarian_kingdom = {
+#	rank = {
+#		1 = FEJEDELEMSEG
+#		2 = KIRALYSAG
+#		3 = BIRODALOM
+#	}
+#
+#	ruler_male = {
+#		1 = HERCEG
+#		2 = KIRALY
+#		3 = CSASZAR
+#	}
+#
+#	ruler_female = {
+#		1 = HERCEGNO
+#		2 = KIRALYNO
+#		3 = CSASZARNO
+#	}
+#
+#	consort_male = {
+#		1 = HERCEG
+#		2 = KIRALY
+#		3 = CSASZAR
+#	}
+#
+#	consort_female = {
+#		1 = HERCEGNO
+#		2 = KIRALYNO
+#		3 = CSASZARNO
+#	}
+#
+#	heir_male = {
+#		1 = HEIR
+#		2 = HEIR
+#		3 = HEIR
+#	}
+#
+#	heir_female = {
+#		1 = HEIR_fem
+#		2 = HEIR_fem
+#		3 = HEIR_fem
+#	}
+#
+#
+#	trigger = {
+#		primary_culture = hungarian
+#		government = monarchy
+#	}
+#}
 
 gov_steppe_horde = {
 	rank = {
@@ -811,10 +812,19 @@ hre_county = {
 	government_reform = monarchy_mechanic
 
 	trigger = {
-		has_reform = monarchy_mechanic
-		is_part_of_hre = yes
-		NOT = { total_development = 50 }
-	}
+        has_reform = monarchy_mechanic
+        is_part_of_hre = yes
+        NOT = {
+            #OR = {
+                has_reform = margraviate_reform
+                #add any other gov reforms in HRE that have their own naming convention
+            #}
+        }
+        NOT = {
+            num_of_provinces_in_states = 4
+        }
+    }
+
 }
 
 

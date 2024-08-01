@@ -573,8 +573,8 @@ suez_canal = {
 	#can we build it?
 	build_trigger = {
 		FROM = {
-			owns_or_vassal_of = 6537
 			owns_or_vassal_of = 2315
+			owns_or_vassal_of = 6537
 			is_subject = no
 			OR = {
 				has_country_flag = AYY_may_upgrade_suez
@@ -730,7 +730,7 @@ suez_canal = {
 		}
 	}
 }
-second_suez_canal = { #Phase Two
+second_suez_canal = { #Phase Two by SF
 	# province it starts in
 	start = 5261
 	
@@ -760,7 +760,11 @@ second_suez_canal = { #Phase Two
 			owns_or_vassal_of = 5261
 			owns_or_vassal_of = 6537
 			is_subject = no
-			adm_tech = 37
+			OR = {
+				has_country_flag = AYY_may_upgrade_suez
+				#has_country_flag = vu_enable_suez_canal this flag doesn't exist anyway
+				adm_tech = 37
+			}
 			treasury = 20000
 		}
 		2315 = {
@@ -774,7 +778,7 @@ second_suez_canal = { #Phase Two
 	#what to do when it's built
 	on_built = {
 		add_canal = second_suez_canal
-		owner = { add_prestige = 40 }
+		owner = { add_prestige_or_monarch_power = { amount =  40 } }
 	}
 	
 	#what to do when it's destroyed
@@ -852,6 +856,7 @@ second_suez_canal = { #Phase Two
 
 		#what effects happen when this tier is achieved
 		on_upgraded = {
+			owner = { add_prestige_or_monarch_power = { amount =  40 } }
 		}
 	}
 

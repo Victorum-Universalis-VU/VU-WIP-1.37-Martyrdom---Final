@@ -1,3 +1,4 @@
+#VU - Updated by San Felipe for 1.37.*
 woc_boh_first_branch = {
 	slot = 1
 	generic = no
@@ -3610,14 +3611,14 @@ woc_boh_fifth_branch = {
 			}
 			custom_tooltip = boh_perma_claim_hre_provinces_tt
 			hidden_effect = {
-				every_country = {
-					limit = {
-						is_part_of_hre = yes 
-					}
-					ROOT = {
-						add_dip_power = 1
-					}
-				}
+				#every_country = {
+				#	limit = {
+				#		is_part_of_hre = yes 
+				#	}
+				#	ROOT = {
+				#		add_dip_power = 1
+				#	}
+				#}
 				every_province = {
 					limit = {
 						is_part_of_hre = yes

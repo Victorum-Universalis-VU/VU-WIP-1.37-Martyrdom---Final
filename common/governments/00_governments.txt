@@ -773,7 +773,6 @@ monarchy = {
 				# ME Reforms:
 				incan_administration_reform
 				me_hofkammer_reform
-				ME_reform_chaghatai_literature
 				#VU Reforms 
 				tur_custodian_holy_city_reform
 				ara_consulate_of_the_sea
@@ -1258,7 +1257,6 @@ republic = {
 				# ME Reforms:
 				athenian_republic
 				constitutional_republic_reform
-				timurid_stratocracy
 				vu_fleet_with_a_state_reform
 				nov_commercial_law
 				SOS_advanced_tactics

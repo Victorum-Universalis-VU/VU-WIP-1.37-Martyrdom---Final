@@ -1,13 +1,15 @@
-#VU - Updated by San Felipe for 1.36.*
+#VU - Updated by San Felipe for 1.37.*
 emp_ned_slot1_branch = {
 	slot = 1
 	generic = no
 	ai = yes
 	potential_on_load = {
 		has_dlc = "Emperor"
+		NOT = { has_dlc = "Winds of Change" }
 	}
 	potential = {
 		has_dlc = "Emperor"
+		NOT = { has_dlc = "Winds of Change" }
 		OR = {
 			tag = NED
 			tag = HOL
@@ -19,7 +21,7 @@ emp_ned_slot1_branch = {
 					tag = FRI
 					tag = BRB
 				}
-				has_country_flag = use_paradox_missions
+				#has_country_flag = use_paradox_missions
 			}
 		}
 		NOT = { map_setup = map_setup_random }
@@ -213,9 +215,11 @@ emp_ned_slot2_branch = {
 	ai = yes
 	potential_on_load = {
 		has_dlc = "Emperor"
+		NOT = { has_dlc = "Winds of Change" }
 	}
 	potential = {
 		has_dlc = "Emperor"
+		NOT = { has_dlc = "Winds of Change" }
 		OR = {
 			tag = NED
 			tag = HOL
@@ -227,7 +231,7 @@ emp_ned_slot2_branch = {
 					tag = FRI
 					tag = BRB
 				}
-				has_country_flag = use_paradox_missions
+				#has_country_flag = use_paradox_missions
 			}
 		}
 		NOT = { map_setup = map_setup_random }
@@ -384,9 +388,11 @@ emp_ned_slot2_ned_branch = {
 	ai = yes
 	potential_on_load = {
 		has_dlc = "Emperor"
+		NOT = { has_dlc = "Winds of Change" }
 	}
 	potential = {
 		has_dlc = "Emperor"
+		NOT = { has_dlc = "Winds of Change" }
 		OR = {
 			AND = {
 				tag = NED
@@ -400,7 +406,7 @@ emp_ned_slot2_ned_branch = {
 					tag = GEL
 					tag = FRI
 				}
-				has_country_flag = use_paradox_missions
+				#has_country_flag = use_paradox_missions
 			}
 		}
 		NOT = { map_setup = map_setup_random }
@@ -437,16 +443,18 @@ emp_ned_slot2_ned_fla_branch = {
 	ai = yes
 	potential_on_load = {
 		has_dlc = "Emperor"
+		NOT = { has_dlc = "Winds of Change" }
 	}
 	potential = {
 		has_dlc = "Emperor"
+		NOT = { has_dlc = "Winds of Change" }
 		OR = {
 			AND = {
 				OR = {
 					tag = FLA
 					tag = BRB
 				}
-				has_country_flag = use_paradox_missions
+				#has_country_flag = use_paradox_missions
 			}
 			AND = {
 				tag = NED
@@ -490,9 +498,11 @@ emp_ned_slot2_indies_branch = {
 	ai = yes
 	potential_on_load = {
 		has_dlc = "Emperor"
+		NOT = { has_dlc = "Winds of Change" }
 	}
 	potential = {
 		has_dlc = "Emperor"
+		NOT = { has_dlc = "Winds of Change" }
 		OR = {
 			tag = NED
 			tag = HOL
@@ -504,7 +514,7 @@ emp_ned_slot2_indies_branch = {
 					tag = FRI
 					tag = BRB
 				}
-				has_country_flag = use_paradox_missions
+				#has_country_flag = use_paradox_missions
 			}
 		}
 		NOT = { map_setup = map_setup_random }
@@ -639,9 +649,11 @@ emp_ned_slot3_branch = {
 	ai = yes
 	potential_on_load = {
 		has_dlc = "Emperor"
+		NOT = { has_dlc = "Winds of Change" }
 	}
 	potential = {
 		has_dlc = "Emperor"
+		NOT = { has_dlc = "Winds of Change" }
 		OR = {
 			tag = NED
 			tag = HOL
@@ -653,7 +665,7 @@ emp_ned_slot3_branch = {
 					tag = FRI
 					tag = BRB
 				}
-				has_country_flag = use_paradox_missions
+				#has_country_flag = use_paradox_missions
 			}
 		}
 		NOT = { map_setup = map_setup_random }
@@ -863,9 +875,11 @@ emp_ned_slot4_branch = { # Statists
 	ai = yes
 	potential_on_load = {
 		has_dlc = "Emperor"
+		NOT = { has_dlc = "Winds of Change" }
 	}
 	potential = {
 		has_dlc = "Emperor"
+		NOT = { has_dlc = "Winds of Change" }
 		tag = NED
 		NOT = { map_setup = map_setup_random }
 	}
@@ -1144,9 +1158,11 @@ emp_ned_slot4_colony_branch = {
 	ai = yes
 	potential_on_load = {
 		has_dlc = "Emperor"
+		NOT = { has_dlc = "Winds of Change" }
 	}
 	potential = {
 		has_dlc = "Emperor"
+		NOT = { has_dlc = "Winds of Change" }
 		OR = {
 			tag = NED
 			tag = HOL
@@ -1259,9 +1275,11 @@ emp_ned_slot5_branch = { # Orangists
 	ai = yes
 	potential_on_load = {
 		has_dlc = "Emperor"
+		NOT = { has_dlc = "Winds of Change" }
 	}
 	potential = {
 		has_dlc = "Emperor"
+		NOT = { has_dlc = "Winds of Change" }
 		tag = NED
 		NOT = { map_setup = map_setup_random }
 	}
@@ -1516,9 +1534,11 @@ emp_ned_slot5_colony_branch = {
 	ai = yes
 	potential_on_load = {
 		has_dlc = "Emperor"
+		NOT = { has_dlc = "Winds of Change" }
 	}
 	potential = {
 		has_dlc = "Emperor"
+		NOT = { has_dlc = "Winds of Change" }
 		OR = {
 			tag = NED
 			tag = HOL
@@ -1530,7 +1550,7 @@ emp_ned_slot5_colony_branch = {
 					tag = FRI
 					tag = BRB
 				}
-				has_country_flag = use_paradox_missions
+				#has_country_flag = use_paradox_missions
 			}
 		}
 		NOT = { map_setup = map_setup_random }

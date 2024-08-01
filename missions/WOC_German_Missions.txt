@@ -628,34 +628,27 @@ JHC_GER_2 = {
 			custom_tooltip = GER_most_developed_province_in_china_superregion
 			tooltip = {
 				if = {
-					limit = {
-						NOT = {
-							any_owned_province = {
-								superregion = china_superregion
-								has_port = yes
-							}
-						}
-					}
-					2139 = {
-						add_province_triggered_modifier = GER_treaty_port
-					}
-				}
-				else = {
-					random_owned_province = {
-						limit = {
-							superregion = china_superregion
-							has_port = yes
-							NOT = {
-								any_owned_province = {
-									superregion = china_superregion
-									has_port = yes
-									higher_development_than = PREV
-								}
-							}
-						}
-						add_province_triggered_modifier = GER_treaty_port
-					}
-				}
+                    limit = {
+                        NOT = {
+                            any_owned_province = {
+                                superregion = china_superregion
+                                has_port = yes
+                            }
+                        }
+                    }
+                    2139 = {
+                        add_province_triggered_modifier = GER_treaty_port
+                    }
+                }
+                else = {
+                    random_owned_province = {
+                        limit = {
+                            superregion = china_superregion
+                            has_port = yes
+                        }
+                        add_province_triggered_modifier = GER_treaty_port
+                    }
+                }
 			}
 			custom_tooltip = GER_treaty_port_info
 			hidden_effect = {

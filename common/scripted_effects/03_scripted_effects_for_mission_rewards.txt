@@ -559,7 +559,7 @@ BYZ_convert_to_greek_culture = { #It's here in case I want to add anatolian-them
 		limit = {
 			area = karaman_area
 		}
-		change_culture = cappadocian
+		change_culture = cappadocian_greek
 	}
 	else = {
 		change_culture = greek

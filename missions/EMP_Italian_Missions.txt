@@ -1,4 +1,4 @@
-#VU - Updated by San Felipe for 1.36.*
+#VU - Updated by San Felipe for 1.37.*
 emp_ita_development_branch = {
 	slot = 1
 	generic = no
@@ -6,12 +6,14 @@ emp_ita_development_branch = {
 	
 	potential_on_load = {
 		has_dlc = "Emperor"
+		NOT = { has_dlc = "Winds of Change" }
 	}
 	potential = {
 		has_dlc = "Emperor"
+		NOT = { has_dlc = "Winds of Change" }
 		tag = ITA
 		NOT = { map_setup = map_setup_random }
-		has_country_flag = use_paradox_missions
+		#has_country_flag = use_paradox_missions
 	}
 	
 	has_country_shield = yes
@@ -81,6 +83,12 @@ emp_ita_development_branch = {
 		}
 		effect = {
 			custom_tooltip = emp_ita_develop_the_south_tt2
+			tooltip = {
+				add_province_modifier = {
+					name = ita_southern_focus
+					duration = 7300
+				}
+			}
 			hidden_effect = {
 				every_owned_province = {
 					limit = {
@@ -127,12 +135,14 @@ emp_ita_gallia_branch = {
 	
 	potential_on_load = {
 		has_dlc = "Emperor"
+		NOT = { has_dlc = "Winds of Change" }
 	}
 	potential = {
 		has_dlc = "Emperor"
+		NOT = { has_dlc = "Winds of Change" }
 		tag = ITA
 		NOT = { map_setup = map_setup_random }
-		has_country_flag = use_paradox_missions
+		#has_country_flag = use_paradox_missions
 	}
 	
 	has_country_shield = yes
@@ -366,12 +376,14 @@ emp_ita_war_branch = {
 	
 	potential_on_load = {
 		has_dlc = "Emperor"
+		NOT = { has_dlc = "Winds of Change" }
 	}
 	potential = {
 		has_dlc = "Emperor"
+		NOT = { has_dlc = "Winds of Change" }
 		tag = ITA
 		NOT = { map_setup = map_setup_random }
-		has_country_flag = use_paradox_missions
+		#has_country_flag = use_paradox_missions
 	}
 	
 	has_country_shield = yes
@@ -511,6 +523,7 @@ emp_ita_war_branch = {
 								has_building = fort_17th
 								has_building = fort_18th
 							}
+
 						}
 						else_if = {
 							limit = {
@@ -942,12 +955,14 @@ emp_ita_unification_branch = {
 	
 	potential_on_load = {
 		has_dlc = "Emperor"
+		NOT = { has_dlc = "Winds of Change" }
 	}
 	potential = {
 		has_dlc = "Emperor"
+		NOT = { has_dlc = "Winds of Change" }
 		tag = ITA
 		NOT = { map_setup = map_setup_random }
-		has_country_flag = use_paradox_missions
+		#has_country_flag = use_paradox_missions
 	}
 	
 	has_country_shield = yes
@@ -1302,12 +1317,14 @@ emp_ita_overseas_branch = {
 	
 	potential_on_load = {
 		has_dlc = "Emperor"
+		NOT = { has_dlc = "Winds of Change" }
 	}
 	potential = {
 		has_dlc = "Emperor"
+		NOT = { has_dlc = "Winds of Change" }
 		tag = ITA
 		NOT = { map_setup = map_setup_random }
-		has_country_flag = use_paradox_missions
+		#has_country_flag = use_paradox_missions
 	}
 	
 	emp_ita_a_worthy_navy = {

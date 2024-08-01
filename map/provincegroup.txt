@@ -992,3 +992,12 @@ chinese_mountains_2 = {
 indochinese_mountains = {
 	2400 4400 4401 4843 4844 8570 8608 8609
 }
+
+#VU 1.37 additions
+#Ottoman Mission perma-claims
+#conquer_southern_greece = { #Template for mission files
+#	145 7100 7101 7102 7163 1773 3178 3179 3712 4701 #morea_area
+#	146 3003 3177 3699 7109 7110 7111 7113 7114      #western_aegean_area
+#	3175 7108 7112 7115                              #aetolia_area
+#	144 4699 7132 7133 7140 7141                     #northern_greece_area
+#}

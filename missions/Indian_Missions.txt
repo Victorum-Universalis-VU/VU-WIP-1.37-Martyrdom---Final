@@ -1,4 +1,4 @@
-#VU - Updated by San Felipe for 1.36.*
+#VU - Updated by San Felipe for 1.37.*
 gen_north_india_2 = {
 	slot = 2
 	generic = yes
@@ -73,6 +73,21 @@ gen_north_india_2 = {
 			add_country_modifier = {
 				name = "gen_delhi_conquest"
 				duration = 7300
+			}
+			custom_tooltip = perma_claim_neighbor_area
+			hidden_effect = {
+				every_owned_province = {
+					every_neighbor_province = {
+						area = {
+							limit = {
+								NOT = { owned_by = ROOT }
+								NOT = { is_permanent_claim = ROOT    }
+								NOT = { is_core = ROOT    }
+							}
+							add_permanent_claim = ROOT
+						}
+					}
+				}
 			}
 		}
 	}
@@ -185,18 +200,112 @@ gen_north_india_2 = {
 		required_missions = { gen_north_india_warrior_castes }
 		
 		provinces_to_highlight = {
-			vu_grand_trunk_road_provinces_highlight_trigger = yes
+			OR = {
+				area = lahore_area
+				area = sirhind_area
+				area = upper_doab_area
+				area = lower_doab_area
+				area = purvanchal_area
+				area = bihar_area
+				area = gaur_area
+				area = east_bengal_area
+				province_id = 507
+			}
+			OR = {
+				NOT = {
+					owned_by = ROOT
+				}
+				province_id = 507
+			}
 		}
 		
 		trigger = {
 			507 = {
 				is_strongest_trade_power = ROOT
 			}
-			vu_grand_trunk_road_mission_trigger = yes
+			lahore_area = {
+				type = all
+				owned_by = ROOT
+				NOT = {
+					devastation = 1
+				}
+			}
+			sirhind_area = {
+				type = all
+				owned_by = ROOT
+				NOT = {
+					devastation = 1
+				}
+			}
+			upper_doab_area = {
+				type = all
+				owned_by = ROOT
+				NOT = {
+					devastation = 1
+				}
+			}
+			lower_doab_area = {
+				type = all
+				owned_by = ROOT
+				NOT = {
+					devastation = 1
+				}
+			}
+			purvanchal_area = {
+				type = all
+				owned_by = ROOT
+				NOT = {
+					devastation = 1
+				}
+			}
+			bihar_area = {
+				type = all
+				owned_by = ROOT
+				NOT = {
+					devastation = 1
+				}
+			}
+			gaur_area = {
+				type = all
+				owned_by = ROOT
+				NOT = {
+					devastation = 1
+				}
+			}
+			east_bengal_area = {
+				type = all
+				owned_by = ROOT
+				NOT = {
+					devastation = 1
+				}
+			}
 		}
 		effect = {
-			add_mercantilism = 5
-			vu_grand_trunk_road_mission_effect = yes
+			add_mercantilism_or_monarch_power = { amount = 5 }
+			524 = {
+				add_trade_modifier = {
+					who = root
+					duration = 7300
+					power = 50
+					key = renovated_grand_trunk_road
+				}
+			}
+			1343 = {
+				add_trade_modifier = {
+					who = root
+					duration = 7300
+					power = 50
+					key = renovated_grand_trunk_road
+				}
+			}
+			507 = {
+				add_trade_modifier = {
+					who = root
+					duration = 7300
+					power = 50
+					key = renovated_grand_trunk_road
+				}
+			}
 		}
 	}
 	
@@ -210,7 +319,9 @@ gen_north_india_2 = {
 		}
 		
 		effect = {
-			add_prestige = 30
+			add_prestige_or_monarch_power = {
+				amount = 30
+			}
 			if = {
 				limit = {
 					NOT = {
@@ -222,6 +333,21 @@ gen_north_india_2 = {
 			add_country_modifier = {
 				name = "indian_empire"
 				duration = 9125
+			}
+			custom_tooltip = perma_claim_neighbor_area
+			hidden_effect = {
+				every_owned_province = {
+					every_neighbor_province = {
+						area = {
+							limit = {
+								NOT = { owned_by = ROOT }
+								NOT = { is_permanent_claim = ROOT    }
+								NOT = { is_core = ROOT    }
+							}
+							add_permanent_claim = ROOT
+						}
+					}
+				}
 			}				
 		}
 	}
@@ -452,6 +578,21 @@ gen_south_india_2 = {
 				name = "deccan_conquest"
 				duration = 7300
 			}
+			custom_tooltip = perma_claim_neighbor_area
+			hidden_effect = {
+				every_owned_province = {
+					every_neighbor_province = {
+						area = {
+							limit = {
+								NOT = { owned_by = ROOT }
+								NOT = { is_permanent_claim = ROOT    }
+								NOT = { is_core = ROOT    }
+							}
+							add_permanent_claim = ROOT
+						}
+					}
+				}
+			}
 		}
 	}
 	
@@ -467,7 +608,9 @@ gen_south_india_2 = {
 		}
 		
 		effect = {
-			add_prestige = 30
+			add_prestige_or_monarch_power = {
+				amount = 30
+			}
 			add_adm_power = 100
 			add_dip_power = 100
 			add_mil_power = 100
@@ -482,6 +625,21 @@ gen_south_india_2 = {
 			add_country_modifier = {
 				name = "indian_empire"
 				duration = 9125
+			}	
+			custom_tooltip = perma_claim_neighbor_area
+			hidden_effect = {
+				every_owned_province = {
+					every_neighbor_province = {
+						area = {
+							limit = {
+								NOT = { owned_by = ROOT }
+								NOT = { is_permanent_claim = ROOT    }
+								NOT = { is_core = ROOT    }
+							}
+							add_permanent_claim = ROOT
+						}
+					}
+				}
 			}			
 		}
 	}
@@ -536,7 +694,9 @@ gen_hindu = {
 		}
 		
 		effect = {
-			add_prestige = 20
+			add_prestige_or_monarch_power = {
+				amount = 20
+			}
 			if = {
 				limit = {
 					has_estate = estate_brahmins
@@ -781,6 +941,13 @@ gen_hindu = {
 			add_country_modifier = {
 				name = "sapta_puri_modifier"
 				duration = 7300
+			}
+			define_advisor = {
+				type = inquisitor
+				skill = 3
+				culture = ROOT
+				religion = ROOT
+				cost_multiplier = 0.5
 			}
 		}
 	}
@@ -1768,6 +1935,13 @@ gen_south_india_5 = {
 		effect = {
 			add_years_of_income = 1
 			add_dip_power = 100
+			define_advisor = {
+				type = trader
+				skill = 3
+				culture = ROOT
+				religion = ROOT
+				cost_multiplier = 0.5
+			}
 		}
 	}
 }

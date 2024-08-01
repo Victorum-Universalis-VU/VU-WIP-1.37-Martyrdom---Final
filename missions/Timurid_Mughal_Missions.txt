@@ -1,17 +1,29 @@
+#VU - Updated by San Felipe for 1.37.*
 tim_reconquest_persia = {
 	slot = 1
 	generic = no
 	ai = yes
+	potential_on_load = {
+		NOT = {
+			AND = {
+				has_dlc = "Winds of Change"
+				tag = TIM
+			}
+		}
+	}
 	potential = {
 		OR = {
-			tag = TIM
+			AND = {
+				NOT = { has_dlc = "Winds of Change" }
+				tag = TIM
+			}
 			tag = TRS
 			tag = AFG
 			tag = QOM
 			tag = KHO
 			tag = FRS
 		}
-		has_country_flag = use_paradox_missions
+		#has_country_flag = use_paradox_missions
 		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes
@@ -272,15 +284,26 @@ tim_reconquest_khorasan = {
 	slot = 3
 	generic = no
 	ai = yes
+	potential_on_load = {
+		NOT = {
+			AND = {
+				has_dlc = "Winds of Change"
+				tag = TIM
+			}
+		}
+	}
 	potential = {
 		OR = {
-			tag = TIM
+			AND = {
+				NOT = { has_dlc = "Winds of Change" }
+				tag = TIM
+			}
 			tag = TRS
 			tag = AFG
 			tag = QOM
 			tag = KHO
 		}
-		has_country_flag = use_paradox_missions
+		#has_country_flag = use_paradox_missions
 		NOT = { has_dlc = "Dharma" }
 		NOT = { map_setup = map_setup_random }
 	}
@@ -463,10 +486,21 @@ tim_reconquest_transoxiana = {
 	slot = 5
 	generic = no
 	ai = yes
+	potential_on_load = {
+		NOT = {
+			AND = {
+				has_dlc = "Winds of Change"
+				tag = TIM
+			}
+		}
+	}
 	potential = {
-		has_country_flag = use_paradox_missions
+		#has_country_flag = use_paradox_missions
 		OR = {
-			tag = TIM
+			AND = {
+				NOT = { has_dlc = "Winds of Change" }
+				tag = TIM
+			}
 			tag = TRS
 			tag = AFG
 			tag = QOM
@@ -658,10 +692,21 @@ tim_india = {
 	slot = 3
 	generic = no
 	ai = yes
+	potential_on_load = {
+		NOT = {
+			AND = {
+				has_dlc = "Winds of Change"
+				tag = TIM
+			}
+		}
+	}
 	potential = {
-		has_country_flag = use_paradox_missions
+		#has_country_flag = use_paradox_missions
 		OR = {
-			tag = TIM
+			AND = {
+				NOT = { has_dlc = "Winds of Change" }
+				tag = TIM
+			}
 			tag = TRS
 			tag = AFG
 			tag = QOM

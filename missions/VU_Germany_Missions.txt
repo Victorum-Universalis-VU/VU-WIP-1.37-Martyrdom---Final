@@ -1,10 +1,19 @@
 #VU - Created by Quonton the Greatest Mouse that ever lived for VU v1.36.2.* - By San Felipe
+
 GER_missions_1 = {
 	slot = 1
 	generic = no
 	ai = yes
+	potential_on_load = {
+		NOT = { has_dlc = "Winds of Change" }
+	}
 	potential = {
-		tag = GER
+		OR = {
+			tag = GER
+			tag = HLR
+		}
+		NOT = { map_setup = map_setup_random }
+		NOT = { has_dlc = "Winds of Change" }
 	}
 	has_country_shield = yes
 	
@@ -597,8 +606,16 @@ GER_missions_2 = {
 	slot = 2
 	generic = no
 	ai = yes
+	potential_on_load = {
+		NOT = { has_dlc = "Winds of Change" }
+	}
 	potential = {
-		tag = GER
+		OR = {
+			tag = GER
+			tag = HLR
+		}
+		NOT = { map_setup = map_setup_random }
+		NOT = { has_dlc = "Winds of Change" }
 	}
 	has_country_shield = yes
 	
@@ -1298,8 +1315,16 @@ GER_missions_3 = {
 	slot = 3
 	generic = no
 	ai = yes
+	potential_on_load = {
+		NOT = { has_dlc = "Winds of Change" }
+	}
 	potential = {
-		tag = GER
+		OR = {
+			tag = GER
+			tag = HLR
+		}
+		NOT = { map_setup = map_setup_random }
+		NOT = { has_dlc = "Winds of Change" }
 	}
 	has_country_shield = yes
 
@@ -2777,8 +2802,16 @@ GER_missions_4 = {
 	slot = 4
 	generic = no
 	ai = yes
+	potential_on_load = {
+		NOT = { has_dlc = "Winds of Change" }
+	}
 	potential = {
-		tag = GER
+		OR = {
+			tag = GER
+			tag = HLR
+		}
+		NOT = { map_setup = map_setup_random }
+		NOT = { has_dlc = "Winds of Change" }
 	}
 	has_country_shield = yes
 	
@@ -3077,8 +3110,16 @@ GER_missions_5 = {
 	slot = 5
 	generic = no
 	ai = yes
+	potential_on_load = {
+		NOT = { has_dlc = "Winds of Change" }
+	}
 	potential = {
-		tag = GER
+		OR = {
+			tag = GER
+			tag = HLR
+		}
+		NOT = { map_setup = map_setup_random }
+		NOT = { has_dlc = "Winds of Change" }
 	}
 	has_country_shield = yes
 

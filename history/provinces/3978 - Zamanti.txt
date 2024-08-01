@@ -4,7 +4,7 @@ owner = DUL
 controller = DUL
 add_core = DUL
 add_core = ERE
-culture = cappadocian
+culture = cappadocian_greek
 religion = orthodox
 capital = "Pinarbasi"
 trade_goods = iron
@@ -14,17 +14,6 @@ base_production = 2
 base_manpower = 2
 is_city = yes
 fort_15th = yes
-
-
-
-
-
-
-
-
-
-
-
 
 1469.1.1 = { 
 	owner = TUR 

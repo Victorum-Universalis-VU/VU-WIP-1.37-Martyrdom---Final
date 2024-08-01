@@ -1,4 +1,4 @@
-#VU - Updated by San Felipe for 1.36.*
+#VU - Updated by San Felipe for 1.37.*
 emp_hab_poland_branch = {
 	slot = 1
 	generic = no
@@ -6,10 +6,16 @@ emp_hab_poland_branch = {
 	
 	potential_on_load = {
 		has_dlc = "Emperor"
+		NOT = {
+			has_dlc = "Winds of Change"
+		}
 	}
 	potential = {
 		has_country_flag = use_paradox_missions
 		has_dlc = "Emperor"
+		NOT = {
+			has_dlc = "Winds of Change"
+		}
 		OR = {
 			tag = HAB
 			tag = AUT #VU - SF addition
@@ -128,10 +134,16 @@ emp_hab_empire_branch = {
 	
 	potential_on_load = {
 		has_dlc = "Emperor"
+		NOT = {
+			has_dlc = "Winds of Change"
+		}
 	}
 	potential = {
 		has_country_flag = use_paradox_missions
 		has_dlc = "Emperor"
+		NOT = {
+			has_dlc = "Winds of Change"
+		}
 		OR = {
 			tag = HAB
 			tag = AUT #VU - SF addition
@@ -520,10 +532,16 @@ emp_hab_prestige_branch = {
 	
 	potential_on_load = {
 		has_dlc = "Emperor"
+		NOT = {
+			has_dlc = "Winds of Change"
+		}
 	}
 	potential = {
 		has_country_flag = use_paradox_missions
 		has_dlc = "Emperor"
+		NOT = {
+			has_dlc = "Winds of Change"
+		}
 		OR = {
 			tag = HAB
 			tag = AUT #VU - SF addition
@@ -770,10 +788,16 @@ emp_hab_minorities_branch = {
 	
 	potential_on_load = {
 		has_dlc = "Emperor"
+		NOT = {
+			has_dlc = "Winds of Change"
+		}
 	}
 	potential = {
 		has_country_flag = use_paradox_missions
 		has_dlc = "Emperor"
+		NOT = {
+			has_dlc = "Winds of Change"
+		}
 		OR = {
 			tag = HAB
 			tag = AUT #VU - SF addition
@@ -854,7 +878,7 @@ emp_hab_minorities_branch = {
 					NOT = { accepted_culture = hungarian }
 					NOT = { primary_culture = hungarian }
 				}
-				add_accepted_culture_or_dip_power = { culture = hungarian dip_reward = yes }
+				add_accepted_culture_or_dip_power = { culture = hungarian  value = 100 }
 				if = {
 					limit = {
 						153 = { culture = austrian }
@@ -880,10 +904,10 @@ emp_hab_minorities_branch = {
 				}
 				if = {
 					limit = { has_updated_culture = { culture = slavic } }
-					add_accepted_culture_or_dip_power = { culture = slovak_new dip_reward = yes }
+					add_accepted_culture_or_dip_power = { culture = slovak_new value = 100 }
 				}
 				else = {
-					add_accepted_culture_or_dip_power = { culture = slovak dip_reward = yes }
+					add_accepted_culture_or_dip_power = { culture = slovak value = 100 }
 				}
 				if = {
 					limit = {
@@ -968,10 +992,16 @@ emp_hab_german_expansion_branch = {
 	
 	potential_on_load = {
 		has_dlc = "Emperor"
+		NOT = {
+			has_dlc = "Winds of Change"
+		}
 	}
 	potential = {
 		has_country_flag = use_paradox_missions
 		has_dlc = "Emperor"
+		NOT = {
+			has_dlc = "Winds of Change"
+		}
 		OR = {
 			tag = HAB
 			tag = AUT #VU - SF addition
@@ -1141,10 +1171,16 @@ emp_hab_german_expansion_branch_2 = {
 	
 	potential_on_load = {
 		has_dlc = "Emperor"
+		NOT = {
+			has_dlc = "Winds of Change"
+		}
 	}
 	potential = {
 		has_country_flag = use_paradox_missions
 		has_dlc = "Emperor"
+		NOT = {
+			has_dlc = "Winds of Change"
+		}
 		OR = {
 			tag = HAB
 			tag = AUT #VU - SF addition
@@ -1368,10 +1404,16 @@ emp_hab_western_expansion_branch = {
 	
 	potential_on_load = {
 		has_dlc = "Emperor"
+		NOT = {
+			has_dlc = "Winds of Change"
+		}
 	}
 	potential = {
 		has_country_flag = use_paradox_missions
 		has_dlc = "Emperor"
+		NOT = {
+			has_dlc = "Winds of Change"
+		}
 		OR = {
 			tag = HAB
 			tag = AUT #VU - SF addition
@@ -1655,10 +1697,16 @@ emp_hab_balkans = {
 	
 	potential_on_load = {
 		has_dlc = "Emperor"
+		NOT = {
+			has_dlc = "Winds of Change"
+		}
 	}
 	potential = {
 		has_country_flag = use_paradox_missions
 		has_dlc = "Emperor"
+		NOT = {
+			has_dlc = "Winds of Change"
+		}
 		OR = {
 			tag = HAB
 			tag = AUT #VU - SF addition
@@ -1783,10 +1831,16 @@ emp_hab_balkans_2 = {
 	
 	potential_on_load = {
 		has_dlc = "Emperor"
+		NOT = {
+			has_dlc = "Winds of Change"
+		}
 	}
 	potential = {
 		has_country_flag = use_paradox_missions
 		has_dlc = "Emperor"
+		NOT = {
+			has_dlc = "Winds of Change"
+		}
 		OR = {
 			tag = HAB
 			tag = AUT #VU - SF addition
@@ -1928,10 +1982,16 @@ emp_hab_more_italy_branch = {
 	
 	potential_on_load = {
 		has_dlc = "Emperor"
+		NOT = {
+			has_dlc = "Winds of Change"
+		}
 	}
 	potential = {
 		has_country_flag = use_paradox_missions
 		has_dlc = "Emperor"
+		NOT = {
+			has_dlc = "Winds of Change"
+		}
 		OR = {
 			tag = HAB
 			tag = AUT #VU - SF addition
@@ -2113,10 +2173,16 @@ emp_hab_diplo_branch = {
 	
 	potential_on_load = {
 		has_dlc = "Emperor"
+		NOT = {
+			has_dlc = "Winds of Change"
+		}
 	}
 	potential = {
 		has_country_flag = use_paradox_missions
 		has_dlc = "Emperor"
+		NOT = {
+			has_dlc = "Winds of Change"
+		}
 		OR = {
 			tag = HAB
 			tag = AUT #VU - SF addition

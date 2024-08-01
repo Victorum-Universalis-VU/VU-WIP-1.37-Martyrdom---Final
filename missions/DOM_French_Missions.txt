@@ -4150,7 +4150,7 @@ french_missions_4_italian = {
 						hidden = yes 
 					}
 					set_country_flag = general_flag_for_FU_Rome_flag
-					add_ruler_personality = fu_papal_puppetmaster_personality
+					add_ruler_personality = papal_puppetmaster_personality
 				}
 			}
 		}

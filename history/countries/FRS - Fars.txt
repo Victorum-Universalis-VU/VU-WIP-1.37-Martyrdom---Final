@@ -1,5 +1,5 @@
 government = monarchy
-add_government_reform = timurid_governor
+add_government_reform = iqta
 government_rank = 1
 primary_culture = persian
 religion = shiite

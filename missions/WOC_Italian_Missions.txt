@@ -332,8 +332,9 @@ JHC_ITA_gallia_branch = {
 			give_claims = { area = austria_proper_area }
 			
 			#Extra claims in the west which are otherwise missing for ROM formation
-			give_claims = { area = upper_swabia_area }
-			give_claims = { area = lower_swabia_area }
+			give_claims = { area = swabia_area }
+			#give_claims = { area = upper_swabia_area }
+			#give_claims = { area = lower_swabia_area }
 			give_claims = { area = switzerland_area }
 			
 			custom_tooltip = " "

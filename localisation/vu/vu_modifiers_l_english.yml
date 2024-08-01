@@ -1263,10 +1263,6 @@
  vu_military_success: "Successfull Military"
  desc_vu_military_success: "We have proven our army's worth by winning battles and conflicts. We have shown that our country is formidable opponent capable of surpassing its rivals."
  #
- ability_timurid_militarization: "Timurid Militarization"
- timurid_stratocracy_power_gain_modifier: "Timurid Stratocracy Power Gain"
- monthly_timurid_stratocracy_power: "Timurid Stratocracy"
- belgian_revolt_disaster_tt: "Belgian Revolt"
 
  #Modifiers
  conquest_frenzy_power_gain_modifier: "Conquest Frenzy"
@@ -1284,8 +1280,6 @@
  #New VU additions in v1.36.2.*. By San Felipe
  vu_book_of_grudges_modifier: "Book of Grudges"
  desc_vu_book_of_grudges_modifier: ""
- ME_reform_chaghatai_literature: "Reform Chagathatai Literature"
- ME_reform_chaghatai_literature_desc: ""
 
  ME_revolt_happened: "Revolt Happened"
  desc_ME_revolt_happened: ""

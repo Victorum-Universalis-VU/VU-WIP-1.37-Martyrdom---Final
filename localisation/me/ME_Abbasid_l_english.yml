@@ -14,6 +14,15 @@
  ME_caliphate_feudal_theocracy_desc: "By empowering our religious scholars as a pious nation and a faithful people, we strengthen our faith and enforce our duty to Allah and the Caliph. Our ruler shall lead us in all aspects, with Quran, pen and sword!" 
  ME_caliphate_iqta: "Iqta Administration"
  ME_caliphate_iqta_desc: "The Iqta system has been a tried and true method that a large portion of the Muslim world have employed for centuries to main a successful rule over their subjects, and perhaps we can employ this traditional system ourselves."
+
+ mughal_government_me_modifier_buff: "Mughal Government"
+ mughal_government_me_modifier_buff_desc: "Mughal Government"
+
+ mughal_government_me: "Mughal Government"
+ mughal_government_me_desc: ""
+
+ me_hindu_administration: "Mughal Government"
+ me_hindu_administration_desc: ""
   
  ME_Abbasid_Events.1.t: "The Abbasid Caliphate"
  ME_Abbasid_Events.1.d: "The Abbasid Caliphate, influential from about the 8th century to 13th century, was the third successive caliphate, based mostly in Baghdad. Unfortunately, after the sack of Baghdad in 1258 by the wretched Mongols, the prestige and authority of the Caliphate practically ceased to exist. In time, the Caliphate was recreated once more, this time in the Mamluk controlled Cairo in 1261. Although the Caliph continued to hold powers, the authority the position held was reduced immensely and was confined as an advisor only pertaining to religious matters." 

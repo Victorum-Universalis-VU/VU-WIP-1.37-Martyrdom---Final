@@ -1,4 +1,4 @@
-#VU - Updated by San Felipe for 1.36.*
+#VU - Updated by San Felipe for 1.37.*
 tatar_missions_1 = {
 	slot = 1
 	generic = no
@@ -6,23 +6,25 @@ tatar_missions_1 = {
 	potential = {
 		OR = {
 			AND = {
-				has_country_flag = use_paradox_missions
+				#has_country_flag = use_paradox_missions
 				OR = {
 					tag = GOL
 					tag = CRI
-					tag = KAZ
 				}
 			}			
 			tag = NOG
-			tag = KZH
+			tag = KAZ
 			tag = SHY
 			tag = GLH
 			tag = SIB
 			tag = BSH
 			tag = AST
 			tag = QAS
+			tag = KZH
+			tag = CHG
 			tag = KAS
 		}
+		NOT = { has_dlc = "Winds of Change" }
 		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes
@@ -330,7 +332,7 @@ tatar_missions_slot_2 = {
 	potential = {
 		OR = {
 			AND = {
-				has_country_flag = use_paradox_missions
+				#has_country_flag = use_paradox_missions
 				OR = {
 			        tag = GOL
 			        tag = CRI
@@ -342,12 +344,13 @@ tatar_missions_slot_2 = {
 			        tag = BSH
 			        tag = AST
 			        tag = QAS
-					tag = GLH
 				}
 			}			
 			tag = KZH
+			tag = CHG
 			tag = KAS
 		}
+		NOT = { has_dlc = "Winds of Change" }
 		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes
@@ -630,7 +633,7 @@ tatar_missions_2 = {
 	potential = {
 		OR = {
 			AND = {
-				has_country_flag = use_paradox_missions
+				#has_country_flag = use_paradox_missions
 				OR = {
 			        tag = GOL
 			        tag = CRI
@@ -642,12 +645,13 @@ tatar_missions_2 = {
 			        tag = BSH
 			        tag = AST
 			        tag = QAS
-					tag = GLH
 				}
 			}			
 			tag = KZH
+			tag = CHG
 			tag = KAS
 		}
+		NOT = { has_dlc = "Winds of Change" }
 		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes

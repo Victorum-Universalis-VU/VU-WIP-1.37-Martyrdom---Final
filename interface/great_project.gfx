@@ -94,30 +94,10 @@ spriteTypes = {
 		name = "GFX_great_project_santiago_de_compostela"
 		texturefile = "gfx//interface//great_projects//great_project_santiago_de_compostela.dds"
 	}
-
-	spriteType = {
-		name = "GFX_great_project_universidad_de_salamanca"
-		texturefile = "gfx//interface//great_projects//great_project_universidad_de_salamanca.dds"
-	}
-
-	spriteType = {
-		name = "GFX_great_project_universita_di_bologna"
-		texturefile = "gfx//interface//great_projects//great_project_universita_di_bologna.dds"
-	}
-
-	spriteType = {
-		name = "GFX_great_project_oxford_university"
-		texturefile = "gfx//interface//great_projects//great_project_oxford_university.dds"
-	}
 	
 	spriteType = {
 		name = "GFX_great_project_uffington_white_horse"
 		texturefile = "gfx//interface//great_projects//great_project_uffington_white_horse.dds"
-	}
-
-	spriteType = {
-		name = "GFX_great_project_sorbonne_university"
-		texturefile = "gfx//interface//great_projects//great_project_sorbonne_university.dds"
 	}
 
 	spriteType = {
@@ -1191,6 +1171,46 @@ spriteTypes = {
 #START of Mellstrom's additions
 
     spriteType = {
+		name = "GFX_great_project_venetian_arsenal_gp"	
+		texturefile = "gfx//interface//great_projects//great_project_venetian_arsenal_gp.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_great_project_amsterdam_bourse"	
+		texturefile = "gfx//interface//great_projects//great_project_amsterdam_bourse.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_great_project_golden_kremnica"	
+		texturefile = "gfx//interface//great_projects//great_project_golden_kremnica.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_great_project_schonbrunn_palace"	
+		texturefile = "gfx//interface//great_projects//great_project_schonbrunn_palace.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_great_project_tzintzuntzan"	
+		texturefile = "gfx//interface//great_projects//great_project_tzintzuntzan.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_great_project_city_of_sarai"	
+		texturefile = "gfx//interface//great_projects//great_project_city_of_sarai.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_great_project_afaq_khoja_mausoleum"	
+		texturefile = "gfx//interface//great_projects//great_project_afaq_khoja_mausoleum.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_great_project_citadel_of_aleppo"	
+		texturefile = "gfx//interface//great_projects//great_project_citadel_of_aleppo.dds"
+	}
+    
+    spriteType = {
 		name = "GFX_great_project_arunachalesvara_temple"	
 		texturefile = "gfx//interface//great_projects//great_project_arunachalesvara_temple.dds"
 	}
@@ -1611,5 +1631,194 @@ spriteTypes = {
 	}
 	
 #END of Mellstrom's additions
+#VU Universities
+    spriteType = {
+		name = "GFX_great_project_vu_university_of_cambridge"
+		texturefile = "gfx//interface//great_projects//VU_Universities//great_project_vu_university_of_cambridge.dds"
+	}
+	spriteType = {
+		name = "GFX_great_project_vu_university_of_padua"
+		texturefile = "gfx//interface//great_projects//VU_Universities//great_project_vu_university_of_padua.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_vu_university_of_naples"
+		texturefile = "gfx//interface//great_projects//VU_Universities//great_project_vu_university_of_naples.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_vu_university_of_siena"
+		texturefile = "gfx//interface//great_projects//VU_Universities//great_project_vu_university_of_siena.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_vu_university_of_valladolid"
+		texturefile = "gfx//interface//great_projects//VU_Universities//great_project_vu_university_of_valladolid.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_vu_university_of_montpellier"
+		texturefile = "gfx//interface//great_projects//VU_Universities//great_project_vu_university_of_montpellier.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_vu_university_of_macerata"
+		texturefile = "gfx//interface//great_projects//VU_Universities//great_project_vu_university_of_macerata.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_vu_university_of_coimbra"
+		texturefile = "gfx//interface//great_projects//VU_Universities//great_project_vu_university_of_coimbra.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_vu_university_of_complutense_de_madrid"
+		texturefile = "gfx//interface//great_projects//VU_Universities//great_project_vu_university_of_complutense_de_madrid.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_vu_university_of_sapienza"
+		texturefile = "gfx//interface//great_projects//VU_Universities//great_project_vu_university_of_sapienza.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_vu_university_of_perugia"
+		texturefile = "gfx//interface//great_projects//VU_Universities//great_project_vu_university_of_perugia.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_vu_university_of_florence"
+		texturefile = "gfx//interface//great_projects//VU_Universities//great_project_vu_university_of_florence.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_vu_university_of_pisa"
+		texturefile = "gfx//interface//great_projects//VU_Universities//great_project_vu_university_of_pisa.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_vu_university_of_charles"
+		texturefile = "gfx//interface//great_projects//VU_Universities//great_project_vu_university_of_charles.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_vu_university_of_jagiellon"
+		texturefile = "gfx//interface//great_projects//VU_Universities//great_project_vu_university_of_jagiellon.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_vu_university_of_vienna"
+		texturefile = "gfx//interface//great_projects//VU_Universities//great_project_vu_university_of_vienna.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_vu_university_of_heidelberg"
+		texturefile = "gfx//interface//great_projects//VU_Universities//great_project_vu_university_of_heidelberg.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_vu_university_of_ferrara"
+		texturefile = "gfx//interface//great_projects//VU_Universities//great_project_vu_university_of_ferrara.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_vu_university_of_leipzig"
+		texturefile = "gfx//interface//great_projects//VU_Universities//great_project_vu_university_of_leipzig.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_vu_university_of_st_andrews"
+		texturefile = "gfx//interface//great_projects//VU_Universities//great_project_vu_university_of_st_andrews.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_vu_university_of_rostock"
+		texturefile = "gfx//interface//great_projects//VU_Universities//great_project_vu_university_of_rostock.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_vu_university_of_leuven"
+		texturefile = "gfx//interface//great_projects//VU_Universities//great_project_vu_university_of_leuven.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_vu_university_of_glasgow"
+		texturefile = "gfx//interface//great_projects//VU_Universities//great_project_vu_university_of_glasgow.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_vu_university_of_istanbul"
+		texturefile = "gfx//interface//great_projects//VU_Universities//great_project_vu_university_of_istanbul.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_vu_university_of_greifswald"
+		texturefile = "gfx//interface//great_projects//VU_Universities//great_project_vu_university_of_greifswald.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_vu_university_of_freiburg"
+		texturefile = "gfx//interface//great_projects//VU_Universities//great_project_vu_university_of_freiburg.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_vu_university_of_basel"
+		texturefile = "gfx//interface//great_projects//VU_Universities//great_project_vu_university_of_basel.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_vu_university_of_tubingen"
+		texturefile = "gfx//interface//great_projects//VU_Universities//great_project_vu_university_of_tubingen.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_vu_university_of_uppsala"
+		texturefile = "gfx//interface//great_projects//VU_Universities//great_project_vu_university_of_uppsala.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_vu_university_of_copenhagen"
+		texturefile = "gfx//interface//great_projects//VU_Universities//great_project_vu_university_of_copenhagen.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_vu_university_of_aberdeen"
+		texturefile = "gfx//interface//great_projects//VU_Universities//great_project_vu_university_of_aberdeen.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_vu_university_of_salamanca"
+		texturefile = "gfx//interface//great_projects//VU_Universities//great_project_vu_university_of_salamanca.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_vu_university_of_bologna"
+		texturefile = "gfx//interface//great_projects//VU_Universities//great_project_vu_university_of_bologna.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_vu_university_of_oxford"
+		texturefile = "gfx//interface//great_projects//VU_Universities//great_project_vu_university_of_oxford.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_vu_university_of_sorbonne"
+		texturefile = "gfx//interface//great_projects//VU_Universities//great_project_vu_university_of_sorbonne.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_vu_university_of_leiden"
+		texturefile = "gfx//interface//great_projects//VU_Universities//great_project_vu_university_of_leiden.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_vu_university_of_pavia"
+		texturefile = "gfx//interface//great_projects//VU_Universities//great_project_vu_university_of_pavia.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_vu_university_of_constantinople"
+		texturefile = "gfx//interface//great_projects//VU_Universities//great_project_vu_university_of_constantinople.dds"
+	}
 
 }
