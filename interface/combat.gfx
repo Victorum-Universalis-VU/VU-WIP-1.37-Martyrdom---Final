@@ -5520,6 +5520,11 @@ spriteTypes = {
         name = "GFX_combat_terrain_urban_tortosa"
         texturefile = "gfx/interface/tortosa.dds"
     }
+
+    spriteType = {                                                        
+        name = "GFX_combat_terrain_urban_lagos_por"
+        texturefile = "gfx/interface/lagos_por.dds"
+    }
 	
 #############################################
 

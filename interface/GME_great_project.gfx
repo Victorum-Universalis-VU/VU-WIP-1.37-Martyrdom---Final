@@ -217,10 +217,10 @@ spriteTypes = {
 		name = "GFX_great_project_gme_duomo_monreale"
 		texturefile = "gfx//interface//great_projects//GME//great_project_gme_duomo_monreale.dds"
 	}
-	spriteType = {
-		name = "GFX_great_project_gme_federico_II"
-		texturefile = "gfx//interface//great_projects//GME//great_project_gme_federico_II.dds"
-	}
+	#spriteType = {
+	#	name = "GFX_great_project_gme_federico_II"
+	#	texturefile = "gfx//interface//great_projects//GME//great_project_gme_federico_II.dds"
+	#}
 	spriteType = {
 		name = "GFX_great_project_gme_fori_imperiali"
 		texturefile = "gfx//interface//great_projects//GME//great_project_gme_fori_imperiali.dds"
