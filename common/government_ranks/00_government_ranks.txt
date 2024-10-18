@@ -12,6 +12,7 @@
 	free_leader_pool = 3			#VU AddOn new - kingdoms get an extra leader slot now, too, not just empires. Kingdoms need their leaders, too =p (plus, the many more province in VU mean more spreading out of armies)
 	governing_capacity = 650		#originally 900; VU  Upping by +150%, max states from 5 to 12 corresponded to +140%.
 	#global_autonomy = -0.025		#VU AddOn removed. Larger nations shouldn't magically become MORE centralised.
+	unjustified_demands = -0.3
 }
 
 3 = {
@@ -23,6 +24,7 @@
 	governing_capacity = 1350			#originally 1800; VU  Upping by +150%, even though max states from 10 to 20 corresponded to +100%.
 	#max_absolutism = 12				#VU AddOn removed - Empires are not by definition absolutist. True, many were, but the two do not neccessarily always go hand in hand.
 	#global_autonomy = -0.050			#VU AddOn removed. Larger nations shouldn't magically become MORE centralised.
+	unjustified_demands = -0.45
 	accept_vassalization_reasons = 10	#a fix because of a -10 duchy bug
 	missionaries = 1					#new addon for empires. Come on, empires by definition should be able to hire, afford and maintain more missionaries than a duchy without the need to take specific ideas. You're telling me that massive empire is too poor to simply hire more priests and organize more than one mission?
 }

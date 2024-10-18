@@ -557,7 +557,7 @@ gme_great_mosque_aleppo = {
 		province_modifiers = { }
 		area_modifier = { }
 		country_modifiers = {
-			global_heathen_missionary_strength = 0.005
+			global_heathen_missionary_strength = 0.01
 			tolerance_own = 0.5
 		}
 		on_upgraded = { }
@@ -568,7 +568,7 @@ gme_great_mosque_aleppo = {
 		province_modifiers = { }
 		area_modifier = { }
 		country_modifiers = {
-			global_heathen_missionary_strength = 0.01
+			global_heathen_missionary_strength = 0.02
 			tolerance_own = 1
 			missionary_maintenance_cost = -0.10
 		}
@@ -580,7 +580,7 @@ gme_great_mosque_aleppo = {
 		province_modifiers = { }
 		area_modifier = { }
 		country_modifiers = {
-			global_heathen_missionary_strength = 0.015
+			global_heathen_missionary_strength = 0.03
 			tolerance_own = 1
 			missionary_maintenance_cost = -0.20
 		}

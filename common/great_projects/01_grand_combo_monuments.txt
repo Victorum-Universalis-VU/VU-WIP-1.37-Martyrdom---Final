@@ -11763,7 +11763,7 @@ atiq_mosque = {
 		}
 
 		country_modifiers = {
-			global_missionary_strength = 0.05
+			global_missionary_strength = 0.01
 			tolerance_own = 0.25
 		}
 
@@ -11788,7 +11788,7 @@ atiq_mosque = {
 		}
 
 		country_modifiers = {
-			global_missionary_strength = 0.075
+			global_missionary_strength = 0.02
 			tolerance_own = 0.5
 		}
 
@@ -11814,7 +11814,7 @@ atiq_mosque = {
 		}
 
 		country_modifiers = {
-			global_missionary_strength = 0.1
+			global_missionary_strength = 0.03
 			tolerance_own = 1
 			missionaries = 1
 		}

@@ -2650,7 +2650,7 @@ city_jerusalem = {		#This monument labeled as city represents all the other impo
 
 		country_modifiers = {
 			devotion = 1
-			monthly_piety = 0.1
+			monthly_piety_accelerator = 0.002
 			republican_tradition = 0.5
 			governing_capacity = 50
 		}

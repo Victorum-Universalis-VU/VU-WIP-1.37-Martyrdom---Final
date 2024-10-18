@@ -833,8 +833,8 @@ NCountry = {
 
 	START_YEARLY_INFLATION = 0.0, 					-- _CDEF_START_YEARLY_INFLATION_
 	CLAIM_LOSE = 25,								-- how many years until a claim is lost.
-	CORE_LOSE = 250, 								-- how many years until a core is lost. (TEMPORARY INCREASE FROM 50 DUE TO NEW START DATE NOW BEING 200+ YEARS EARLIER) (REVERT ONLY WHEN HISTORY FILES ARE 100% COMPLETE)
-	CORE_LOSE_CULTURE_GROUP = 300,					-- how many years until a core in a country's culture group is lost. (TEMP INCREASE FROM 250 DUE TO START DATE NOW BEING 200+ YEARS EARLIER)
+	CORE_LOSE = 500, 								-- how many years until a core is lost. (TEMPORARY INCREASE FROM 50 DUE TO NEW START DATE NOW BEING 200+ YEARS EARLIER) (REVERT ONLY WHEN HISTORY FILES ARE 100% COMPLETE)
+	CORE_LOSE_CULTURE_GROUP = 750,					-- how many years until a core in a country's culture group is lost. (TEMP INCREASE FROM 250 DUE TO START DATE NOW BEING 200+ YEARS EARLIER)
 	CORE_LOSE_PRIMARY_CULTURE_TAG = -1,				-- how many years until a core is lost for the primary tag of a country (-1 = never lost)
 	CORE_LOSE_PRESTIGE = -10.0,						-- Prestige change when lost core
 	ABANDON_CORE_PRESTIGE = -5.0,					-- The cost of abandoning a core that some other country owns.
@@ -980,7 +980,7 @@ NCountry = {
 	SCUTAGE_TAX_FRACTION = 0.5,
 	PERCENTAGE_OF_DEV_FOR_CONVERT_TRIBUTARY_TO_VASSAL = 0.4,
 	MAX_LIBERTY_DESIRE_FOR_CONVERT_TRIBUTARY_TO_VASSAL = 50,
-	CONCENTRATE_DEVELOPMENT_DEVELOPMENT_DECREASE = 0.2,
+	CONCENTRATE_DEVELOPMENT_DEVELOPMENT_DECREASE = 0.6,
 	PILLAGE_CAPITAL_DEVELOPMENT_DECREASE = 0.2,
 	RAZE_UNREST_DURATION = 10,						-- Years of unrest. Also used for duration of neg. opinion modifier for previous owner.
 	RAZE_PROVINCE_DEVELOPMENT_DECREASE = 0.33,

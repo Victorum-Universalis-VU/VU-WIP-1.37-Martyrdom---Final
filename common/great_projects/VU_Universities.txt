@@ -79,7 +79,7 @@ vu_university_of_constantinople = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.05
+			local_development_cost_modifier = -0.05
 		}
 		country_modifiers = {
 			global_institution_spread = 0.05
@@ -104,7 +104,7 @@ vu_university_of_constantinople = {
 			trade_goods_size = 0.5
 		}
 		area_modifier = {
-			local_development_cost = -0.1
+			local_development_cost_modifier = -0.1
 		}
 		country_modifiers = {
 			global_institution_spread = 0.15
@@ -130,7 +130,7 @@ vu_university_of_constantinople = {
 			trade_goods_size = 1
 		}
 		area_modifier = {
-			local_development_cost = -0.15
+			local_development_cost_modifier = -0.15
 		}
 		country_modifiers = {
 			global_institution_spread = 0.25
@@ -231,7 +231,7 @@ vu_university_of_bologna = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.05
+			development_cost_modifier = -0.05
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.15
@@ -256,7 +256,7 @@ vu_university_of_bologna = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.1
+			development_cost_modifier = -0.1
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.3
@@ -282,7 +282,7 @@ vu_university_of_bologna = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.15
+			development_cost_modifier = -0.15
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.5
@@ -381,7 +381,7 @@ vu_university_of_oxford = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.05
+			development_cost_modifier = -0.05
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.15
@@ -405,7 +405,7 @@ vu_university_of_oxford = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.1
+			development_cost_modifier = -0.1
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.3
@@ -431,7 +431,7 @@ vu_university_of_oxford = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.15
+			development_cost_modifier = -0.15
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.5
@@ -530,7 +530,7 @@ vu_university_of_cambridge = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.05
+			development_cost_modifier = -0.05
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.15
@@ -554,7 +554,7 @@ vu_university_of_cambridge = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.1
+			development_cost_modifier = -0.1
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.3
@@ -579,7 +579,7 @@ vu_university_of_cambridge = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.15
+			development_cost_modifier = -0.15
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.5
@@ -680,7 +680,7 @@ vu_university_of_salamanca = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.05
+			development_cost_modifier = -0.05
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.15
@@ -704,7 +704,7 @@ vu_university_of_salamanca = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.1
+			development_cost_modifier = -0.1
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.3
@@ -729,7 +729,7 @@ vu_university_of_salamanca = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.15
+			development_cost_modifier = -0.15
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.5
@@ -830,7 +830,7 @@ vu_university_of_padua = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.05
+			development_cost_modifier = -0.05
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.15
@@ -853,7 +853,7 @@ vu_university_of_padua = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.1
+			development_cost_modifier = -0.1
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.3
@@ -878,7 +878,7 @@ vu_university_of_padua = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.15
+			development_cost_modifier = -0.15
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.5
@@ -979,7 +979,7 @@ vu_university_of_naples = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.05
+			development_cost_modifier = -0.05
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.15
@@ -1003,7 +1003,7 @@ vu_university_of_naples = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.1
+			development_cost_modifier = -0.1
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.3
@@ -1028,7 +1028,7 @@ vu_university_of_naples = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.15
+			development_cost_modifier = -0.15
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.5
@@ -1129,7 +1129,7 @@ vu_university_of_siena = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.05
+			development_cost_modifier = -0.05
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.15
@@ -1152,7 +1152,7 @@ vu_university_of_siena = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.1
+			development_cost_modifier = -0.1
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.3
@@ -1176,7 +1176,7 @@ vu_university_of_siena = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.15
+			development_cost_modifier = -0.15
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.5
@@ -1276,7 +1276,7 @@ vu_university_of_valladolid = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.05
+			development_cost_modifier = -0.05
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.15
@@ -1300,7 +1300,7 @@ vu_university_of_valladolid = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.1
+			development_cost_modifier = -0.1
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.3
@@ -1325,7 +1325,7 @@ vu_university_of_valladolid = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.15
+			development_cost_modifier = -0.15
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.5
@@ -1422,7 +1422,7 @@ vu_university_of_sorbonne = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.05
+			development_cost_modifier = -0.05
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.15
@@ -1447,7 +1447,7 @@ vu_university_of_sorbonne = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.1
+			development_cost_modifier = -0.1
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.3
@@ -1473,7 +1473,7 @@ vu_university_of_sorbonne = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.15
+			development_cost_modifier = -0.15
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.5
@@ -1581,7 +1581,7 @@ vu_university_of_montpellier = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.05
+			development_cost_modifier = -0.05
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.15
@@ -1605,7 +1605,7 @@ vu_university_of_montpellier = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.1
+			development_cost_modifier = -0.1
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.3
@@ -1630,7 +1630,7 @@ vu_university_of_montpellier = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.15
+			development_cost_modifier = -0.15
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.5
@@ -1731,7 +1731,7 @@ vu_university_of_macerata = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.05
+			development_cost_modifier = -0.05
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.15
@@ -1755,7 +1755,7 @@ vu_university_of_macerata = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.1
+			development_cost_modifier = -0.1
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.3
@@ -1780,7 +1780,7 @@ vu_university_of_macerata = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.15
+			development_cost_modifier = -0.15
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.5
@@ -1881,7 +1881,7 @@ vu_university_of_coimbra = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.05
+			development_cost_modifier = -0.05
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.15
@@ -1904,7 +1904,7 @@ vu_university_of_coimbra = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.1
+			development_cost_modifier = -0.1
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.3
@@ -1929,7 +1929,7 @@ vu_university_of_coimbra = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.15
+			development_cost_modifier = -0.15
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.5
@@ -2030,7 +2030,7 @@ vu_university_of_complutense_de_madrid = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.05
+			development_cost_modifier = -0.05
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.15
@@ -2053,7 +2053,7 @@ vu_university_of_complutense_de_madrid = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.1
+			development_cost_modifier = -0.1
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.3
@@ -2078,7 +2078,7 @@ vu_university_of_complutense_de_madrid = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.15
+			development_cost_modifier = -0.15
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.5
@@ -2179,7 +2179,7 @@ vu_university_of_sapienza = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.05
+			development_cost_modifier = -0.05
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.15
@@ -2203,7 +2203,7 @@ vu_university_of_sapienza = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.1
+			development_cost_modifier = -0.1
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.3
@@ -2228,7 +2228,7 @@ vu_university_of_sapienza = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.15
+			development_cost_modifier = -0.15
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.5
@@ -2329,7 +2329,7 @@ vu_university_of_perugia = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.05
+			development_cost_modifier = -0.05
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.15
@@ -2353,7 +2353,7 @@ vu_university_of_perugia = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.1
+			development_cost_modifier = -0.1
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.3
@@ -2378,7 +2378,7 @@ vu_university_of_perugia = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.15
+			development_cost_modifier = -0.15
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.5
@@ -2479,7 +2479,7 @@ vu_university_of_florence = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.05
+			development_cost_modifier = -0.05
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.15
@@ -2503,7 +2503,7 @@ vu_university_of_florence = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.1
+			development_cost_modifier = -0.1
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.3
@@ -2528,7 +2528,7 @@ vu_university_of_florence = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.15
+			development_cost_modifier = -0.15
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.5
@@ -2629,7 +2629,7 @@ vu_university_of_pisa = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.05
+			development_cost_modifier = -0.05
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.15
@@ -2653,7 +2653,7 @@ vu_university_of_pisa = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.1
+			development_cost_modifier = -0.1
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.3
@@ -2678,7 +2678,7 @@ vu_university_of_pisa = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.15
+			development_cost_modifier = -0.15
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.5
@@ -2776,7 +2776,7 @@ vu_university_of_charles = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.05
+			development_cost_modifier = -0.05
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.15
@@ -2801,7 +2801,7 @@ vu_university_of_charles = {
 			trade_goods_size = 0.5
 		}
 		area_modifier = {
-			local_development_cost = -0.1
+			development_cost_modifier = -0.1
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.3
@@ -2827,7 +2827,7 @@ vu_university_of_charles = {
 			trade_goods_size = 1
 		}
 		area_modifier = {
-			local_development_cost = -0.15
+			development_cost_modifier = -0.15
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.5
@@ -2928,7 +2928,7 @@ vu_university_of_pavia = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.05
+			development_cost_modifier = -0.05
 		}
 		country_modifiers = {
 			culture_conversion_cost = -0.1
@@ -2952,7 +2952,7 @@ vu_university_of_pavia = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.1
+			development_cost_modifier = -0.1
 		}
 		country_modifiers = {
 			culture_conversion_cost = -0.15
@@ -2977,7 +2977,7 @@ vu_university_of_pavia = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.15
+			development_cost_modifier = -0.15
 		}
 		country_modifiers = {
 			global_institution_spread = 0.25
@@ -3075,7 +3075,7 @@ vu_university_of_jagiellon = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.05
+			development_cost_modifier = -0.05
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.15
@@ -3100,7 +3100,7 @@ vu_university_of_jagiellon = {
 			trade_goods_size = 0.5
 		}
 		area_modifier = {
-			local_development_cost = -0.1
+			development_cost_modifier = -0.1
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.3
@@ -3126,7 +3126,7 @@ vu_university_of_jagiellon = {
 			trade_goods_size = 1
 		}
 		area_modifier = {
-			local_development_cost = -0.15
+			development_cost_modifier = -0.15
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.5
@@ -3224,7 +3224,7 @@ vu_university_of_vienna = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.05
+			development_cost_modifier = -0.05
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.15
@@ -3248,7 +3248,7 @@ vu_university_of_vienna = {
 			trade_goods_size = 0.5
 		}
 		area_modifier = {
-			local_development_cost = -0.1
+			development_cost_modifier = -0.1
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.3
@@ -3274,7 +3274,7 @@ vu_university_of_vienna = {
 			trade_goods_size = 1
 		}
 		area_modifier = {
-			local_development_cost = -0.15
+			development_cost_modifier = -0.15
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.5
@@ -3369,7 +3369,7 @@ vu_university_of_heidelberg = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.05
+			development_cost_modifier = -0.05
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.15
@@ -3394,7 +3394,7 @@ vu_university_of_heidelberg = {
 			trade_goods_size = 0.5
 		}
 		area_modifier = {
-			local_development_cost = -0.1
+			development_cost_modifier = -0.1
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.3
@@ -3420,7 +3420,7 @@ vu_university_of_heidelberg = {
 			trade_goods_size = 1
 		}
 		area_modifier = {
-			local_development_cost = -0.15
+			development_cost_modifier = -0.15
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.5
@@ -3521,7 +3521,7 @@ vu_university_of_ferrara = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.05
+			development_cost_modifier = -0.05
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.15
@@ -3546,7 +3546,7 @@ vu_university_of_ferrara = {
 			trade_goods_size = 0.5
 		}
 		area_modifier = {
-			local_development_cost = -0.1
+			development_cost_modifier = -0.1
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.3
@@ -3572,7 +3572,7 @@ vu_university_of_ferrara = {
 			trade_goods_size = 1
 		}
 		area_modifier = {
-			local_development_cost = -0.15
+			development_cost_modifier = -0.15
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.5
@@ -3670,7 +3670,7 @@ vu_university_of_leipzig = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.05
+			development_cost_modifier = -0.05
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.15
@@ -3695,7 +3695,7 @@ vu_university_of_leipzig = {
 			trade_goods_size = 0.5
 		}
 		area_modifier = {
-			local_development_cost = -0.1
+			development_cost_modifier = -0.1
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.3
@@ -3721,7 +3721,7 @@ vu_university_of_leipzig = {
 			trade_goods_size = 1
 		}
 		area_modifier = {
-			local_development_cost = -0.15
+			development_cost_modifier = -0.15
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.5
@@ -3819,7 +3819,7 @@ vu_university_of_leuven = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.05
+			development_cost_modifier = -0.05
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.15
@@ -3844,7 +3844,7 @@ vu_university_of_leuven = {
 			trade_goods_size = 0.5
 		}
 		area_modifier = {
-			local_development_cost = -0.1
+			development_cost_modifier = -0.1
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.3
@@ -3870,7 +3870,7 @@ vu_university_of_leuven = {
 			trade_goods_size = 1
 		}
 		area_modifier = {
-			local_development_cost = -0.15
+			development_cost_modifier = -0.15
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.5
@@ -3968,7 +3968,7 @@ vu_university_of_glasgow = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.05
+			development_cost_modifier = -0.05
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.15
@@ -3993,7 +3993,7 @@ vu_university_of_glasgow = {
 			trade_goods_size = 0.5
 		}
 		area_modifier = {
-			local_development_cost = -0.1
+			development_cost_modifier = -0.1
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.3
@@ -4019,7 +4019,7 @@ vu_university_of_glasgow = {
 			trade_goods_size = 1
 		}
 		area_modifier = {
-			local_development_cost = -0.15
+			development_cost_modifier = -0.15
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.5
@@ -4117,7 +4117,7 @@ vu_university_of_istanbul = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.05
+			local_development_cost_modifier = -0.05
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.15
@@ -4141,7 +4141,7 @@ vu_university_of_istanbul = {
 			trade_goods_size = 0.5
 		}
 		area_modifier = {
-			local_development_cost = -0.1
+			local_development_cost_modifier = -0.1
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.3
@@ -4167,7 +4167,7 @@ vu_university_of_istanbul = {
 			trade_goods_size = 1
 		}
 		area_modifier = {
-			local_development_cost = -0.15
+			local_development_cost_modifier = -0.15
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.5
@@ -4268,7 +4268,7 @@ vu_university_of_greifswald = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.05
+			development_cost_modifier = -0.05
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.15
@@ -4293,7 +4293,7 @@ vu_university_of_greifswald = {
 			trade_goods_size = 0.5
 		}
 		area_modifier = {
-			local_development_cost = -0.1
+			development_cost_modifier = -0.1
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.3
@@ -4319,7 +4319,7 @@ vu_university_of_greifswald = {
 			trade_goods_size = 1
 		}
 		area_modifier = {
-			local_development_cost = -0.15
+			development_cost_modifier = -0.15
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.5
@@ -4423,7 +4423,7 @@ vu_university_of_freiburg = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.05
+			development_cost_modifier = -0.05
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.15
@@ -4448,7 +4448,7 @@ vu_university_of_freiburg = {
 			trade_goods_size = 0.5
 		}
 		area_modifier = {
-			local_development_cost = -0.1
+			development_cost_modifier = -0.1
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.3
@@ -4474,7 +4474,7 @@ vu_university_of_freiburg = {
 			trade_goods_size = 1
 		}
 		area_modifier = {
-			local_development_cost = -0.15
+			development_cost_modifier = -0.15
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.5
@@ -4578,7 +4578,7 @@ vu_university_of_basel = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.05
+			development_cost_modifier = -0.05
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.15
@@ -4603,7 +4603,7 @@ vu_university_of_basel = {
 			trade_goods_size = 0.5
 		}
 		area_modifier = {
-			local_development_cost = -0.1
+			development_cost_modifier = -0.1
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.3
@@ -4629,7 +4629,7 @@ vu_university_of_basel = {
 			trade_goods_size = 1
 		}
 		area_modifier = {
-			local_development_cost = -0.15
+			development_cost_modifier = -0.15
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.5
@@ -4724,7 +4724,7 @@ vu_university_of_tubingen = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.05
+			development_cost_modifier = -0.05
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.15
@@ -4749,7 +4749,7 @@ vu_university_of_tubingen = {
 			trade_goods_size = 0.5
 		}
 		area_modifier = {
-			local_development_cost = -0.1
+			development_cost_modifier = -0.1
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.3
@@ -4775,7 +4775,7 @@ vu_university_of_tubingen = {
 			trade_goods_size = 1
 		}
 		area_modifier = {
-			local_development_cost = -0.15
+			development_cost_modifier = -0.15
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.5
@@ -4873,7 +4873,7 @@ vu_university_of_uppsala = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.05
+			development_cost_modifier = -0.05
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.15
@@ -4898,7 +4898,7 @@ vu_university_of_uppsala = {
 			trade_goods_size = 0.5
 		}
 		area_modifier = {
-			local_development_cost = -0.1
+			development_cost_modifier = -0.1
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.3
@@ -4924,7 +4924,7 @@ vu_university_of_uppsala = {
 			trade_goods_size = 1
 		}
 		area_modifier = {
-			local_development_cost = -0.15
+			development_cost_modifier = -0.15
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.5
@@ -5022,7 +5022,7 @@ vu_university_of_copenhagen = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.05
+			development_cost_modifier = -0.05
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.15
@@ -5048,7 +5048,7 @@ vu_university_of_copenhagen = {
 			trade_goods_size = 0.5
 		}
 		area_modifier = {
-			local_development_cost = -0.1
+			development_cost_modifier = -0.1
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.3
@@ -5075,7 +5075,7 @@ vu_university_of_copenhagen = {
 			trade_goods_size = 1
 		}
 		area_modifier = {
-			local_development_cost = -0.15
+			development_cost_modifier = -0.15
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.5
@@ -5095,7 +5095,7 @@ vu_university_of_copenhagen = {
 }
 
 vu_university_of_aberdeen = {
-	start = 251
+	start = 4347
 	date = 1451.01.01
 	time = {
 		months = 0
@@ -5106,7 +5106,7 @@ vu_university_of_aberdeen = {
 	starting_tier = 1
 	type = monument
 	build_trigger = {
-		province_id = 251
+		province_id = 4347
 		is_year = 1451
 		owner = {
 			AND = {
@@ -5174,7 +5174,7 @@ vu_university_of_aberdeen = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.05
+			development_cost_modifier = -0.05
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.15
@@ -5200,7 +5200,7 @@ vu_university_of_aberdeen = {
 			trade_goods_size = 0.5
 		}
 		area_modifier = {
-			local_development_cost = -0.1
+			development_cost_modifier = -0.1
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.3
@@ -5226,7 +5226,7 @@ vu_university_of_aberdeen = {
 			trade_goods_size = 1
 		}
 		area_modifier = {
-			local_development_cost = -0.15
+			development_cost_modifier = -0.15
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.5
@@ -5327,7 +5327,7 @@ vu_university_of_leiden = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			local_development_cost = -0.05
+			development_cost_modifier = -0.05
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.15
@@ -5353,7 +5353,7 @@ vu_university_of_leiden = {
 			trade_goods_size = 0.5
 		}
 		area_modifier = {
-			local_development_cost = -0.1
+			development_cost_modifier = -0.1
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.3
@@ -5379,7 +5379,7 @@ vu_university_of_leiden = {
 			trade_goods_size = 1
 		}
 		area_modifier = {
-			local_development_cost = -0.15
+			development_cost_modifier = -0.15
 		}
 		country_modifiers = {
 			innovativeness_gain = 0.5

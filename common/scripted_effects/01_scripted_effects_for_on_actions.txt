@@ -3585,39 +3585,53 @@ on_colony_finished_effect = {
 }
 
 on_colonist_boosting_colony_effect = {
-	hidden_effect = {
 		if = {
 			limit = {
-				OR = {
-					religion = noreligion
-					#test if colonists outnumber natives
-					variable_arithmetic_trigger = {
-						custom_tooltip = colonysize_is_larger_than_nativesize_tt
-						export_to_variable = {
-							which = vab_colonysize
-							value = trigger_value:colonysize
-						}
-						export_to_variable = {
-							which = vab_nativesize
-							value = trigger_value:native_size
-						}
-						multiply_variable = {
-							which = vab_nativesize
-							value = 100
-						}
-						check_variable = {
-							which = vab_colonysize
-							which = vab_nativesize
+				AND = {
+					AND = {  
+						FROM = { native_policy = native_policy_coexist }
+						OR = {
+							AND = {
+								NOT = { FROM = { has_idea_group = religious_ideas } }
+								NOT = { FROM = { full_idea_group = humanist_ideas } }
+							}
+							AND = {
+								FROM = { has_idea_group = religious_ideas }
+								FROM = { full_idea_group = humanist_ideas }
+							}
 						}
 					}
-					is_in_capital_area = yes
-					continent = north_america
-					continent = south_america
-					continent = new_world
-					NOT = {
-						OR = {
-							has_dlc = "Dharma"
-							has_dlc = "Wealth of Nations"
+					OR = {
+						religion = noreligion
+						#test if colonists outnumber natives
+						variable_arithmetic_trigger = {
+							custom_tooltip = colonysize_is_larger_than_nativesize_tt
+							export_to_variable = {
+								which = vab_colonysize
+								value = trigger_value:colonysize
+							}
+							export_to_variable = {
+								which = vab_nativesize
+								value = trigger_value:native_size
+							}
+							multiply_variable = {
+								which = vab_nativesize
+								value = 100
+							}
+							check_variable = {
+								which = vab_colonysize
+								which = vab_nativesize
+							}
+						}
+						is_in_capital_area = yes
+						continent = north_america
+						continent = south_america
+						continent = new_world
+						NOT = {
+							OR = {
+								has_dlc = "Dharma"
+								has_dlc = "Wealth of Nations"
+							}
 						}
 					}
 				}
@@ -3626,44 +3640,410 @@ on_colonist_boosting_colony_effect = {
 		}
 		if = {
 			limit = {
-				OR = {
-					culture = noculture
-					#test if colonists outnumber natives
-					variable_arithmetic_trigger = {
-						custom_tooltip = colonysize_is_larger_than_nativesize_tt
-						export_to_variable = {
-							which = vab_colonysize
-							value = trigger_value:colonysize
-						}
-						export_to_variable = {
-							which = vab_nativesize
-							value = trigger_value:native_size
-						}
-						multiply_variable = {
-							which = vab_nativesize
-							value = 100
-						}
-						check_variable = {
-							which = vab_colonysize
-							which = vab_nativesize
+				AND = {
+					AND = {  
+						FROM = { native_policy = native_policy_coexist }
+						OR = {
+							AND = {
+								NOT = { FROM = { has_idea_group = religious_ideas } }
+								NOT = { FROM = { full_idea_group = humanist_ideas } }
+							}
+							AND = {
+								FROM = { has_idea_group = religious_ideas }
+								FROM = { full_idea_group = humanist_ideas }
+							}
 						}
 					}
-					is_in_capital_area = yes
-					continent = north_america
-					continent = south_america
-					continent = new_world
-					NOT = {
-						OR = {
-							has_dlc = "Dharma"
-							has_dlc = "Wealth of Nations"
+					OR = {
+						culture = noculture
+						#test if colonists outnumber natives
+						variable_arithmetic_trigger = {
+							custom_tooltip = colonysize_is_larger_than_nativesize_tt
+							export_to_variable = {
+								which = vab_colonysize
+								value = trigger_value:colonysize
+							}
+							export_to_variable = {
+								which = vab_nativesize
+								value = trigger_value:native_size
+							}
+							multiply_variable = {
+								which = vab_nativesize
+								value = 100
+							}
+							check_variable = {
+								which = vab_colonysize
+								which = vab_nativesize
+							}
+						}
+						is_in_capital_area = yes
+						continent = north_america
+						continent = south_america
+						continent = new_world
+						NOT = {
+							OR = {
+								has_dlc = "Dharma"
+								has_dlc = "Wealth of Nations"
+							}
 						}
 					}
 				}
 			}
 			change_culture = FROM
-			change_original_culture = FROM
 		}
-	}
+		hidden_effect = {
+			if = {
+				limit = {
+					AND = {
+						#OR = {
+						#	FROM = { native_policy = native_policy_trade }
+						#	FROM = { native_policy = native_policy_hostile }
+						#} 
+						OR = {
+							FROM = { native_policy = native_policy_trade }
+							FROM = { native_policy = native_policy_hostile }
+							AND = {  
+								FROM = { native_policy = native_policy_coexist }
+								AND = {
+									FROM = { has_idea_group = religious_ideas }
+									NOT = { FROM = { full_idea_group = humanist_ideas } }
+								}
+							}
+							AND = {  
+								FROM = { native_policy = native_policy_coexist }
+								religion = noreligion
+							}
+							
+						}
+						OR = {
+							religion = noreligion
+							#test if colonists outnumber natives
+							variable_arithmetic_trigger = {
+								custom_tooltip = colonysize_is_larger_than_nativesize_tt
+								export_to_variable = {
+									which = vab_colonysize
+									value = trigger_value:colonysize
+								}
+								export_to_variable = {
+									which = vab_nativesize
+									value = trigger_value:native_size
+								}
+								multiply_variable = {
+									which = vab_nativesize
+									value = 100
+								}
+								check_variable = {
+									which = vab_colonysize
+									which = vab_nativesize
+								}
+							}
+							is_in_capital_area = yes
+							continent = north_america
+							continent = south_america
+							continent = new_world
+							NOT = {
+								OR = {
+									has_dlc = "Dharma"
+									has_dlc = "Wealth of Nations"
+								}
+							}
+						}
+					}
+				}
+				change_religion = FROM
+			}
+			if = {
+				limit = {
+					AND = {
+						#OR = {
+						#	FROM = { native_policy = native_policy_trade }
+						#	FROM = { native_policy = native_policy_hostile }
+						#} 
+						OR = {
+							FROM = { native_policy = native_policy_trade }
+							FROM = { native_policy = native_policy_hostile }
+							AND = {  
+								FROM = { native_policy = native_policy_coexist }
+								AND = {
+									FROM = { has_idea_group = religious_ideas }
+									NOT = { FROM = { full_idea_group = humanist_ideas } }
+								}
+							}
+							AND = {  
+								FROM = { native_policy = native_policy_coexist }
+								culture = noculture
+							}
+						}
+						OR = {
+							culture = noculture
+							#test if colonists outnumber natives
+							variable_arithmetic_trigger = {
+								custom_tooltip = colonysize_is_larger_than_nativesize_tt
+								export_to_variable = {
+									which = vab_colonysize
+									value = trigger_value:colonysize
+								}
+								export_to_variable = {
+									which = vab_nativesize
+									value = trigger_value:native_size
+								}
+								multiply_variable = {
+									which = vab_nativesize
+									value = 100
+								}
+								check_variable = {
+									which = vab_colonysize
+									which = vab_nativesize
+								}
+							}
+							is_in_capital_area = yes
+							continent = north_america
+							continent = south_america
+							continent = new_world
+							NOT = {
+								OR = {
+									has_dlc = "Dharma"
+									has_dlc = "Wealth of Nations"
+								}
+							}
+						}
+					}
+				}
+				change_culture = FROM
+				change_original_culture = FROM
+			}
+		}
+		#Coexist Native by Panthera
+		hidden_effect = {
+			if = {
+				limit = {
+					AND = {
+						FROM = { native_policy = native_policy_coexist }
+						FROM = { full_idea_group = humanist_ideas }
+						NOT = { FROM = { has_idea_group = religious_ideas } }
+						NOT = { religion = noreligion }
+						OR = {
+							#test if colonists outnumber natives
+							variable_arithmetic_trigger = {
+								custom_tooltip = colonysize_is_larger_than_nativesize_tt
+								export_to_variable = {
+									which = vab_colonysize
+									value = trigger_value:colonysize
+								}
+								export_to_variable = {
+									which = vab_nativesize
+									value = trigger_value:native_size
+								}
+								multiply_variable = {
+									which = vab_nativesize
+									value = 100
+								}
+								check_variable = {
+									which = vab_colonysize
+									which = vab_nativesize
+								}
+							}
+						}
+					}
+				}
+				change_religion = FROM
+			}
+			if = {
+				limit = {
+					AND = {
+						FROM = { native_policy = native_policy_coexist }
+						FROM = { full_idea_group = humanist_ideas }
+						NOT = { FROM = { has_idea_group = religious_ideas } }
+						NOT = { culture = noculture }
+						OR = {
+							#test if colonists outnumber natives
+							variable_arithmetic_trigger = {
+								custom_tooltip = colonysize_is_larger_than_nativesize_tt
+								export_to_variable = {
+									which = vab_colonysize
+									value = trigger_value:colonysize
+								}
+								export_to_variable = {
+									which = vab_nativesize
+									value = trigger_value:native_size
+								}
+								multiply_variable = {
+									which = vab_nativesize
+									value = 100
+								}
+								check_variable = {
+									which = vab_colonysize
+									which = vab_nativesize
+								}
+							}
+						}
+					}
+				}
+				change_culture = FROM
+			}
+		}
+#	hidden_effect = {
+#		if = {
+#			limit = {
+#				AND = {
+					#OR = {
+					#	FROM = { native_policy = native_policy_trade }
+					#	FROM = { native_policy = native_policy_hostile }
+					#} 
+#					OR = {
+#						FROM = { native_policy = native_policy_trade }
+#						FROM = { native_policy = native_policy_hostile }
+#					} 
+#					OR = {
+#						religion = noreligion
+#						#test if colonists outnumber natives
+#						variable_arithmetic_trigger = {
+#							custom_tooltip = colonysize_is_larger_than_nativesize_tt
+#							export_to_variable = {
+#								which = vab_colonysize
+#								value = trigger_value:colonysize
+#							}
+#							export_to_variable = {
+#								which = vab_nativesize
+#								value = trigger_value:native_size
+#							}
+#							multiply_variable = {
+#								which = vab_nativesize
+#								value = 100
+#							}
+#							check_variable = {
+#								which = vab_colonysize
+#								which = vab_nativesize
+#							}
+#						}
+#						is_in_capital_area = yes
+#						continent = north_america
+#						continent = south_america
+#						continent = new_world
+#						NOT = {
+#							OR = {
+#								has_dlc = "Dharma"
+#								has_dlc = "Wealth of Nations"
+#							}
+#						}
+#					}
+#				}
+#			}
+#			change_religion = FROM
+#		}
+#		if = {
+#			limit = {
+#				AND = {
+					#OR = {
+					#	FROM = { native_policy = native_policy_trade }
+					#	FROM = { native_policy = native_policy_hostile }
+					#} 
+#					OR = {
+#						FROM = { native_policy = native_policy_trade }
+#						FROM = { native_policy = native_policy_hostile }
+#					} 
+#					OR = {
+#						culture = noculture
+#						#test if colonists outnumber natives
+#						variable_arithmetic_trigger = {
+#							custom_tooltip = colonysize_is_larger_than_nativesize_tt
+#							export_to_variable = {
+#								which = vab_colonysize
+#								value = trigger_value:colonysize
+#							}
+#							export_to_variable = {
+#								which = vab_nativesize
+#								value = trigger_value:native_size
+#							}
+#							multiply_variable = {
+#								which = vab_nativesize
+#								value = 100
+#							}
+#							check_variable = {
+#								which = vab_colonysize
+#								which = vab_nativesize
+#							}
+#						}
+#						is_in_capital_area = yes
+#						continent = north_america
+#						continent = south_america
+#						continent = new_world
+#						NOT = {
+#							OR = {
+#								has_dlc = "Dharma"
+#								has_dlc = "Wealth of Nations"
+#							}
+#						}
+#					}
+#				}
+#			}
+#			change_culture = FROM
+#			change_original_culture = FROM
+#		}
+#		#Coexist Native by Panthera
+#		if = {
+#			limit = {
+#				AND = {
+#					FROM = { native_policy = native_policy_coexist }
+#					NOT = { religion = noreligion }
+#					OR = {
+#						#test if colonists outnumber natives
+#						variable_arithmetic_trigger = {
+#							custom_tooltip = colonysize_is_larger_than_nativesize_tt
+#							export_to_variable = {
+#								which = vab_colonysize
+#								value = trigger_value:colonysize
+#							}
+#							export_to_variable = {
+#								which = vab_nativesize
+#								value = trigger_value:native_size
+#							}
+#							multiply_variable = {
+#								which = vab_nativesize
+#								value = 100
+#							}
+#							check_variable = {
+#								which = vab_colonysize
+#								which = vab_nativesize
+#							}
+#						}
+#					}
+#				}
+#			}
+#			change_religion = FROM
+#		}
+#		if = {
+#			limit = {
+#				AND = {
+#					FROM = ( native_policy = native_policy_coexist )
+#					NOT = { culture = noculture }
+#					OR = {
+#						#test if colonists outnumber natives
+#						variable_arithmetic_trigger = {
+#							custom_tooltip = colonysize_is_larger_than_nativesize_tt
+#							export_to_variable = {
+#								which = vab_colonysize
+#								value = trigger_value:colonysize
+#							}
+#							export_to_variable = {
+#								which = vab_nativesize
+#								value = trigger_value:native_size
+#							}
+#							multiply_variable = {
+#								which = vab_nativesize
+#								value = 100
+#							}
+#							check_variable = {
+#								which = vab_colonysize
+#								which = vab_nativesize
+#							}
+#						}
+#					}
+#				}
+#			}
+#			change_culture = FROM
+#		}
+#	}
 }
 
 on_alliance_broken_effect = {
